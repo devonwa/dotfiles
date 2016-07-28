@@ -64,11 +64,6 @@
 (load_config "init-flyspell.el")
 
 
-;; Gilgamesh
-(load_config (concat my_path-lib "kitchinhub/gilgamesh/gilgamesh.el"))
-(load_config (concat my_path-lib "kitchinhub/gilgamesh/ivy-gilgamesh.el"))
-
-
 ;; Themes
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory (convert-standard-filename "themes/")))
 ;; (setq org-level-color-stars-only t)
@@ -116,6 +111,11 @@
                   (and plus-minus
                        (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" plus-minus)
                        (format " +%s-%s" (match-string 1 plus-minus) (match-string 2 plus-minus)))))))
+
+
+;; Gilgamesh
+(load_config (concat my_path-lib "kitchinhub/gilgamesh/gilgamesh.el"))
+(load_config (concat my_path-lib "kitchinhub/gilgamesh/ivy-gilgamesh.el"))
 
 
 ;; Scimax
