@@ -23,6 +23,7 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+
 ;; Install packages if not already installed
 ;; https://github.com/rmm5t/dotfiles/blob/master/emacs.d/personal/defuns.el
 (defun package (package)
@@ -128,4 +129,3 @@
 ;; Scimax
 (load_config "init-scimax.el")
 (load_config (concat my_path-lib "jkitchin/scimax/init.el"))
-
