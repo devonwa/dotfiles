@@ -17,16 +17,17 @@
 
 ;; Packages
 (require 'package)
+(package-initialize)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
-(package-initialize)
-
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
 ;; Install packages if not already installed
 ;; https://github.com/rmm5t/dotfiles/blob/master/emacs.d/personal/defuns.el
 (defun package (package)
-    (when (not (package-installed-p package))
-      (package-install package)))
+  (when (not (package-installed-p package))
+    (package-install package)))
 
 
 ;; Check packages
@@ -41,7 +42,8 @@
 
 
 ;; Load-path
-(add-to-list 'load-path (concat user-emacs-directory (convert-standard-filename "lisp/")))
+(add-to-list 'load-path (concat user-emacs-directory
+                                (convert-standard-filename "lisp/")))
 
 
 ;; Load confifuration files with a warning on error
@@ -65,7 +67,9 @@
 
 
 ;; Themes
-(add-to-list 'custom-theme-load-path (concat user-emacs-directory (convert-standard-filename "themes/")))
+(add-to-list 'custom-theme-load-path
+             (concat user-emacs-directory
+                     (convert-standard-filename "themes/")))
 ;; (setq org-level-color-stars-only t)
 ;; (load-theme 'zenburn)
 
@@ -109,8 +113,11 @@
                 (let ((plus-minus (vc-git--run-command-string
                                    file "diff" "--numstat" "--")))
                   (and plus-minus
-                       (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" plus-minus)
-                       (format " +%s-%s" (match-string 1 plus-minus) (match-string 2 plus-minus)))))))
+                       (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t"
+                                     plus-minus)
+                       (format " +%s-%s"
+                               (match-string 1 plus-minus)
+                               (match-string 2 plus-minus)))))))
 
 
 ;; Gilgamesh
