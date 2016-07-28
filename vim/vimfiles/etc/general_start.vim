@@ -1,0 +1,2 @@
+" leader aliases
+let mapleader=" "

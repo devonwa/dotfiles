@@ -1,0 +1,33 @@
+" vim requirements
+set nocompatible
+filetype off
+
+" path variables
+let vim_folder_name = 'vimfiles'
+let vim_folder_path = $HOME . '/' . vim_folder_name
+let etc_path = vim_folder_path . '/etc'
+let general_start_path = etc_path . '/general_start.vim'
+let general_end_path = etc_path . '/general_end.vim'
+let plugin_path = etc_path . '/plugins.vim'
+let config_nix_path = etc_path . '/nix.vim'
+let config_win_path = etc_path . '/windows.vim'
+let local_path = etc_path . '/local.vim'
+
+" general settings: start-of-file 
+execute 'source' general_start_path 
+
+" windows or *nix settings
+if has("win64") || has("win32") || has("win16")
+    execute 'source' config_win_path 
+else
+    execute 'source' config_nix_path 
+endif
+
+" plugins
+execute 'source' plugin_path
+
+" local settings
+execute 'source' local_path
+
+" general settings: end-of-file 
+execute 'source' general_end_path
