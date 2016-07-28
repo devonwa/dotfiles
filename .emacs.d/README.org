@@ -2,22 +2,3 @@
 #+AUTHOR: Devon Walker
 
 For Windows: Add the variable HOME to point to your user directory (i.e. C:\users\devon).
-
-Include the following in .emacs.d/init.el:
-#+BEGIN_SRC emacs-lisp
-;; Variables
-(setq my_path-cloud "~/Google Drive/")
-(setq my_path-projects (concat my_path-cloud "projects/"))
-(setq my_path-bib (concat my_path-projects "bibliography/"))
-(setq my_path-settings (concat my_path-projects "settings/emacs/"))
-(setq my_path-settings-jmax (concat my_path-settings "jmax/"))
-
-;; Load
-(load (concat my_path-settings "my_init.el"))
-#+END_SRC
-
-
-Include the following line in jmax user.el:
-#+BEGIN_SRC emacs-lisp
-(load (concat my_path-settings "jmax.el"))
-#+END_SRC
