@@ -68,7 +68,6 @@
 
 
 ;; lib: Scimax
-(setq org-src-fontify-natively nil)
 (load_config "init-scimax-pre.el")
 (load_config (concat my_path-lib "jkitchin/scimax/init.el"))
 (load_config "init-scimax-post.el")

@@ -36,3 +36,4 @@
 ;; Turn off beacon (gray cursor highlighting)
 (beacon-mode 1)
 (setq beacon-size 10)
+(setq beacon-color "#FFFF85")
