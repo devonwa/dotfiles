@@ -62,6 +62,18 @@
 (load_config "init-flyspell.el")
 
 
+;; lib: Gilgamesh
+(load_config (concat my_path-lib "kitchinhub/gilgamesh/gilgamesh.el"))
+(load_config (concat my_path-lib "kitchinhub/gilgamesh/ivy-gilgamesh.el"))
+
+
+;; lib: Scimax
+(setq org-src-fontify-natively nil)
+(load_config "init-scimax-pre.el")
+(load_config (concat my_path-lib "jkitchin/scimax/init.el"))
+(load_config "init-scimax-post.el")
+
+
 ;; Themes
 (add-to-list 'custom-theme-load-path
              (concat user-emacs-directory
@@ -70,12 +82,37 @@
 ;; (load-theme 'zenburn)
 
 
+;; Highlight current line
+;; (global-hl-line-mode 1)
+;; (set-face-background 'hl-line "#FAFAFA")
+;; (set-face-foreground 'highlight nil)
+
+
+;; Set cursor color
+(set-cursor-color "#763A87") 
+
+
 ;; Use single emacs instance as a server
 (if nil remote_login
   (require 'server)
   (unless (server-running-p)
     (server-start))
   )
+
+
+;; Put temporary files in tmp directory
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
+
+;; Tramp
+(setq tramp-default-method "ssh")
+(setq explicit-shell-file-name "/bin/bash") 
+(add-to-list 'tramp-remote-path 'tramp-own-remote-path)
+(add-to-list 'tramp-remote-process-environment
+             (format "DISPLAY=%s" (getenv "DISPLAY")))
 
 
 ;; Tabs become spaces
@@ -88,41 +125,17 @@
 ;; (linum-relative-on)
 
 
-;; Tramp
-(setq tramp-default-method "ssh")
-(setq explicit-shell-file-name "/bin/bash") 
-(add-to-list 'tramp-remote-path 'tramp-own-remote-path)
-(add-to-list 'tramp-remote-process-environment
-             (format "DISPLAY=%s" (getenv "DISPLAY")))
+;; ;; git status in bottom bar
+;; ;; http://superuser.com/questions/576953
+;; (defadvice vc-git-mode-line-string (after plus-minus (file) compile activate)
+;; (setq ad-return-value
+;; (concat ad-return-value
+;; (let ((plus-minus (vc-git--run-command-string
+;; file "diff" "--numstat" "--")))
+;; (and plus-minus
+;; (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t"
+;; plus-minus)
+;; (format " +%s-%s"
+;; (match-string 1 plus-minus)
+;; (match-string 2 plus-minus)))))))
 
-
-;; Put temporary files in tmp directory
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
-
-
-;; git status in bottom bar
-;; http://superuser.com/questions/576953
-(defadvice vc-git-mode-line-string (after plus-minus (file) compile activate)
-  (setq ad-return-value
-        (concat ad-return-value
-                (let ((plus-minus (vc-git--run-command-string
-                                   file "diff" "--numstat" "--")))
-                  (and plus-minus
-                       (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t"
-                                     plus-minus)
-                       (format " +%s-%s"
-                               (match-string 1 plus-minus)
-                               (match-string 2 plus-minus)))))))
-
-
-;; Gilgamesh
-(load_config (concat my_path-lib "kitchinhub/gilgamesh/gilgamesh.el"))
-(load_config (concat my_path-lib "kitchinhub/gilgamesh/ivy-gilgamesh.el"))
-
-
-;; Scimax
-(load_config "init-scimax.el")
-(load_config (concat my_path-lib "jkitchin/scimax/init.el"))

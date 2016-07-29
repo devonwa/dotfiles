@@ -1,5 +1,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Scimax
+;; Scimax - post-load
 
 ;; Turn off update check
 ;; (setq scimax-auto-update nil)
@@ -32,3 +32,7 @@
       message-send-mail-function 'smtpmail-send-it
       smtpmail-smtp-server "smtp.andrew.cmu.edu"
       smtpmail-smtp-service 587)    
+
+;; Turn off beacon (gray cursor highlighting)
+(beacon-mode 1)
+(setq beacon-size 10)
