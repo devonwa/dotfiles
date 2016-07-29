@@ -1,18 +1,13 @@
 ;; -*- mode: Lisp -*-
 
 ;; Variables
-(setq my_path-cloud "~/Dropbox/")
-(setq my_path-projects (concat my_path-cloud ""))
-(setq my_path-bib (concat my_path-projects "bibliography/"))
-(setq my_path-lib (concat my_path-projects "clones/"))
-
+(setq my_path-projects "~/Dropbox/")
 (when (string= system-name "gilgamesh.cheme.cmu.edu")
-  (setq gilgamesh t)
-  (setq my_path-cloud "~/")
-  (setq my_path-projects (concat my_path-cloud ""))
-  (setq my_path-bib (concat my_path-projects "bibliography/"))
-  (setq my_path-lib (concat my_path-projects ""))
+  (setq my_path-projects "~/")
+  (setq remote_login t)
   )
+(setq my_path-bib (concat my_path-projects "bibliography/"))
+(setq my_path-lib (concat my_path-projects "lib/"))
 
 
 ;; Packages
@@ -51,9 +46,9 @@
 (defun load_config (setting_path)
   "Report load errors."
   (condition-case nil
-            (load setting_path)
-        (error (lwarn 'initialization 'warning 
-        "%s did not load properly." setting_path))))
+      (load setting_path)
+    (error (lwarn 'initialization 'warning 
+                  "%s did not load properly." setting_path))))
 
 
 ;; Load package specific settings (order may matter)
@@ -76,9 +71,11 @@
 
 
 ;; Use single emacs instance as a server
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+(if nil remote_login
+  (require 'server)
+  (unless (server-running-p)
+    (server-start))
+  )
 
 
 ;; Tabs become spaces
