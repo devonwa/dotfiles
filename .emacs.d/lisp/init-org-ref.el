@@ -14,13 +14,13 @@
 
 (setq helm-bibtex-bibliography (concat my_path-bib "references.bib"))
 (setq helm-bibtex-library-path (concat my_path-bib "bibtex-pdfs/"))
+(setq helm-bibtex-notes-path (concat my_path-bib "helm-bibtex-notes"))
 
 ;; open pdf with system pdf viewer (works on mac)
 (setq helm-bibtex-pdf-open-function
-  (lambda (fpath)
-    (start-process "open" "*open*" "open" fpath)))
+      (lambda (fpath)
+        (start-process "open" "*open*" "open" fpath)))
 
 ;; alternative
 ;; (setq helm-bibtex-pdf-open-function 'org-open-file)
 
-(setq helm-bibtex-notes-path (concat my_path-bib "helm-bibtex-notes"))
