@@ -75,8 +75,8 @@
 
 ;; Themes
 (add-to-list 'custom-theme-load-path
-             (concat user-emacs-directory
-                     (convert-standard-filename "themes/")))
+(concat user-emacs-directory
+(convert-standard-filename "themes/")))
 ;; (setq org-level-color-stars-only t)
 ;; (load-theme 'zenburn)
 
@@ -93,17 +93,17 @@
 
 ;; Use single emacs instance as a server
 (if nil remote_login
-  (require 'server)
-  (unless (server-running-p)
-    (server-start))
-  )
+(require 'server)
+(unless (server-running-p)
+(server-start))
+)
 
 
 ;; Put temporary files in tmp directory
 (setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
+`((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+`((".*" ,temporary-file-directory t)))
 
 
 ;; Tramp
@@ -111,12 +111,14 @@
 (setq explicit-shell-file-name "/bin/bash") 
 (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
 (add-to-list 'tramp-remote-process-environment
-             (format "DISPLAY=%s" (getenv "DISPLAY")))
+(format "DISPLAY=%s" (getenv "DISPLAY")))
 
 
 ;; Tabs become spaces
 (setq-default indent-tabs-mode nil)
 
+;; Disable the bell notification
+(setq visible-bell t)
 
 ;; Relative line numbers (bad for big files)
 ;; (package 'linum-relative)
