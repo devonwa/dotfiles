@@ -90,10 +90,11 @@ source $ZSH/oh-my-zsh.sh
 
 PROMPT='
 %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)%{$reset_color%}
-$fg_bold[yellow]Ψ $reset_color%'
+%{$fg[yellow]%}Ψ %{$reset_color%}'
 
-alias gilg="ssh -X devonw@gilgamesh.cheme.cmu.edu"
-alias hyd="cd ~/Dropbox/hydrogen2D/"
+alias gilg="ssh -Y devonw@gilgamesh.cheme.cmu.edu"
+alias cls="clear; ls"
+alias pingg="ping google.com"
 
 export WORKON_HOME=$HOME/.envs
 export PROJECT_HOME=$HOME/Dropbox

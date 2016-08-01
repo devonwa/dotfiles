@@ -1,15 +1,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; org-ref
 
-(setq reftex-default-bibliography '((concat my_path-bib "references.bib")))
-
 (global-set-key [f10] 'org-ref-open-bibtex-notes)
 (global-set-key [f11] 'org-ref-open-bibtex-pdf)
 (global-set-key [f12] 'org-ref-open-in-browser)
 
+(setq reftex-default-bibliography `(,(concat my_path-bib "references.bib")))
+
 ;; see org-ref.el for use of these variables
 (setq org-ref-bibliography-notes (concat my_path-bib "bibliography.org")
-      org-ref-default-bibliography '((concat my_path-bib "references.bib"))
+      org-ref-default-bibliography `(,(concat my_path-bib "references.bib"))
       org-ref-pdf-directory (concat my_path-bib "bibtex-pdfs/"))
 
 (setq helm-bibtex-bibliography (concat my_path-bib "references.bib"))
