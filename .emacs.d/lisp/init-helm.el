@@ -3,6 +3,7 @@
 
 ;; from jmax.el https://github.com/jkitchin/jmax
 ;; http://tuhdo.github.io/helm-intro.html
+(package 'helm)
 (require 'helm)
 (setq helm-command-prefix-key "C-c h")
 (require 'helm-config)

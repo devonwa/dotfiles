@@ -1,4 +1,5 @@
 ;; https://github.com/andrewmcveigh/emacs.d/blob/master/lisp/init-neotree.el
+(package 'neotree)
 (require 'neotree)
 (require 'evil)
 (require 'dired)

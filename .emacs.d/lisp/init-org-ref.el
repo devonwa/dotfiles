@@ -1,6 +1,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; org-ref
 
+(package 'org-ref)
+
 (global-set-key [f10] 'org-ref-open-bibtex-notes)
 (global-set-key [f11] 'org-ref-open-bibtex-pdf)
 (global-set-key [f12] 'org-ref-open-in-browser)

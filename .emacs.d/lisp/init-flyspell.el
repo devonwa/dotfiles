@@ -4,12 +4,13 @@
 (global-set-key [f5] 'flyspell-mode)
 
 ;; adjust this path if it is not where aspell got installed
-;(setq-default ispell-program-name "C:/Program Files (x86)/Aspell/bin/aspell.exe")
+;; (setq-default ispell-program-name "C:/Program Files (x86)/Aspell/bin/aspell.exe")
 
+(package 'flyspell)
 (require 'flyspell)
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
 (autoload 'flyspell-delay-command "flyspell" "Delay on command." t)
-;(flyspell-mode t)
+                                        ;(flyspell-mode t)
 
-(add-hook 'org-mode-hook 'turn-on-flyspell 'append)
+;; (add-hook 'org-mode-hook 'turn-on-flyspell 'append)
 

@@ -1,6 +1,7 @@
 ;; -*- mode: Lisp -*-
 
 ;; Variables
+(setq my_path-emacs user-emacs-directory) ;; scimax changes user-emacs-directory
 (setq my_path-projects "~/Dropbox/")
 (when (string= system-name "gilgamesh.cheme.cmu.edu")
   (setq my_path-projects "~/")
@@ -26,19 +27,8 @@
     (package-install package)))
 
 
-;; Check packages
-(package 'evil)
-(package 'evil-leader)
-(package 'helm)
-(package 'flyspell)
-(package 'neotree)
-(package 'org)
-(package 'org-ref)
-(package 'ox-reveal)
-
-
 ;; Load-path
-(add-to-list 'load-path (concat user-emacs-directory
+(add-to-list 'load-path (concat my_path-emacs
                                 (convert-standard-filename "lisp/")))
 
 
@@ -49,6 +39,17 @@
       (load setting_path)
     (error (lwarn 'initialization 'warning 
                   "%s did not load properly." setting_path))))
+
+
+;; lib: Scimax (Must be before my configs)
+(load_config "init-scimax-pre.el")
+(load_config (concat my_path-lib "jkitchin/scimax/init.el"))
+(load_config "init-scimax-post.el")
+
+
+;; lib: Gilgamesh
+(load_config (concat my_path-lib "kitchinhub/gilgamesh/gilgamesh.el"))
+(load_config (concat my_path-lib "kitchinhub/gilgamesh/ivy-gilgamesh.el"))
 
 
 ;; Load package specific settings (order may matter)
@@ -62,21 +63,10 @@
 (load_config "init-flyspell.el")
 
 
-;; lib: Gilgamesh
-(load_config (concat my_path-lib "kitchinhub/gilgamesh/gilgamesh.el"))
-(load_config (concat my_path-lib "kitchinhub/gilgamesh/ivy-gilgamesh.el"))
-
-
-;; lib: Scimax
-(load_config "init-scimax-pre.el")
-(load_config (concat my_path-lib "jkitchin/scimax/init.el"))
-(load_config "init-scimax-post.el")
-
-
 ;; Themes
 (add-to-list 'custom-theme-load-path
-(concat user-emacs-directory
-(convert-standard-filename "themes/")))
+             (concat my_path-emacs
+                     (convert-standard-filename "themes/")))
 ;; (setq org-level-color-stars-only t)
 ;; (load-theme 'zenburn)
 
@@ -93,10 +83,10 @@
 
 ;; Use single emacs instance as a server
 (if nil remote_login
-(require 'server)
-(unless (server-running-p)
-(server-start))
-)
+  (require 'server)
+  (unless (server-running-p)
+    (server-start))
+  )
 
 
 ;; Put temporary files in tmp directory
@@ -117,8 +107,11 @@
 ;; Tabs become spaces
 (setq-default indent-tabs-mode nil)
 
+
 ;; Disable the bell notification
 (setq visible-bell t)
+(setq ring-bell-function 'ignore)
+
 
 ;; Relative line numbers (bad for big files)
 ;; (package 'linum-relative)

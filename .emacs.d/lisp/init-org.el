@@ -1,6 +1,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; org
 
+;; Install package if not present
+(package 'org)
 
 ;; Dependencies
 (require 'ox-latex)
