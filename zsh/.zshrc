@@ -95,13 +95,14 @@ PROMPT='
 alias gilg="ssh -Y devonw@gilgamesh.cheme.cmu.edu"
 alias cls="clear; ls"
 alias pingg="ping google.com"
+alias pinggilg="ping gilgamesh.cheme.cmu.edu"
 
 export WORKON_HOME=$HOME/.envs
 export PROJECT_HOME=$HOME/Dropbox
 source /usr/local/bin/virtualenvwrapper.sh
 
-#export PYTHONPATH=~/ase:$PYTHONPATH
-#export PATH=~/ase/tools:$PATH
-
-export PYTHONPATH=~/Dropbox/clones/amp:$PYTHONPATH
-
+alias ga="git add"
+alias gc="git commit"
+alias gd="git diff"
+alias gs="git status -sb"
+alias gl="git --no-pager log -10 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
