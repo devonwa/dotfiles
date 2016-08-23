@@ -23,13 +23,16 @@
   "f" 'helm-find-files
   "n" 'next-buffer
   "p" 'previous-buffer
-  "k" 'kill-this-buffer
+  "d" 'kill-this-buffer
   "t" 'neotree-toggle
   "o" 'other-window
   "0" 'delete-window
   "1" 'delete-other-windows
   "2" 'split-window-below
   "3" 'split-window-right
+  "j" 'outline-next-heading
+  "k" 'outline-previous-heading
+  "u" 'outline-up-heading
   )
 
 

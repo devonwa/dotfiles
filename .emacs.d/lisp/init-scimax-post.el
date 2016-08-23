@@ -37,3 +37,19 @@
 (beacon-mode 1)
 (setq beacon-size 10)
 (setq beacon-color "#FFFF85")
+
+;; Remove lispy mode (forceful auto-complete)
+;(remove-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode) (eldoc-mode)))
+;; (use-package lispy
+;;   :config
+;;   (dolist (hook '(emacs-lisp-mode-hook
+;;                   hy-mode-hook))
+;;     (remove-hook hook
+;;                  (lambda ()
+;;                    (lispy-mode)
+;;                    (eldoc-mode)))))
+
+;; Remove aggressive indent
+(use-package aggressive-indent
+  :config (aggressive-indent-global-mode 0))
+

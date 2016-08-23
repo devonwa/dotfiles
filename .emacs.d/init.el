@@ -67,8 +67,16 @@
 (add-to-list 'custom-theme-load-path
              (concat my_path-emacs
                      (convert-standard-filename "themes/")))
-;; (setq org-level-color-stars-only t)
-;; (load-theme 'zenburn)
+(add-to-list 'custom-theme-load-path
+             (concat my_path-emacs
+                     (convert-standard-filename "themes/emacs-color-theme-solarized")))
+
+(if (display-graphic-p) 
+    (load-theme 'leuven) 
+  (progn
+    (load-theme 'leuven) 
+    )
+  )
 
 
 ;; Highlight current line
