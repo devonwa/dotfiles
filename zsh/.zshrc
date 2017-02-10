@@ -53,7 +53,7 @@ ZSH_THEME="amuse"
 plugins=(git)
 
 # User configuration
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -83,26 +83,36 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# virtualenvwrapper
-#export WORKON_HOME=~/.env
-#export VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3' 
-#source /usr/local/bin/virtualenvwrapper.sh
-
 PROMPT='
 %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)%{$reset_color%}
 %{$fg[yellow]%}Ψ %{$reset_color%}'
+
+export PATH="$HOME/bin:$PATH"
+
 
 alias gilg="ssh -Y devonw@gilgamesh.cheme.cmu.edu"
 alias cls="clear; ls"
 alias pingg="ping google.com"
 alias pinggilg="ping gilgamesh.cheme.cmu.edu"
 
+# virtualenvwrapper
 export WORKON_HOME=$HOME/.envs
 export PROJECT_HOME=$HOME/Dropbox
-source /usr/local/bin/virtualenvwrapper.sh
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+#export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
+#source /usr/local/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
+
 
 alias ga="git add"
 alias gc="git commit"
 alias gd="git diff"
 alias gs="git status -sb"
 alias gl="git --no-pager log -10 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# From Learn C the Hard Way
+alias dbg="gdb --batch --ex run --ex bt --ex q --args"
+
+export GOPATH=$HOME/dev/golang
+export PATH=$PATH:$GOPATH/bin
