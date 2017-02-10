@@ -21,6 +21,9 @@
 ;; (add-hook 'org-mode-hook 'turn-on-flyspell)
 
 
+;; Export backends
+(require 'ox-md)
+
 ;; babel
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -38,3 +41,5 @@
    (C . t)))
 
 
+;; Additional latex classes
+(eval-after-load 'ox '(require 'ox-koma-letter))

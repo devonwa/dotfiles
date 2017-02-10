@@ -54,13 +54,15 @@
 
 ;; Load package specific settings (order may matter)
 (load_config "init-evil.el")
-(load_config "init-neotree.el")
-(load_config "init-recentf.el")
+(load_config "init-flyspell.el")
 (load_config "init-helm.el")
+(load_config "init-neotree.el")
 (load_config "init-org.el")
 (load_config "init-org-ref.el")
 (load_config "init-ox-reveal.el")
-(load_config "init-flyspell.el")
+(load_config "init-recentf.el")
+(load_config "init-web-mode.el")
+(load_config "ox-cmu-ms-report.el")
 
 
 ;; Themes
@@ -112,8 +114,9 @@
 (format "DISPLAY=%s" (getenv "DISPLAY")))
 
 
-;; Tabs become spaces
+;; Tabs become spaces. Set tab width to 4
 (setq-default indent-tabs-mode nil)
+(setq tab-width 4)
 
 
 ;; Disable the bell notification
@@ -121,6 +124,8 @@
 (setq ring-bell-function 'ignore)
 
 
+;; Line Numbers
+(global-linum-mode t)
 ;; Relative line numbers (bad for big files)
 ;; (package 'linum-relative)
 ;; (require 'linum-relative)
@@ -141,3 +146,13 @@
 ;; (match-string 1 plus-minus)
 ;; (match-string 2 plus-minus)))))))
 
+(require 'markdown-mode)
+(require 'go-mode)
+
+(column-number-mode 1)
+
+;; C tab spacing
+(setq-default c-basic-offset 4)
+
+;; Open buffers from last session
+(desktop-save-mode 1)
