@@ -1,0 +1,30 @@
+{
+  "title": "Devon Specials",
+  "rules": [
+    {
+      "description": "Command Backtick to Option Backtick",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "`",
+            "modifiers": {
+		"mandatory": [
+			"option"
+		]
+            }
+          },
+          "to": [
+            {
+              "key_code": "`",
+		"modifiers": [
+			"command"
+		]
+            }
+          ]
+          ]
+        }
+      ]
+    }
+  ]
+}

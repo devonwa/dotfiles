@@ -1,0 +1,209 @@
+{
+  ///////////////////////////////////////////
+  // VS Code application settings
+  "debug.javascript.autoAttachFilter": "smart",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.cursorSurroundingLines": 8,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "FiraCode Nerd Font, Fira Code, Fira Mono, Source Code Pro, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.rulers": [
+    { "column": 80, "color": "#272727" },
+    { "column": 120, "color": "#303030" }
+  ],
+  "editor.suggestSelection": "first",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "git.autofetch": true,
+  "[git-commit]": { "editor.rulers": [50] },
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.mergeEditor": false,
+  "redhat.telemetry.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontSize": 13,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.newWindowDimensions": "maximized",
+  "window.restoreFullscreen": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#1c1c1c",
+    "statusBar.noFolderBackground": "#212121",
+    "statusBar.debuggingBackground": "#263238",
+    "statusBar.foreground": "#a0a0a0",
+    "statusBarItem.remoteBackground": "#4e4e4e",
+    "statusBarItem.remoteForeground": "#1c1c1c"
+  },
+  "workbench.editor.closeEmptyGroups": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.editor.centeredLayoutAutoResize": true,
+  "workbench.startupEditor": "none",
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideTabs": false,
+  "zenMode.fullScreen": false,
+  "zenMode.restore": true,
+
+  ///////////////////////////////////////////
+  // vim
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.highlightedyank.enable": true,
+  "vim.hlsearch": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "commands": ["workbench.view.debug"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["actions.find"]
+    },
+    {
+      "before": ["<leader>", "F"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "n"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "s"]
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.view.testing.focus"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    {
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"]
+    },
+    {
+      "before": ["n"],
+      "after": ["n", "z", "z", "z", "v"]
+    },
+    {
+      "before": ["N"],
+      "after": ["N", "z", "z", "z", "v"]
+    }
+    // { // find a way to offset up ~7 lines
+    //   "before": ["z", "z"],
+    //   "after": ["z", "z"]
+    // }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-w>": false,
+    "<C-d>": true
+  },
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "m"],
+      "commands": ["bookmarks.toggle"]
+    },
+    {
+      "before": ["<leader>", "M"],
+      "commands": ["bookmarks.toggleLabeled"]
+    },
+    {
+      "before": ["<leader>", "b"],
+      "commands": ["bookmarks.listFromAllFiles"]
+    },
+    {
+      "before": ["<leader>", "B"],
+      "commands": ["bookmarks.list"]
+    }
+  ],
+
+  ///////////////////////////////////////////
+  // FX Frontend Settings
+  // if using Angular Language Service
+  "angular.view-engine": true,
+
+  // eslint settings
+  // "eslint.workingDirectories": ["./web"],
+
+  // Lint/format on save
+  // "editor.codeActionsOnSave": {
+  //   //   // "source.organizeImports": true, ///////////////////// Turned off cause removing react from SC. Need better jsconfig.json
+  //   "source.fixAll.eslint": true
+  // },
+
+  ///////////////////////////////////////////
+  // Language-specific settings
+  "eslint.validate": ["javascript", "typescript", "typescriptreact"],
+
+  "go.useLanguageServer": true,
+  "go.toolsManagement.autoUpdate": true,
+  "go.lintTool": "golangci-lint",
+  "go.formatTool": "gofmt",
+
+  "html.format.wrapAttributes": "force-aligned",
+  "html.format.wrapLineLength": 0,
+
+  "python.defaultInterpreterPath": "/usr/bin/python3",
+
+  "typescript.format.semicolons": "insert",
+
+  ///////////////////////////////////////////
+  // Extensions
+  "git-graph.showStatusBarItem": false,
+  "github.gitProtocol": "ssh",
+  "github-enterprise.uri": "github.tesla.com",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.hovers.enabled": false,
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "none",
+  "editor.stickyScroll.enabled": true,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "go.coverageDecorator": {
+    "type": "gutter"
+  },
+  "[go.mod]": {
+    "editor.defaultFormatter": "golang.go"
+  }
+
+  ///////////////////////////////////////////
+  // Auto-added, unsorted
+}
