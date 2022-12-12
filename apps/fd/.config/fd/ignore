@@ -3,4 +3,6 @@
 .tldrc/
 .sbt/
 
+Library/
+
 .zcompdump*
