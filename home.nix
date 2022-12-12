@@ -4,7 +4,7 @@
   # fonts.fontconfig.enable = true;
 
   home.packages = [
-    pkgs.alacritty
+    # pkgs.alacritty
     pkgs.ansible
     pkgs.bat
     pkgs.cmatrix
@@ -18,7 +18,7 @@
     pkgs.jq
     pkgs.k9s
     # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
-    pkgs.logseq
+    # pkgs.logseq
     pkgs.neovim
     pkgs.neovide
     pkgs.ripgrep
