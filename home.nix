@@ -1,7 +1,7 @@
 { config, pkgs, dotfilesEnv, ... }:
 
 {
-  fonts.fontconfig.enable = true;
+  # fonts.fontconfig.enable = true;
 
   home.packages = [
     pkgs.alacritty
@@ -14,12 +14,12 @@
     pkgs.fzf
     pkgs.git
     pkgs.gnumake
-    pkgs.google-chrome
-    pkgs.helm
-    pkgs.helmfile
+    # pkgs.google-chrome
+    # pkgs.helm
+    # pkgs.helmfile
     pkgs.jq
     pkgs.k9s
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
+    # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     pkgs.logseq
     pkgs.neovim
     pkgs.neovide
