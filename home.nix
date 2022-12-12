@@ -9,10 +9,8 @@
     pkgs.bat
     pkgs.cmatrix
     pkgs.dbeaver
-    pkgs.diff-so-fancy
     pkgs.fd
     pkgs.fzf
-    pkgs.git
     pkgs.gnumake
     # pkgs.google-chrome
     # pkgs.helm
