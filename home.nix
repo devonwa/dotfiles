@@ -28,6 +28,7 @@
     pkgs.tldr
     pkgs.tmux
     pkgs.vscode
+    pkgs.xclip
     pkgs.yarn
   ];
 
