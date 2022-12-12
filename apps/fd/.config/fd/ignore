@@ -1,3 +1,6 @@
 .cache/
 .local/
 .tldrc/
+.sbt/
+
+.zcompdump*

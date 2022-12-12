@@ -8,6 +8,7 @@ local opts = { noremap = true, silent = true }
 keymap("n", "<leader>p", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false, hidden = true }))<cr>", opts)
 keymap("n", "<C-p>", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false, hidden = true }))<cr>", opts)
 keymap("n", "<leader><S-p>", "<cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>", opts)
+keymap("n", "<C-S-p>", "<cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>", opts)
 keymap("n", "<leader><Tab>", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap("n", "<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
