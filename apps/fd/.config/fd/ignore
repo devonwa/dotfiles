@@ -6,3 +6,5 @@
 Library/
 
 .zcompdump*
+
+go/pkg/
