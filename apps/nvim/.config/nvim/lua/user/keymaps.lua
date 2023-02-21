@@ -22,12 +22,14 @@ vim.api.nvim_create_user_command('Reload', 'source $MYVIMRC<CR>', {})
 keymap("n", "<leader>w", ":w<CR>", opts) -- save
 keymap("n", "<C-w>", ":bd<CR>", opts) -- close buffer
 keymap("n", "<leader>n", ":nohl<CR>", opts) -- clear highlights after search
+keymap("n", "<leader>z", ":ZenMode<CR>", opts) -- ZenMode
+keymap("n", "<leader>r", ":Reload<CR>", opts) -- clear highlights after search
 
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- keymap("n", "<C-h>", "<C-w>h", opts)
+-- keymap("n", "<C-j>", "<C-w>j", opts)
+-- keymap("n", "<C-k>", "<C-w>k", opts)
+-- keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Sidebars
 keymap("n", "<leader>e", ":Lex 30<CR>", opts) -- explorer

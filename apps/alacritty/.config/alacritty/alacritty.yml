@@ -1,11 +1,11 @@
-import:
-  - ~/.config/alacritty/keys.yml
 shell:
   program: zsh
-  args:
-    - -l
-    - -c
-    - "tmux -2 attach || tmux new -s main"
+#  args:
+#    - -l
+#    - -c
+#    - "tmux"
+import:
+  - ~/.config/alacritty/keys.yml
 font:
   normal:
     family: FiraCode Nerd Font

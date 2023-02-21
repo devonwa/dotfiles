@@ -1,10 +1,10 @@
 { config, pkgs, dotfilesEnv, ... }:
 
 {
-  fonts.fontconfig.enable = true; #mac issue
+  #fonts.fontconfig.enable = true; #mac issue
 
   home.packages = [
-    # pkgs.alacritty
+    pkgs.alacritty
     pkgs.ansible
     pkgs.bat
     pkgs.cmatrix
@@ -12,9 +12,9 @@
     pkgs.fd
     pkgs.fzf
     pkgs.gnumake
-    pkgs.google-chrome #mac issue
-    pkgs.helm #mac issue
-    pkgs.helmfile #mac issue
+    #pkgs.google-chrome #mac issue
+    #pkgs.helm #mac issue
+    #pkgs.helmfile #mac issue
     pkgs.jq
     pkgs.k9s
     # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })

@@ -1,6 +1,6 @@
 local ok, catppuccin = pcall(require, "catppuccin")
 if ok then
-  vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha (lightest to darkest)
+  vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha (lightest to darkest)
 
   catppuccin.setup({
     transparent_background = false,
