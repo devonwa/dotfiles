@@ -108,6 +108,10 @@
       "after": ["<C-u>", "z", "z"]
     },
     {
+      "before": ["<C-t>"],
+      "after": ["terminal.active"]
+    },
+    {
       "before": ["n"],
       "after": ["n", "z", "z", "z", "v"]
     },
@@ -123,9 +127,9 @@
   "vim.leader": "<space>",
   "vim.handleKeys": {
     "<C-a>": false,
+    "<C-d>": true,
     "<C-f>": false,
-    "<C-w>": false,
-    "<C-d>": true
+    "<C-w>": false
   },
   "vim.normalModeKeyBindings": [
     {

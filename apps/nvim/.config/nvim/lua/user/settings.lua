@@ -36,8 +36,7 @@ end
 
 vim.opt.iskeyword:append("-")
 
--- colorschemes
--- tokyonight-night, catppuccin
+-- set scolorscheme
 vim.cmd [[
 try
   colorscheme catppuccin

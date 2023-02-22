@@ -16,8 +16,9 @@ plugins = {
 	"windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
 	"numToStr/Comment.nvim",
 	"JoosepAlviste/nvim-ts-context-commentstring",
-	"kyazdani42/nvim-web-devicons",
-	"kyazdani42/nvim-tree.lua",
+    { "kyazdani42/nvim-web-devicons", lazy = false },
+    { "kyazdani42/nvim-tree.lua", lazy = false },
+
 	"akinsho/bufferline.nvim",
 	"moll/vim-bbye",
 	"nvim-lualine/lualine.nvim",
@@ -64,9 +65,9 @@ plugins = {
 	"lewis6991/gitsigns.nvim",
 
 	-- LSP
-    --{ "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
-	--{ "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" } -- enable LSP
-	--{ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" } -- for formatters and linters
+--     { "williamboman/nvim-lsp-installer" } -- simple to use language server installer
+-- 	{ "neovim/nvim-lspconfig" } -- enable LSP
+-- 	{ "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
 }
 
 require("lazy").setup(plugins, opts)

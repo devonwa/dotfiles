@@ -22,12 +22,15 @@ vim.api.nvim_create_user_command('Reload', 'source $MYVIMRC<CR>', {})
 --   term_mode = "t",
 --   command_mode = "c",
 
+-----------------
 -- Normal
+-- Leader commands
 keymap("n", "<leader>w", ":w<CR>", opts) -- save
 keymap("n", "<C-w>", ":bd<CR>", opts) -- close buffer
 keymap("n", "<leader>n", ":nohl<CR>", opts) -- clear highlights after search
 keymap("n", "<leader>z", ":ZenMode<CR>", opts) -- ZenMode
-keymap("n", "<leader>r", ":Reload<CR>", opts) -- clear highlights after search
+keymap("n", "<leader>r", ":Reload<CR>", opts) -- Reload config
+keymap("n", "<leader>t", ":ToggleTerm<CR>", opts) -- clear highlights after search
 
 -- Better window navigation
 -- keymap("n", "<C-h>", "<C-w>h", opts)
@@ -53,6 +56,7 @@ keymap("n", "<C-S-Tab>", ":bprevious<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-----------------
 -- Visual
 -- Paste replace without overwrite
 keymap("v", "p", '"_dP', opts)
