@@ -2,6 +2,10 @@ local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -32,7 +36,7 @@ keymap("n", "<leader>r", ":Reload<CR>", opts) -- clear highlights after search
 -- keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Sidebars
-keymap("n", "<leader>e", ":Lex 30<CR>", opts) -- explorer
+keymap("n", "<leader>e", ":NvimTreeToggle 30<CR>", opts) -- explorer
 -- debug
 -- testing
 -- git
