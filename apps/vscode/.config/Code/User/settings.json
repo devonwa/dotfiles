@@ -10,6 +10,7 @@
   "editor.fontFamily": "FiraCode Nerd Font, Fira Code, Fira Mono, Source Code Pro, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 13,
   "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "off",
   "editor.lineNumbers": "relative",
   "editor.rulers": [
     { "column": 80, "color": "#272727" },
@@ -168,6 +169,8 @@
   // Language-specific settings
   "eslint.validate": ["javascript", "typescript", "typescriptreact"],
 
+  "typescript.format.semicolons": "insert",
+
   "go.useLanguageServer": true,
   "go.toolsManagement.autoUpdate": true,
   "go.lintTool": "golangci-lint",
@@ -177,8 +180,6 @@
   "html.format.wrapLineLength": 0,
 
   "python.defaultInterpreterPath": "/usr/bin/python3",
-
-  "typescript.format.semicolons": "insert",
 
   ///////////////////////////////////////////
   // Extensions
@@ -211,6 +212,13 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
+  },
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
   }
 
   ///////////////////////////////////////////

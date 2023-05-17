@@ -26,6 +26,10 @@ key_bindings:
   - { key: J, mods: Control, chars: "\x1b[106;5u" }
   - { key: M, mods: Control, chars: "\x1b[109;5u" }
 
+  
+  - { key: C, mods: Command|Shift, action: Copy }
+  - { key: C, mods: Command, chars: "\x03" }
+
   # Control + Shift + <letter> ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 
   # Control + B ⇒ SearchBackward

@@ -43,7 +43,7 @@
     initExtra = ''
       export DOTFILES_ENV=${dotfilesEnv};
       export NIXPKGS_ALLOW_UNFREE=1;
-      . $HOME/dotfiles/env/${dotfilesEnv}/.env
+      . $HOME/dotfiles/env/${dotfilesEnv}/env
     '';
   };
 
