@@ -13,6 +13,8 @@ alias v='nvim'
 alias nv='neovide --maximized'
 alias python=python3
 
+stty intr ^\\
+
 #java
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 
