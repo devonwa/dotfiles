@@ -10,7 +10,11 @@
     pkgs.cmatrix
     pkgs.dbeaver
     pkgs.fd
+    pkgs.fira-code
+    pkgs.fontconfig
+    pkgs.font-manager
     pkgs.fzf
+    pkgs.gcc
     pkgs.gnumake
     #pkgs.google-chrome #mac issue
     #pkgs.helm #mac issue
