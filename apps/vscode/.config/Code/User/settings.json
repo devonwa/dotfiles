@@ -219,7 +219,8 @@
   "workbench.colorTheme": "One Dark Pro Darker",
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
-  }
+  },
+  "terminal.integrated.scrollback": 30000
 
   ///////////////////////////////////////////
   // Auto-added, unsorted
