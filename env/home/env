@@ -1,6 +1,7 @@
 #!/bin/bash
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/sbin
+export XDG_CONFIG_HOME=$HOME/.config
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/.repo/ --work-tree=$HOME'
 alias dots=config
@@ -58,3 +59,9 @@ bindkey '^[[Z' autosuggest-accept # shift+tab
 
 # zsh vi-mode cursor change
 export VI_MODE_SET_CURSOR=true
+
+
+# tmux
+newTmuxSession() {
+    cd $(fd --type d . | fzf)
+}
