@@ -12,7 +12,7 @@
     pkgs.fd
     pkgs.fira-code
     pkgs.fontconfig
-    pkgs.font-manager
+#    pkgs.font-manager #broken webkit? mac issue only?
     pkgs.fzf
     pkgs.gcc
     pkgs.gnumake
@@ -22,6 +22,7 @@
     pkgs.jq
     pkgs.k9s
     # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
+    pkgs.lazygit
     # pkgs.logseq
     pkgs.neovim
     pkgs.neovide
@@ -30,9 +31,10 @@
     pkgs.tldr
     pkgs.tmux
     pkgs.vscode
-    pkgs.wezterm
+ #   pkgs.wezterm #failed build on mac
     pkgs.xclip
     pkgs.yarn
+    pkgs.zoxide
   ];
 
   programs.home-manager.enable = true;
