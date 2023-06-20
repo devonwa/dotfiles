@@ -30,6 +30,7 @@
     pkgs.tldr
     pkgs.tmux
     pkgs.vscode
+    pkgs.wezterm
     pkgs.xclip
     pkgs.yarn
   ];
