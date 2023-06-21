@@ -8,6 +8,7 @@ alias dots=config
 
 alias reload='. $HOME/.zshrc'
 alias cat='bat --style plain'
+alias cd='z'
 alias dl='docker container ls'
 alias kc='kubectl'
 alias v='nvim'
@@ -16,12 +17,19 @@ alias python=python3
 
 stty intr ^\\
 
+# fzf
+## Use fd instead of find to respect .gitignore
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+## nix paths
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+  source "$(fzf-share)/completion.zsh"
+fi
+
 #java
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 
-
-# nix
-export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
 
 # home-manager
 hm-switch() {
@@ -36,32 +44,29 @@ alias gw='git worktree'
 alias gitMergedBranch='git branch --merged | egrep -v "(^\*|master|main|dev)"' 
 alias gitMergedBranchPrune='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
 
-# fzf
-## Use fd instead of find to respect .gitignore
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-## nix paths
-if [ -n "${commands[fzf-share]}" ]; then
-  source "$(fzf-share)/key-bindings.zsh"
-  source "$(fzf-share)/completion.zsh"
-fi
-
-# notes
-export NOTES=$HOME/go/src/github.com/devonwa/notes
-
 # go
 export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
-# zsh autosuggest
-bindkey '^[[Z' autosuggest-accept # shift+tab
+# nix
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
 
-# zsh vi-mode cursor change
-export VI_MODE_SET_CURSOR=true
-
+# notes
+export NOTES=$HOME/go/src/github.com/devonwa/notes
 
 # tmux
 newTmuxSession() {
-    cd $(fd --type d . | fzf)
+    $XDG_CONFIG_HOME/tmux/templates/basic $(fd --type d . | fzf)
 }
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+# zsh
+#   autosuggest
+bindkey '^[[Z' autosuggest-accept # shift+tab
+#    vi-mode cursor change
+export VI_MODE_SET_CURSOR=true
+
+
