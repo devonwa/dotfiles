@@ -2,17 +2,14 @@ local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
--- disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- Leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Reload nvim
-vim.api.nvim_create_user_command('Reload', 'source $MYVIMRC<CR>', {})
+-- TODO Isn't working right now
+vim.api.nvim_create_user_command('Reload', ':luafile $MYVIMRC', {})
 
 -- Modes
 --   normal_mode = "n",
@@ -24,22 +21,17 @@ vim.api.nvim_create_user_command('Reload', 'source $MYVIMRC<CR>', {})
 
 -----------------
 -- Normal
--- Leader commands
 keymap("n", "<leader>w", ":w<CR>", opts) -- save
 keymap("n", "<C-w>", ":bd<CR>", opts) -- close buffer
+keymap("n", "<leader>q", ":q<CR>", opts) -- quit
 keymap("n", "<leader>n", ":nohl<CR>", opts) -- clear highlights after search
 keymap("n", "<leader>z", ":ZenMode<CR>", opts) -- ZenMode
 keymap("n", "<leader>r", ":Reload<CR>", opts) -- Reload config
 keymap("n", "<leader>t", ":ToggleTerm<CR>", opts) -- clear highlights after search
 
--- Better window navigation
--- keymap("n", "<C-h>", "<C-w>h", opts)
--- keymap("n", "<C-j>", "<C-w>j", opts)
--- keymap("n", "<C-k>", "<C-w>k", opts)
--- keymap("n", "<C-l>", "<C-w>l", opts)
-
 -- Sidebars
-keymap("n", "<leader>e", ":NvimTreeToggle 30<CR>", opts) -- explorer
+keymap("", "<Space>", "<Nop>", opts)
+keymap("n", "<C-e>", ":NvimTreeToggle 30<CR>", opts) -- explorer
 -- debug
 -- testing
 -- git
@@ -55,6 +47,13 @@ keymap("n", "<C-Tab>", ":bnext<CR>", opts)
 keymap("n", "<C-S-Tab>", ":bprevious<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+-- Neovide zoom
+if vim.g.neovide == true then
+  vim.api.nvim_set_keymap("n", "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>", { silent = true })
+  vim.api.nvim_set_keymap("n", "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>", { silent = true })
+  vim.api.nvim_set_keymap("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
+end
 
 -----------------
 -- Visual

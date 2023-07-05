@@ -13,6 +13,7 @@ alias dl='docker container ls'
 alias kc='kubectl'
 alias v='nvim'
 alias nv='neovide --maximized'
+alias top='btop'
 alias python=python3
 
 stty intr ^\\
@@ -39,6 +40,8 @@ hm-switch() {
 }
 
 # git
+alias gp='git pull'
+alias gP='git push'
 alias gs='git status'
 alias gw='git worktree'
 alias gitMergedBranch='git branch --merged | egrep -v "(^\*|master|main|dev)"' 

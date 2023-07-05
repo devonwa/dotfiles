@@ -7,6 +7,7 @@
     pkgs.alacritty
     pkgs.ansible
     pkgs.bat
+    pkgs.btop
     pkgs.cmatrix
     pkgs.dbeaver
     pkgs.fd

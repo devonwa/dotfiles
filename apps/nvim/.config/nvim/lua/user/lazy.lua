@@ -1,6 +1,6 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
+    vim.fn.system({
     "git",
     "clone",
     "--filter=blob:none",
@@ -14,22 +14,23 @@ vim.opt.rtp:prepend(lazypath)
 plugins = {
     "nvim-lua/plenary.nvim", -- Useful lua functions used by lots of plugins
 	"windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
-	"numToStr/Comment.nvim",
-	"JoosepAlviste/nvim-ts-context-commentstring",
-    { "kyazdani42/nvim-web-devicons", lazy = false },
-    { "kyazdani42/nvim-tree.lua", lazy = false },
+	"numToStr/Comment.nvim", -- Comment with C-/
+    "christoomey/vim-tmux-navigator", -- tmux hjkl integration
+    { "folke/neodev.nvim", opts = {} }, -- tooltips for neovim init.lua development
 
+    -- 	in tryout
+	"ahmedkhalf/project.nvim",
+	"lukas-reineke/indent-blankline.nvim",
+	"JoosepAlviste/nvim-ts-context-commentstring",
+    { "nvim-tree/nvim-web-devicons", lazy = false },
+    { "nvim-tree/nvim-tree.lua", lazy = false },
 	"akinsho/bufferline.nvim",
 	"moll/vim-bbye",
 	"nvim-lualine/lualine.nvim",
 	"akinsho/toggleterm.nvim",
-	"ahmedkhalf/project.nvim",
-	"lewis6991/impatient.nvim",
-	"lukas-reineke/indent-blankline.nvim",
 	"goolord/alpha-nvim",
 	"folke/which-key.nvim",
     "folke/zen-mode.nvim",
-    "christoomey/vim-tmux-navigator",
 
 	-- Colorschemes
     { "catppuccin/nvim", lazy = false },
@@ -51,7 +52,7 @@ plugins = {
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-nvim-lua",
 
-	-- snippets
+	-- Snippets
 	"L3MON4D3/LuaSnip", --snippet engine
 	"rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
@@ -61,13 +62,25 @@ plugins = {
 	-- Treesitter
 	"nvim-treesitter/nvim-treesitter",
 
+    -- Buffers
+    {"akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
+
 	-- Git
 	"lewis6991/gitsigns.nvim",
 
-	-- LSP
---     { "williamboman/nvim-lsp-installer" } -- simple to use language server installer
--- 	{ "neovim/nvim-lspconfig" } -- enable LSP
--- 	{ "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
+	-- Manager of LSPs, Linters, Formatters
+	{ "williamboman/mason.nvim", build = ":MasonUpdate", lazy = false },
+	{ "williamboman/mason-lspconfig.nvim", lazy = false },
+
+	-- LSPs, Linters, Formatters
+ 	{ "neovim/nvim-lspconfig", lazy = false }, -- enable LSP
+	{ "williamboman/nvim-lsp-installer", lazy = false }, -- simple to use language server installer
+	{ "jose-elias-alvarez/null-ls.nvim", lazy = false }, -- for formatters and linters
+
+    -- Debugger
+    'mfussenegger/nvim-dap',
+    { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
 }
 
 require("lazy").setup(plugins, opts)
