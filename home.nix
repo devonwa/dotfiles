@@ -10,6 +10,7 @@
     pkgs.btop
     pkgs.cmatrix
     pkgs.dbeaver
+    pkgs.direnv
     pkgs.fd
     pkgs.fira-code
     pkgs.fontconfig
@@ -27,6 +28,7 @@
     # pkgs.logseq
     pkgs.neovim
     pkgs.neovide
+    pkgs.nix-direnv
     pkgs.ripgrep
     pkgs.stow
     pkgs.tldr
