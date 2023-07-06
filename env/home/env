@@ -3,9 +3,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/sbin
 export XDG_CONFIG_HOME=$HOME/.config
 
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/.repo/ --work-tree=$HOME'
-alias dots=config
-
+alias dots='v $HOME/personal/env'
 alias reload='. $HOME/.zshrc'
 alias cat='bat --style plain'
 alias cd='z'
@@ -71,5 +69,8 @@ eval "$(zoxide init zsh)"
 bindkey '^[[Z' autosuggest-accept # shift+tab
 #    vi-mode cursor change
 export VI_MODE_SET_CURSOR=true
+# 10ms for key sequences - remove ESC delay
+KEYTIMEOUT=1
+
 
 
