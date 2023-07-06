@@ -2,13 +2,20 @@
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/sbin
 export XDG_CONFIG_HOME=$HOME/.config
+export DOTFILES=$HOME/dotfiles
 
-alias dots='v $HOME/personal/env'
+# common configs
+alias config_env='$SHELL -c "cd $HOME/dotfiles && nvim $HOME/dotfiles/env/home"'
+alias config_homemanager='$SHELL -c "cd $HOME/dotfiles && nvim $HOME/dotfiles/home.nix"'
+alias config_nvim='$SHELL -c "cd $XDG_CONFIG_HOME/nvim && nvim $XDG_CONFIG_HOME/nvim/init.lua"'
+alias config_tmux='$SHELL -c "cd $XDG_CONFIG_HOME/tmux && nvim $XDG_CONFIG_HOME/tmux/tmux.conf"'
+
 alias reload='. $HOME/.zshrc'
 alias cat='bat --style plain'
 alias cd='z'
 alias dl='docker container ls'
 alias kc='kubectl'
+alias lg='lazygit'
 alias v='nvim'
 alias nv='neovide --maximized'
 alias top='btop'
@@ -65,12 +72,9 @@ newTmuxSession() {
 eval "$(zoxide init zsh)"
 
 # zsh
-#   autosuggest
-bindkey '^[[Z' autosuggest-accept # shift+tab
-#    vi-mode cursor change
-export VI_MODE_SET_CURSOR=true
-# 10ms for key sequences - remove ESC delay
-KEYTIMEOUT=1
+bindkey '^[[Z' autosuggest-accept # autosuggest (shift+tab)
+export VI_MODE_SET_CURSOR=true # vi-mode cursor change
+KEYTIMEOUT=1 # 10ms for key sequences - remove ESC delay
 
 
 

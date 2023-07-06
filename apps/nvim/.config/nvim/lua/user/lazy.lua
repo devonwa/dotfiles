@@ -15,7 +15,6 @@ plugins = {
     "nvim-lua/plenary.nvim", -- Useful lua functions used by lots of plugins
 	"windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
 	"numToStr/Comment.nvim", -- Comment with C-/
-    "christoomey/vim-tmux-navigator", -- tmux hjkl integration
     { "folke/neodev.nvim", opts = {} }, -- tooltips for neovim init.lua development
 
     -- 	in tryout
