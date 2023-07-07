@@ -7,7 +7,6 @@
     pkgs.alacritty
     pkgs.ansible
     pkgs.bat
-    pkgs.btop
     pkgs.cmatrix
     pkgs.dbeaver
     pkgs.direnv
@@ -21,6 +20,7 @@
     #pkgs.google-chrome #mac issue
     #pkgs.helm #mac issue
     #pkgs.helmfile #mac issue
+    pkgs.htop-vim
     pkgs.jq
     pkgs.k9s
     # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })

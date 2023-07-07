@@ -17,11 +17,11 @@ alias cat='bat --style plain'
 alias cd='z'
 alias dl='docker container ls'
 alias kc='kubectl'
-alias lg='lazygit'
-alias v='nvim'
 alias nv='neovide --maximized'
-alias top='btop'
+alias lg='lazygit'
 alias python=python3
+alias top='htop'
+alias v='nvim'
 
 stty intr ^\\
 
@@ -51,9 +51,11 @@ hm-switch() {
 }
 
 # git
+alias gll='git logline'
 alias gp='git pull'
 alias gP='git push'
 alias gs='git status'
+alias gS='git switch'
 alias gw='git worktree'
 alias gitMergedBranch='git branch --merged | egrep -v "(^\*|master|main|dev)"' 
 alias gitMergedBranchPrune='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
