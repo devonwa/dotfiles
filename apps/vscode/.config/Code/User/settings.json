@@ -5,6 +5,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 8,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "FiraCode Nerd Font, Fira Code, Fira Mono, Source Code Pro, Menlo, Monaco, 'Courier New', monospace",
