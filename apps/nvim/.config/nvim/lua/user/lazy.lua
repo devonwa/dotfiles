@@ -30,6 +30,13 @@ plugins = {
 	"goolord/alpha-nvim",
 	"folke/which-key.nvim",
     "folke/zen-mode.nvim",
+    { "kylechui/nvim-surround", version = "*", event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+	},
 
 	-- Colorschemes
     { "catppuccin/nvim", lazy = false },
