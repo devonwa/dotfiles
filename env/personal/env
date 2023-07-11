@@ -6,7 +6,6 @@ export XDG_CONFIG_HOME=$HOME/.config
 export DOTFILES=$HOME/dotfiles
 
 # common configs
-alias config_env='$SHELL -c "cd $HOME/dotfiles && nvim $HOME/dotfiles/env/home/env"'
 alias config_personal='$SHELL -c "cd $HOME/personal && nvim $HOME/personal/env"'
 alias config_homemanager='$SHELL -c "cd $HOME/dotfiles && nvim $HOME/dotfiles/home.nix"'
 alias config_nvim='$SHELL -c "cd $XDG_CONFIG_HOME/nvim && nvim $XDG_CONFIG_HOME/nvim/init.lua"'

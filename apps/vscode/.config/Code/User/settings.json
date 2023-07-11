@@ -50,7 +50,7 @@
   "workbench.editor.centeredLayoutAutoResize": true,
   "workbench.startupEditor": "none",
   "zenMode.hideLineNumbers": false,
-  "zenMode.hideTabs": false,
+  "zenMode.hideTabs": true,
   "zenMode.fullScreen": false,
   "zenMode.restore": true,
 

@@ -19,11 +19,11 @@
     homeConfigurations = {
       home = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { dotfilesEnv = "home"; };
+        extraSpecialArgs = { dotfilesEnv = "personal"; };
         modules = [
           ./home.nix
           {
-            home = {
+            personal = {
               username = "devonwa";
               homeDirectory = "/home/devonwa";
               stateVersion = "22.05";
