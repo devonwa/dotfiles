@@ -13,7 +13,7 @@ alias config_tmux='$SHELL -c "cd $XDG_CONFIG_HOME/tmux && nvim $XDG_CONFIG_HOME/
 
 alias reload='. $HOME/.zshrc'
 alias cat='bat --style plain'
-#alias cd='z'
+alias cd='z'
 alias dl='docker container ls'
 alias kc='kubectl'
 alias nv='neovide --maximized'
