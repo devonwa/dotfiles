@@ -13,7 +13,7 @@ alias config_tmux='$SHELL -c "cd $XDG_CONFIG_HOME/tmux && nvim $XDG_CONFIG_HOME/
 
 alias reload='. $HOME/.zshrc'
 alias cat='bat --style plain'
-alias cd='z'
+#alias cd='z'
 alias dl='docker container ls'
 alias kc='kubectl'
 alias nv='neovide --maximized'
@@ -66,6 +66,11 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # nix
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
+
+# avoid macOS updates to destroy nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
 
 # notes
 export NOTES=$HOME/go/src/github.com/devonwa/notes
