@@ -13,10 +13,11 @@
     pkgs.fd
     pkgs.fira-code
     pkgs.fontconfig
-#    pkgs.font-manager #broken webkit? mac issue only?
+    #pkgs.font-manager #broken webkit? mac issue only?
     pkgs.fzf
-    pkgs.gcc
-    pkgs.gnumake
+    pkgs.gcc # collisions with brew builds?
+    pkgs.gnumake # collissions with brew builds? 
+    pkgs.go-task
     #pkgs.google-chrome #mac issue
     #pkgs.helm #mac issue
     #pkgs.helmfile #mac issue
@@ -31,10 +32,11 @@
     pkgs.nix-direnv
     pkgs.ripgrep
     pkgs.stow
+    pkgs.thefuck
     pkgs.tldr
     pkgs.tmux
     pkgs.vscode
- #   pkgs.wezterm #failed build on mac
+    #pkgs.wezterm #failed build on mac
     pkgs.xclip
     pkgs.yarn
     pkgs.zoxide

@@ -1,6 +1,6 @@
 #!/bin/bash
 export EDITOR=nvim
-export PATH=/usr/local/bin:$PATH
+export PATH=$PATH:usr/local/bin
 export PATH=$PATH:/usr/local/sbin
 export XDG_CONFIG_HOME=$HOME/.config
 export DOTFILES=$HOME/dotfiles
@@ -62,7 +62,11 @@ alias gitMergedBranchPrune='git branch --merged | egrep -v "(^\*|master|main|dev
 # go
 export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export PATH=/USR/LOCAL/opt/go@1.19/bin:$PATH
+export PATH=$PATH:${GOPATH}/bin
+#export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+
 
 # nix
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}

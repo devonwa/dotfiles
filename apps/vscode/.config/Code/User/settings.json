@@ -41,7 +41,6 @@
     "statusBarItem.remoteBackground": "#4e4e4e",
     "statusBarItem.remoteForeground": "#1c1c1c"
   },
-  "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.closeEmptyGroups": false,
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
@@ -227,7 +226,8 @@
   "rust-analyzer.inlayHints.typeHints.enable": false,
   "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.closingBraceHints.enable": false,
-  "vsicons.dontShowNewVersionMessage": true
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.colorTheme": "One Dark Pro"
 
   ///////////////////////////////////////////
   // Auto-added, unsorted
