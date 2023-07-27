@@ -23,7 +23,7 @@
         modules = [
           ./home.nix
           {
-            personal = {
+            home = {
               username = "devonwa";
               homeDirectory = "/home/devonwa";
               stateVersion = "22.05";

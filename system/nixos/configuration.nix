@@ -31,34 +31,32 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.utf8";
 
-
-  # Enable the GNOME Desktop Environment.
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
-
   # Configure keymap in X11
-#  environment.pathsToLink = [ "/libexec" ];
+  environment.pathsToLink = [ "/libexec" ];
+  # Enable automatic login for the user.
   services.xserver = {
     enable = true;
     desktopManager = {
-        gnome.enable = true;
-#        xterm.enable = true;
+#        gnome.enable = true;
+        xterm.enable = true;
     };
     displayManager = {
-        gdm.enable = true;
-#        defaultSession = "none+i3";
+        autoLogin.enable = true;
+        autoLogin.user = "devonwa";
+#        gdm.enable = true;
+        defaultSession = "none+i3";
     };
-#    windowManager = {
-#        i3 = {
-#            enable = true;
-#            extraPackages = with pkgs; [
-#                dmenu
-#                i3status
-#                i3lock
-#                i3blocks
-#            ];
-#        };
-#    };
+    windowManager = {
+        i3 = {
+            enable = true;
+            extraPackages = with pkgs; [
+                dmenu
+                i3status
+                i3lock
+                i3blocks
+            ];
+        };
+    };
     layout = "us";
     xkbVariant = "";
   };
@@ -97,9 +95,6 @@
     ];
   };
 
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "devonwa";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
@@ -149,9 +144,10 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # NVIDIA
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl.enable = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  #services.xserver.videoDrivers = [ "nvidia" ];
+  #hardware.opengl.enable = true;
+  #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  #hardware.nvidia.modesetting.enable = true;
 
   # Shell
   programs.zsh.enable = true;
