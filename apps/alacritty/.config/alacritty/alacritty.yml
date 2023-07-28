@@ -7,18 +7,18 @@ shell:
 import:
   - ~/.config/alacritty/keys.yml
 font:
-  normal:
-    family: FiraCode Nerd Font
-    style: Retina
-  bold:
-    family: FiraCode Nerd Font
-    style: Bold
-  italic:
-    family: Source Code Pro
-    style: Italic
-  bold_italic:
-    family: Source Code Pro
-    style: Bold Italic
+  #  normal:
+  #    family: FiraCode Nerd Font
+  #    style: Retina
+  #  bold:
+  #    family: FiraCode Nerd Font
+  #    style: Bold
+  #  italic:
+  #    family: Source Code Pro
+  #    style: Italic
+  #  bold_italic:
+  #    family: Source Code Pro
+  #    style: Bold Italic
   size: 13.0
   AppleFontSmoothing: 0
 # If `true`, bold text is drawn using the bright color variants.

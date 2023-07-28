@@ -144,10 +144,18 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # NVIDIA
-  #services.xserver.videoDrivers = [ "nvidia" ];
-  #hardware.opengl.enable = true;
-  #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-  #hardware.nvidia.modesetting.enable = true;
+  hardware.opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+  };
+  services.xserver.videoDrivers = [ "vmware" ];
+#  hardware.nvidia = {
+#      modesetting.enable = true;
+#      #open = false;
+#      nvidiaSettings = true;
+#      package = config.boot.kernelPackages.nvidiaPackages.stable;
+#  };
 
   # Shell
   programs.zsh.enable = true;
