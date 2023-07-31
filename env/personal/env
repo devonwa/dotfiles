@@ -11,6 +11,7 @@ alias config_homemanager='$SHELL -c "cd $HOME/dotfiles && nvim $HOME/dotfiles/ho
 alias config_nvim='$SHELL -c "cd $XDG_CONFIG_HOME/nvim && nvim $XDG_CONFIG_HOME/nvim/init.lua"'
 alias config_tmux='$SHELL -c "cd $XDG_CONFIG_HOME/tmux && nvim $XDG_CONFIG_HOME/tmux/tmux.conf"'
 
+alias base='cd $(git rev-parse --show-toplevel)'
 alias reload='. $HOME/.zshrc'
 alias cat='bat --style plain'
 alias cd='z'
