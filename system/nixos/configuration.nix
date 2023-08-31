@@ -10,6 +10,9 @@
       /etc/nixos/hardware-configuration.nix
     ];
 
+  boot.kernelPackages = pkgs.linuxPackages_5_15;
+
+
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
@@ -33,18 +36,27 @@
 
   # Configure keymap in X11
   environment.pathsToLink = [ "/libexec" ];
-  # Enable automatic login for the user.
+  environment.enableDebugInfo = true;
+
+
   services.xserver = {
     enable = true;
+    layout = "us";
+    xkbVariant = "";
+#    modules = [ pkgs.xorg.xf86videofbdev ];
+#    videoDrivers = [ "hyperv_fb" ];
     desktopManager = {
-#        gnome.enable = true;
-        xterm.enable = true;
+#      gnome.enable = true;
+#      gnome.debug = true;
+      xterm.enable = false;
     };
     displayManager = {
-        autoLogin.enable = true;
-        autoLogin.user = "devonwa";
-#        gdm.enable = true;
-        defaultSession = "none+i3";
+      autoLogin.enable = true;
+      autoLogin.user = "devonwa";
+#      gdm.enable = true;
+#      gdm.debug = true;
+#      lightdm.enable = true;
+      defaultSession = "none+i3";
     };
     windowManager = {
         i3 = {
@@ -57,8 +69,6 @@
             ];
         };
     };
-    layout = "us";
-    xkbVariant = "";
   };
 
   # Enable CUPS to print documents.
@@ -81,17 +91,17 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.devonwa = {
     isNormalUser = true;
     description = "Devon Walker";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
-    #  thunderbird
+      feh
+      fira-code
+      google-chrome
+      xcape
+      wezterm
     ];
   };
 
@@ -106,8 +116,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    git
+    inxi
+    glxinfo
+    pciutils
+    inetutils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -137,28 +151,35 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
 
-  # VMware tools
-  virtualisation.vmware.guest.enable = true;
+#  # VM Hyper-V
+#  virtualisation.hypervGuest = {
+#    enable = true;
+#    videoMode = "1920x1080";
+#  };
 
   # Nix experimental
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # NVIDIA
+#  # NVIDIA
   hardware.opengl = {
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
   };
-  services.xserver.videoDrivers = [ "vmware" ];
-#  hardware.nvidia = {
-#      modesetting.enable = true;
-#      #open = false;
-#      nvidiaSettings = true;
-#      package = config.boot.kernelPackages.nvidiaPackages.stable;
-#  };
+  hardware.nvidia = {
+      modesetting.enable = true;
+      #open = false;
+      nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
 
   # Shell
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
+
+#  # Fonts
+#  fonts.packages = with pkgs; [
+#    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+#  ];
 }

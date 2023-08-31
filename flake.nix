@@ -17,7 +17,7 @@
     devShell.x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.mkShell { buildInputs = [ self.packages.x86_64-darwin.default ]; };
 
     homeConfigurations = {
-      home = home-manager.lib.homeManagerConfiguration {
+      personal = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { dotfilesEnv = "personal"; };
         modules = [

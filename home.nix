@@ -10,6 +10,7 @@
     pkgs.cmatrix
     pkgs.dbeaver
     pkgs.direnv
+    pkgs.docker
     pkgs.fd
     pkgs.fira-code
     pkgs.fontconfig
@@ -18,25 +19,26 @@
     pkgs.gcc # collisions with brew builds?
     pkgs.gnumake # collissions with brew builds? 
     pkgs.go-task
-    #pkgs.google-chrome #mac issue
+#    pkgs.google-chrome #mac issue
     #pkgs.helm #mac issue
     #pkgs.helmfile #mac issue
     pkgs.htop-vim
     pkgs.jq
     pkgs.k9s
+    pkgs.killall
     # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     pkgs.lazygit
-    # pkgs.logseq
     pkgs.neovim
     pkgs.neovide
     pkgs.nix-direnv
+    pkgs.obsidian
     pkgs.ripgrep
+    pkgs.sxhkd
     pkgs.stow
     pkgs.thefuck
     pkgs.tldr
     pkgs.tmux
     pkgs.vscode
-    #pkgs.wezterm #failed build on mac
     pkgs.xclip
     pkgs.yarn
     pkgs.zoxide
