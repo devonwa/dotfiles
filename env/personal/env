@@ -2,6 +2,7 @@
 export EDITOR=nvim
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/usr/local/sbin"
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
 export XDG_CONFIG_HOME=$HOME/.config
 export DOTFILES=$HOME/dotfiles
 
@@ -15,7 +16,9 @@ alias base='cd $(git rev-parse --show-toplevel)'
 alias reload='. $HOME/.zshrc'
 alias cat='bat --style plain'
 alias cd='z'
+alias dc='docker compose'
 alias dl='docker container ls'
+alias f='fuck'
 alias kc='kubectl'
 alias nv='neovide --maximized'
 alias lg='lazygit'
@@ -27,6 +30,9 @@ stty intr ^\\
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# fuck
+eval $(thefuck --alias)
 
 # fzf
 ## Use fd instead of find to respect .gitignore
@@ -66,8 +72,6 @@ export PATH="$PATH:$GOPATH/bin"
 #export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 
 # nix
-export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
-
 # avoid macOS updates to destroy nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'

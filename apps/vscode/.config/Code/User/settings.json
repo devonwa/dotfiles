@@ -41,14 +41,16 @@
     "statusBarItem.remoteBackground": "#4e4e4e",
     "statusBarItem.remoteForeground": "#1c1c1c"
   },
+  "workbench.editor.centeredLayoutFixedWidth": true,
   "workbench.editor.closeEmptyGroups": false,
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
   "workbench.iconTheme": "vscode-icons",
-  "workbench.editor.centeredLayoutAutoResize": true,
   "workbench.startupEditor": "none",
+  "zenMode.centerLayout": true,
   "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false,
   "zenMode.hideTabs": true,
   "zenMode.fullScreen": false,
   "zenMode.restore": true,

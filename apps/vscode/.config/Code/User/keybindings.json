@@ -5,8 +5,8 @@
     "when": "terminal.active"
   },
   {
-    "key": "ctrl+`",
-    "command": "-workbench.action.terminal.toggleTerminal",
+    "key": "ctrl+e",
+    "command": "workbench.action.toggleSidebarVisibility",
     "when": "terminal.active"
   }
 ]
