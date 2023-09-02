@@ -24,8 +24,8 @@
           ./home.nix
           {
             home = {
-              username = "devonwa";
-              homeDirectory = "/home/devonwa";
+              username = "devn";
+              homeDirectory = "/home/devn";
               stateVersion = "22.05";
             };
           }
