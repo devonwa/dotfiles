@@ -75,8 +75,8 @@ plugins = {
 	"lewis6991/gitsigns.nvim",
 
 	-- Manager of LSPs, Linters, Formatters
-	{ "williamboman/mason.nvim", build = ":MasonUpdate", lazy = false },
-	{ "williamboman/mason-lspconfig.nvim", lazy = false },
+	{ "williamboman/mason.nvim" },
+	{ "williamboman/mason-lspconfig.nvim" },
 
 	-- LSPs, Linters, Formatters
  	{ "neovim/nvim-lspconfig", lazy = false }, -- enable LSP

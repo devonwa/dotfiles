@@ -23,6 +23,7 @@ alias kc='kubectl'
 alias nv='neovide --maximized'
 alias lg='lazygit'
 alias python='python3'
+alias ta='tmux attach'
 alias top='htop'
 alias v='nvim'
 
