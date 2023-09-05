@@ -28,17 +28,19 @@
     pkgs.killall
     # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     pkgs.lazygit
+    pkgs.neofetch
     pkgs.neovim
     pkgs.neovide
     pkgs.nix-direnv
     pkgs.obsidian
     pkgs.ripgrep
+    pkgs.rustup
     pkgs.sxhkd
     pkgs.stow
     pkgs.thefuck
     pkgs.tldr
     pkgs.tmux
-    pkgs.vscode
+    #pkgs.vscode
     pkgs.xclip
     pkgs.yarn
     pkgs.zoxide
@@ -155,8 +157,8 @@
       set -g @plugin 'tmux-plugins/tmux-continuum'
       set -g @plugin 'sainnhe/tmux-fzf'
       
-      set -g @continuum-boot 'on'
-      set -g @continuum-boot-options 'alacritty'
+      set -g @continuum-restore 'on'
+
       
       # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
       run '~/.tmux/plugins/tpm/tpm'
