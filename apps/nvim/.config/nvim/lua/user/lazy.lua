@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-plugins = {
+local plugins = {
     "nvim-lua/plenary.nvim", -- Useful lua functions used by lots of plugins
 	"windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
 	"numToStr/Comment.nvim", -- Comment with C-/
@@ -48,7 +48,6 @@ plugins = {
 	{ "sainnhe/gruvbox-material", lazy = true },
 	{ "sainnhe/everforest", lazy = true },
 	{ "sainnhe/edge", lazy = true },
-    
 
 	-- cmp plugins
 	"hrsh7th/nvim-cmp", -- The completion plugin
@@ -89,4 +88,4 @@ plugins = {
 
 }
 
-require("lazy").setup(plugins, opts)
+require("lazy").setup(plugins)
