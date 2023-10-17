@@ -11,6 +11,7 @@ require "user.treesitter"
 require "user.comment"
 -- require "user.gitsigns"
 require "user.nvim-tree"
+-- require("oil").setup()
 require("bufferline").setup{}
 require "user.lualine"
 require "user.toggleterm"
