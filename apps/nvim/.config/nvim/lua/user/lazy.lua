@@ -29,7 +29,7 @@ local plugins = {
 	"akinsho/toggleterm.nvim",
 	"goolord/alpha-nvim",
 	"folke/which-key.nvim",
-    "folke/zen-mode.nvim",
+    {"folke/zen-mode.nvim", opts = { window = { width = 130 }}},
     { "kylechui/nvim-surround", version = "*", event = "VeryLazy",
     config = function()
         require("nvim-surround").setup({
@@ -40,6 +40,7 @@ local plugins = {
 
 	-- Colorschemes
     { "catppuccin/nvim", lazy = false },
+    { "dracula/vim", lazy = true },
     { "olimorris/onedarkpro.nvim", lazy = true },
 	{ "folke/tokyonight.nvim", lazy = true},
 	{ "sainnhe/edge", lazy = true },

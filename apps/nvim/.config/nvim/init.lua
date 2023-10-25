@@ -20,7 +20,6 @@ require "user.toggleterm"
 -- require "user.alpha"
 -- require "user.whichkey"
 -- require "user.autocommands"
--- require "user.zenmode"
 require "user.lsp"
 
 -- Settings
