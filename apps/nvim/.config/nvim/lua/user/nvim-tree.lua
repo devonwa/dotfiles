@@ -21,11 +21,9 @@ local function my_on_attach(bufnr)
   api.config.mappings.default_on_attach(bufnr)
 
   -- custom mappings
-  -- TODO vim.keymap.set('n', '<C-e>', '<Nop>', {}) currently unsetting c-e outside of nvim-tree buffer
-  -- vim.keymap.set('n', '<C-e>', api.tree.change_root_to_parent, opts('Up'))
-  --vim.keymap.set('n', '<C-r>', api.tree.reload(), opts('Reload'))
   vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
   vim.keymap.del('n', '<C-e>', { buffer = bufnr })
+  vim.keymap.set('n', '<esc>', api.tree.close)
 end
 
 local HEIGHT_RATIO = 0.8
