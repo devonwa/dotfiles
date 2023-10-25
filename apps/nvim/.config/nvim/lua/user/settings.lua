@@ -2,6 +2,7 @@ local options = {
   backup = false,                           -- creates a backup file
   clipboard = "unnamedplus",                -- allows neovim to access the system clipboard
   cmdheight = 1,                            -- more space in the neovim command line for displaying messages
+  colorcolumn = {120},                   -- character limit lines
   conceallevel = 0,                         -- so that `` is visible in markdown files
   cursorline = true,                        -- highlight cursor line
   expandtab = true,                         -- convert tabs to spaces
