@@ -29,14 +29,14 @@ local plugins = {
 	"akinsho/toggleterm.nvim",
 	"goolord/alpha-nvim",
 	"folke/which-key.nvim",
-    {"folke/zen-mode.nvim", opts = { window = { width = 130 }}},
     { "kylechui/nvim-surround", version = "*", event = "VeryLazy",
-    config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
-    end
+	    config = function()
+		require("nvim-surround").setup({
+		    -- Configuration here, or leave empty to use defaults
+		})
+	    end
 	},
+    { "folke/persistence.nvim", event = "BufReadPre" }, -- only start session saving when an actual file was opened
 
 	-- Colorschemes
     { "catppuccin/nvim", lazy = false },
@@ -64,15 +64,30 @@ local plugins = {
 
 	-- Telescope
 	"nvim-telescope/telescope.nvim",
+    {"ibhagwan/fzf-lua", dependencies = { "nvim-tree/nvim-web-devicons" }},
 
 	-- Treesitter
 	"nvim-treesitter/nvim-treesitter",
+
+    -- Mini
+    --{ 'echasnovski/mini.nvim', version = false },
 
     -- Buffers
     {"akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
 
 	-- Git
 	"lewis6991/gitsigns.nvim",
+    "sindrets/diffview.nvim",
+    {
+      "NeogitOrg/neogit",
+      dependencies = {
+        "nvim-lua/plenary.nvim",         -- required
+        "nvim-telescope/telescope.nvim", -- optional
+        "sindrets/diffview.nvim",        -- optional
+        "ibhagwan/fzf-lua",              -- optional
+      },
+      config = true
+    },
 
 	-- Manager of LSPs, Linters, Formatters
 	{ "williamboman/mason.nvim" },
@@ -85,8 +100,10 @@ local plugins = {
 
     -- Debugger
     'mfussenegger/nvim-dap',
-    { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} },
 
+    -- Presentation
+    {"folke/zen-mode.nvim", opts = { window = { width = 130 }}}
 }
 
 require("lazy").setup(plugins)

@@ -9,7 +9,9 @@ require "user.telescope"
 require "user.treesitter"
 -- require "user.autopairs"
 require "user.comment"
--- require "user.gitsigns"
+require "user.gitsigns"
+--require('mini').setup()
+--require('mini.starter').setup({})
 require "user.nvim-tree"
 -- require("oil").setup()
 require("bufferline").setup{}

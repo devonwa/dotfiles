@@ -28,6 +28,7 @@ vim.keymap.set("n", "<leader>n", ":nohl<CR>", opts) -- clear highlights after se
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", opts) -- ZenMode
 vim.keymap.set("n", "<leader>r", ":Reload<CR>", opts) -- Reload config
 vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", opts) -- clear highlights after search
+vim.keymap.set("n", "<leader>gg", ":Neogit<CR>", opts) -- clear highlights after search
 
 -- Non-vim editor commands
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save" })
