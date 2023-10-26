@@ -33,7 +33,7 @@
     pkgs.nix-direnv
     pkgs.obsidian
     pkgs.ripgrep
-    pkgs.sxhkd
+    #pkgs.sxhkd # no mac
     pkgs.stow
     pkgs.thefuck
     pkgs.tldr
