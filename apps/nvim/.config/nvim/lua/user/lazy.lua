@@ -26,7 +26,7 @@ local plugins = {
 	"akinsho/bufferline.nvim",
 	"moll/vim-bbye",
 	"nvim-lualine/lualine.nvim",
-	"akinsho/toggleterm.nvim",
+    { "akinsho/toggleterm.nvim", lazy = false },
 	"goolord/alpha-nvim",
 	"folke/which-key.nvim",
     { "kylechui/nvim-surround", version = "*", event = "VeryLazy",
@@ -99,8 +99,8 @@ local plugins = {
 	{ "jose-elias-alvarez/null-ls.nvim", lazy = false }, -- for formatters and linters
 
     -- Debugger
-    'mfussenegger/nvim-dap',
-    { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} },
+    "mfussenegger/nvim-dap",
+    "rcarriga/nvim-dap-ui",
 
     -- Presentation
     {"folke/zen-mode.nvim", opts = { window = { width = 130 }}}

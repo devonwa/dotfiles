@@ -1,8 +1,6 @@
 { config, pkgs, dotfilesEnv, ... }:
 
 {
-  #fonts.fontconfig.enable = true; #mac issue
-
   home.packages = [
     pkgs.alacritty
     pkgs.ansible
@@ -14,26 +12,18 @@
     pkgs.fd
     pkgs.fira-code
     pkgs.fontconfig
-    #pkgs.font-manager #broken webkit? mac issue only?
     pkgs.fzf
-    pkgs.gcc # collisions with brew builds?
-    pkgs.gnumake # collissions with brew builds? 
     pkgs.go-task
-#    pkgs.google-chrome #mac issue
-    #pkgs.helm #mac issue
-    #pkgs.helmfile #mac issue
     pkgs.htop-vim
     pkgs.jq
     pkgs.k9s
     pkgs.killall
-    # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     pkgs.lazygit
     pkgs.neovim
     pkgs.neovide
     pkgs.nix-direnv
     pkgs.obsidian
     pkgs.ripgrep
-    #pkgs.sxhkd # no mac
     pkgs.stow
     pkgs.thefuck
     pkgs.tldr

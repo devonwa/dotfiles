@@ -1,10 +1,6 @@
 shell:
-  program: zsh
-#  args:
-#    - -l
-#    - -c
-#    - "tmux"
-import:
+  program: /Users/devwalker/.nix-profile/bin/zsh
+  import:
   - ~/.config/alacritty/keys.yml
 font:
   normal:
@@ -21,11 +17,8 @@ font:
     style: Bold Italic
   size: 13.0
   AppleFontSmoothing: 0
-# If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 window:
   opacity: 0.9
 scrolling:
-  # Maximum number of lines in the scrollback buffer.
-  # Specifying '0' will disable scrolling.
-  history: 30000
+  history: 30000 # Maximum number of lines in the scrollback buffer.

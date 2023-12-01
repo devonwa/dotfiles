@@ -21,7 +21,7 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { dotfilesEnv = "personal"; };
         modules = [
-          ./home.nix
+          ./system/nixos/home.nix
           {
             home = {
               username = "devn";
@@ -36,7 +36,7 @@
         pkgs = nixpkgs.legacyPackages.x86_64-darwin;
         extraSpecialArgs = { dotfilesEnv = "work"; };
         modules = [
-          ./home.nix
+          ./system/macos/home.nix
           {
             home = {
               username = "devwalker";

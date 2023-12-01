@@ -34,11 +34,12 @@ func tnw() { tmux new -t $(basename $(dirname $(dirname $(pwd))))/$(basename $(p
 
 stty intr ^\\
 
-# direnv
-eval "$(direnv hook zsh)"
-
-# fuck
-eval $(thefuck --alias)
+# ISSUE with shell loading these at startup
+## direnv
+#eval "$(direnv hook zsh)"
+#
+## fuck
+#eval $(thefuck --alias)
 
 # fzf
 ## Use fd instead of find to respect .gitignore
