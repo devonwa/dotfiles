@@ -35,7 +35,7 @@
     pkgs.obsidian
     pkgs.ripgrep
     pkgs.rustup
-    pkgs.sxhkd
+    #pkgs.sxhkd # no mac
     pkgs.stow
     pkgs.thefuck
     pkgs.tldr

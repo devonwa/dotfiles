@@ -23,17 +23,23 @@ alias kc='kubectl'
 alias nv='neovide --maximized'
 alias lg='lazygit'
 alias python='python3'
-alias ta='tmux attach'
 alias top='htop'
 alias v='nvim'
+alias gw='git worktree'
+
+alias t='tmux'
+alias ta='tmux attach'
+func tn() { tmux new -t $(basename $(pwd)) }
+func tnw() { tmux new -t $(basename $(dirname $(dirname $(pwd))))/$(basename $(pwd)) }
 
 stty intr ^\\
 
-# direnv
-eval "$(direnv hook zsh)"
-
-# fuck
-eval $(thefuck --alias)
+# ISSUE with shell loading these at startup
+## direnv
+#eval "$(direnv hook zsh)"
+#
+## fuck
+#eval $(thefuck --alias)
 
 # fzf
 ## Use fd instead of find to respect .gitignore

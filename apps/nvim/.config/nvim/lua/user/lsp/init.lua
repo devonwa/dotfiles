@@ -1,14 +1,28 @@
 -- Setup Mason
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup {
+    automatic_installation = true,
+}
 
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.gopls.setup{}
 lspconfig.rust_analyzer.setup{}
+<<<<<<< HEAD
 -- lspconfig.pyright.setup {}
 -- lspconfig.tsserver.setup {}
 
+=======
+lspconfig.lua_ls.setup{
+  settings = {
+    Lua = {
+      workspace = {
+        checkThirdParty = false,
+      },
+    },
+  },
+}
+>>>>>>> mac
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

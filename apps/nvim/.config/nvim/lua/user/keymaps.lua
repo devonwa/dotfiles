@@ -22,20 +22,21 @@ vim.api.nvim_create_user_command('Reload', ':luafile $MYVIMRC', {})
 -----------------
 -- Normal
 vim.keymap.set("n", "<leader>w", ":w<CR>", opts) -- save
-vim.keymap.set("n", "<C-w>", ":bd<CR>", opts) -- close buffer
 --vim.keymap.set("n", "<leader>q", ":q<CR>", opts) -- quit
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", opts) -- quit
 vim.keymap.set("n", "<leader>n", ":nohl<CR>", opts) -- clear highlights after search
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", opts) -- ZenMode
 vim.keymap.set("n", "<leader>r", ":Reload<CR>", opts) -- Reload config
 vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", opts) -- clear highlights after search
+vim.keymap.set("n", "<leader>gg", ":Neogit<CR>", opts) -- clear highlights after search
+
+-- Non-vim editor commands
+vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save" })
+vim.keymap.set("n", "s", "", { desc = "Do nothing" })
 
 -- Sidebars
 --vim.keymap.set("", "<Space>", "<Nop>", opts)
-vim.keymap.set("n", "<C-e>", ":NvimTreeToggle 30<CR>", opts) -- explorer
--- debug
--- testing
--- git
+vim.keymap.set("n", "<C-e>", ":NvimTreeFindFileToggle<CR>", opts) -- explorer
 
 -- Resize with arrows
 vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -50,10 +51,9 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 
 -- Navigate buffers
-vim.keymap.set("n", "<C-Tab>", ":bnext<CR>", opts)
-vim.keymap.set("n", "<C-S-Tab>", ":bprevious<CR>", opts)
-vim.keymap.set("n", "<S-l>", ":bnext<CR>", opts)
-vim.keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>",  {desc = "Previous buffer" })
+vim.keymap.set("n", "<C-w>", ":bd<CR>", { desc = "Close buffer" })
 
 -- Neovide zoom
 if vim.g.neovide == true then

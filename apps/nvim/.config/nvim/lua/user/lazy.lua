@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-plugins = {
+local plugins = {
     "nvim-lua/plenary.nvim", -- Useful lua functions used by lots of plugins
 	"windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
 	"numToStr/Comment.nvim", -- Comment with C-/
@@ -26,20 +26,21 @@ plugins = {
 	"akinsho/bufferline.nvim",
 	"moll/vim-bbye",
 	"nvim-lualine/lualine.nvim",
-	"akinsho/toggleterm.nvim",
+    { "akinsho/toggleterm.nvim", lazy = false },
 	"goolord/alpha-nvim",
 	"folke/which-key.nvim",
-    "folke/zen-mode.nvim",
     { "kylechui/nvim-surround", version = "*", event = "VeryLazy",
-    config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
-    end
+	    config = function()
+		require("nvim-surround").setup({
+		    -- Configuration here, or leave empty to use defaults
+		})
+	    end
 	},
+    { "folke/persistence.nvim", event = "BufReadPre" }, -- only start session saving when an actual file was opened
 
 	-- Colorschemes
     { "catppuccin/nvim", lazy = false },
+    { "dracula/vim", lazy = true },
     { "olimorris/onedarkpro.nvim", lazy = true },
 	{ "folke/tokyonight.nvim", lazy = true},
 	{ "sainnhe/edge", lazy = true },
@@ -48,7 +49,6 @@ plugins = {
 	{ "sainnhe/gruvbox-material", lazy = true },
 	{ "sainnhe/everforest", lazy = true },
 	{ "sainnhe/edge", lazy = true },
-    
 
 	-- cmp plugins
 	"hrsh7th/nvim-cmp", -- The completion plugin
@@ -64,15 +64,30 @@ plugins = {
 
 	-- Telescope
 	"nvim-telescope/telescope.nvim",
+    {"ibhagwan/fzf-lua", dependencies = { "nvim-tree/nvim-web-devicons" }},
 
 	-- Treesitter
 	"nvim-treesitter/nvim-treesitter",
+
+    -- Mini
+    --{ 'echasnovski/mini.nvim', version = false },
 
     -- Buffers
     {"akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
 
 	-- Git
 	"lewis6991/gitsigns.nvim",
+    "sindrets/diffview.nvim",
+    {
+      "NeogitOrg/neogit",
+      dependencies = {
+        "nvim-lua/plenary.nvim",         -- required
+        "nvim-telescope/telescope.nvim", -- optional
+        "sindrets/diffview.nvim",        -- optional
+        "ibhagwan/fzf-lua",              -- optional
+      },
+      config = true
+    },
 
 	-- Manager of LSPs, Linters, Formatters
 	{ "williamboman/mason.nvim" },
@@ -84,9 +99,11 @@ plugins = {
 	{ "jose-elias-alvarez/null-ls.nvim", lazy = false }, -- for formatters and linters
 
     -- Debugger
-    'mfussenegger/nvim-dap',
-    { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    "mfussenegger/nvim-dap",
+    "rcarriga/nvim-dap-ui",
 
+    -- Presentation
+    {"folke/zen-mode.nvim", opts = { window = { width = 130 }}}
 }
 
-require("lazy").setup(plugins, opts)
+require("lazy").setup(plugins)

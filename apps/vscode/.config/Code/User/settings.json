@@ -13,10 +13,14 @@
   "editor.formatOnSave": true,
   "editor.inlayHints.enabled": "off",
   "editor.lineNumbers": "relative",
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "none",
   "editor.rulers": [
     { "column": 80, "color": "#272727" },
     { "column": 120, "color": "#303030" }
   ],
+  "editor.stickyScroll.enabled": true,
   "editor.suggestSelection": "first",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -51,7 +55,6 @@
   "zenMode.centerLayout": true,
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
-  "zenMode.hideTabs": true,
   "zenMode.fullScreen": false,
   "zenMode.restore": true,
 
@@ -117,6 +120,14 @@
       "after": ["terminal.active"]
     },
     {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
       "before": ["n"],
       "after": ["n", "z", "z", "z", "v"]
     },
@@ -173,42 +184,38 @@
   // Language-specific settings
   "eslint.validate": ["javascript", "typescript", "typescriptreact"],
 
-  "typescript.format.semicolons": "insert",
-
+  "go.coverageDecorator": { "type": "gutter" },
   "go.useLanguageServer": true,
   "go.toolsManagement.autoUpdate": true,
   "go.lintTool": "golangci-lint",
   "go.formatTool": "gofmt",
-
-  "html.format.wrapAttributes": "force-aligned",
-  "html.format.wrapLineLength": 0,
-  "python.defaultInterpreterPath": "/usr/bin/python3",
-
   "[go]": {
     "editor.defaultFormatter": "golang.go"
-  },
-  "go.coverageDecorator": {
-    "type": "gutter"
   },
   "[go.mod]": {
     "editor.defaultFormatter": "golang.go"
   },
+  "[helm]": {
+    "editor.formatOnSave": false
+  },
+  "html.format.wrapAttributes": "force-aligned",
+  "html.format.wrapLineLength": 0,
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "python.defaultInterpreterPath": "/usr/bin/python3",
   "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnType": true
   },
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
   },
+  "typescript.format.semicolons": "insert",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
-  "[helm]": {
-    "editor.formatOnSave": false
   },
 
   ///////////////////////////////////////////
@@ -220,16 +227,16 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.hovers.enabled": false,
-  "editor.minimap.showSlider": "always",
-  "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "none",
-  "editor.stickyScroll.enabled": true,
   "rust-analyzer.inlayHints.parameterHints.enable": false,
   "rust-analyzer.inlayHints.typeHints.enable": false,
   "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.closingBraceHints.enable": false,
   "vsicons.dontShowNewVersionMessage": true,
-  "workbench.colorTheme": "One Dark Pro"
+  "workbench.colorTheme": "One Dark Pro",
+  "[sql]": {
+    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+  },
+  "zenMode.showTabs": "single"
 
   ///////////////////////////////////////////
   // Auto-added, unsorted

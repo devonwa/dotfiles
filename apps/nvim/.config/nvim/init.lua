@@ -9,8 +9,11 @@ require "user.telescope"
 require "user.treesitter"
 -- require "user.autopairs"
 require "user.comment"
--- require "user.gitsigns"
+require "user.gitsigns"
+--require('mini').setup()
+--require('mini.starter').setup({})
 require "user.nvim-tree"
+-- require("oil").setup()
 require("bufferline").setup{}
 require "user.lualine"
 require "user.toggleterm"
@@ -19,7 +22,6 @@ require "user.toggleterm"
 -- require "user.alpha"
 -- require "user.whichkey"
 -- require "user.autocommands"
--- require "user.zenmode"
 require "user.lsp"
 
 -- Settings
