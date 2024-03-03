@@ -3,7 +3,7 @@
   // VS Code application settings
   "debug.javascript.autoAttachFilter": "smart",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 8,
@@ -207,7 +207,10 @@
   "python.defaultInterpreterPath": "/usr/bin/python3",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
   },
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
@@ -236,7 +239,13 @@
   "[sql]": {
     "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
   },
-  "zenMode.showTabs": "single"
+  "zenMode.showTabs": "single",
+  "window.commandCenter": false,
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  }
 
   ///////////////////////////////////////////
   // Auto-added, unsorted
