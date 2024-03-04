@@ -15,6 +15,7 @@
     pkgs.fzf
     pkgs.gcc # collisions with brew builds?
     pkgs.gnumake # collissions with brew builds? 
+    pkgs.go
     pkgs.go-task
     pkgs.htop-vim
     pkgs.jq
@@ -45,6 +46,7 @@
       theme = "macovsky";
     };
     initExtra = ''
+      export DOTFILES_SYSTEM=${system};
       export DOTFILES_ENV=${env};
       export NIXPKGS_ALLOW_UNFREE=1;
       . $HOME/dotfiles/env/${env}/env
