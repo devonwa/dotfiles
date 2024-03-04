@@ -8,11 +8,6 @@ require("mason-lspconfig").setup {
 local lspconfig = require('lspconfig')
 lspconfig.gopls.setup{}
 lspconfig.rust_analyzer.setup{}
-<<<<<<< HEAD
--- lspconfig.pyright.setup {}
--- lspconfig.tsserver.setup {}
-
-=======
 lspconfig.lua_ls.setup{
   settings = {
     Lua = {
@@ -22,7 +17,6 @@ lspconfig.lua_ls.setup{
     },
   },
 }
->>>>>>> mac
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
