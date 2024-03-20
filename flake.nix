@@ -17,9 +17,24 @@
     devShell.x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.mkShell { buildInputs = [ self.packages.x86_64-darwin.default ]; };
 
     homeConfigurations = {
-      personal = home-manager.lib.homeManagerConfiguration {
+      wsl = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { dotfilesEnv = "personal"; };
+        extraSpecialArgs = { system = "wsl"; env = "personal"; };
+        modules = [
+          ./system/wsl/home.nix
+          {
+            home = {
+              username = "devn";
+              homeDirectory = "/home/devn";
+              stateVersion = "22.05";
+            };
+          }
+        ];
+      };
+
+      nixos = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { system = "nixos"; env = "personal"; };
         modules = [
           ./system/nixos/home.nix
           {
@@ -34,7 +49,7 @@
 
       work = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-darwin;
-        extraSpecialArgs = { dotfilesEnv = "work"; };
+        extraSpecialArgs = { system = "macos"; env = "work"; };
         modules = [
           ./system/macos/home.nix
           {

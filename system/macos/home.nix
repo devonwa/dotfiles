@@ -1,78 +1,10 @@
-{ config, pkgs, dotfilesEnv, ... }:
+{ config, pkgs, system, env, ... }:
 
 {
-  #fonts.fontconfig.enable = true; #mac issue
-
-  home.packages = [
-    pkgs.alacritty
-    pkgs.ansible
-    pkgs.bat
-    pkgs.cmatrix
-    pkgs.dbeaver
-    pkgs.direnv
-    pkgs.docker
-    pkgs.fd
-    pkgs.fira-code
-    pkgs.fontconfig
-    #pkgs.font-manager #broken webkit? mac issue only?
-    pkgs.fzf
-    pkgs.gcc # collisions with brew builds?
-    pkgs.gnumake # collissions with brew builds? 
-    pkgs.go-task
-#    pkgs.google-chrome #mac issue
-    #pkgs.helm #mac issue
-    #pkgs.helmfile #mac issue
-    pkgs.htop-vim
-    pkgs.jq
-    pkgs.k9s
-    pkgs.killall
-    # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
-    pkgs.lazygit
-    pkgs.neovim
-    #pkgs.neovide
-    pkgs.nix-direnv
-    pkgs.obsidian
-    pkgs.ripgrep
-    #pkgs.sxhkd # no mac
-    pkgs.stow
-    pkgs.thefuck
-    pkgs.tldr
-    pkgs.tmux
-    pkgs.vscode
-    pkgs.xclip
-    pkgs.yarn
-    pkgs.zoxide
+  imports = [
+    ../common.nix
   ];
 
-  programs.home-manager.enable = true;
-
-  programs.zsh = {
-    enable = true;
-    enableAutosuggestions = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" "vi-mode" ];
-      theme = "macovsky";
-    };
-    initExtra = ''
-      export DOTFILES_ENV=${dotfilesEnv};
-      export NIXPKGS_ALLOW_UNFREE=1;
-      . $HOME/dotfiles/env/${dotfilesEnv}/env
-    '';
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "Devon Walker";
-    aliases = {
-	  logline = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
-	  recentb = ''!r() { refbranch=$1 count=$2; git for-each-ref --sort=-committerdate refs/heads --format='%(refname:short)|%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always --count=''${count:-20} | while read line; do branch=$(echo \"$line\" | awk 'BEGIN { FS = \"|\" }; { print $1 }' | tr -d '*'); ahead=$(git rev-list --count \"''${refbranch:-origin/master}..''${branch}\"); behind=$(git rev-list --count \"''${branch}..''${refbranch:-origin/master}\"); colorline=$(echo \"$line\" | sed 's/^[^|]*|//'); echo \"$ahead|$behind|$colorline\" | awk -F'|' -vOFS='|' '{$5=substr($5,1,70)}1' ; done | ( echo \"ahead|behind||branch|lastcommit|message|author\\n\" && cat) | column -ts'|';}; r'';
-    };
-    diff-so-fancy.enable = true;
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
-    includes = [ { path = "~/dotfiles/env/${dotfilesEnv}/.gitconfig"; } ];
-  };
+  home.packages = [];
 }
 

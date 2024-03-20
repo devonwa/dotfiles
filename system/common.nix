@@ -1,4 +1,4 @@
-{ config, pkgs, dotfilesEnv, ... }:
+{ config, pkgs, system, env, ... }:
 
 {
   home.packages = [
@@ -13,6 +13,9 @@
     pkgs.fira-code
     pkgs.fontconfig
     pkgs.fzf
+    pkgs.gcc # collisions with brew builds?
+    pkgs.gnumake # collissions with brew builds? 
+    pkgs.go
     pkgs.go-task
     pkgs.htop-vim
     pkgs.jq
@@ -20,7 +23,6 @@
     pkgs.killall
     pkgs.lazygit
     pkgs.neovim
-    pkgs.neovide
     pkgs.nix-direnv
     pkgs.obsidian
     pkgs.ripgrep
@@ -28,7 +30,6 @@
     pkgs.thefuck
     pkgs.tldr
     pkgs.tmux
-    pkgs.vscode
     pkgs.xclip
     pkgs.yarn
     pkgs.zoxide
@@ -45,9 +46,10 @@
       theme = "macovsky";
     };
     initExtra = ''
-      export DOTFILES_ENV=${dotfilesEnv};
+      export DOTFILES_SYSTEM=${system};
+      export DOTFILES_ENV=${env};
       export NIXPKGS_ALLOW_UNFREE=1;
-      . $HOME/dotfiles/env/${dotfilesEnv}/env
+      . $HOME/dotfiles/env/${env}/env
     '';
   };
 
@@ -62,8 +64,7 @@
     extraConfig = {
       init.defaultBranch = "main";
     };
-    includes = [ { path = "~/dotfiles/env/${dotfilesEnv}/.gitconfig"; } ];
+    includes = [ { path = "~/dotfiles/env/${env}/.gitconfig"; } ];
   };
-
 }
 
