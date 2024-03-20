@@ -1,23 +1,51 @@
 {
+    "features": {
+        "copilot": false
+    },
     "theme": "One Dark",
     "tab_size": 4,
     "preferred_line_length": 80,
     "soft_wrap": "none",
     "buffer_font_size": 15,
-    "buffer_font_family": "FiraCode Nerd Font Mono",
+    "buffer_font_family": "FiraCode Nerd Font",
     "autosave": "on_focus_change",
-    "format_on_save": "off",
+    "format_on_save": "on",
+
     "vim_mode": true,
+    "relative_line_numbers": true,
+    "cursor_blink": false,
+
     "projects_online_by_default": true,
     "terminal": {
-        "font_family": "FiraCode Nerd Font Mono",
+        "font_family": "FiraCode Nerd Font",
         "blinking": "off"
     },
+
     "language_overrides": {
         "C": {
             "format_on_save": "language_server",
             "preferred_line_length": 64,
             "soft_wrap": "preferred_line_length"
+        }
+    },
+
+    "git": {
+        "git_gutter": "tracked_files"
+    },
+
+    "lsp": {
+        "gopls": {
+            "initialization_options": {
+                "hints": {
+                    "assignVariableTypes": true,
+                    "compositeLiteralFields": true,
+                    "compositeLiteralTypes": true,
+                    "constantValues": true,
+                    "functionTypeParameters": true,
+                    "parameterNames": true,
+                    "rangeVariableTypes": true
+                }
+            }
         }
     }
 }

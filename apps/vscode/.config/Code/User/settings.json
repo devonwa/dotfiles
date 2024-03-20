@@ -40,10 +40,10 @@
   "workbench.colorCustomizations": {
     "statusBar.background": "#1c1c1c",
     "statusBar.noFolderBackground": "#212121",
-    "statusBar.debuggingBackground": "#263238",
-    "statusBar.foreground": "#a0a0a0",
-    "statusBarItem.remoteBackground": "#4e4e4e",
-    "statusBarItem.remoteForeground": "#1c1c1c"
+    "statusBar.debuggingBackground": "#96a2a5",
+    "statusBar.foreground": "#a0a0a0"
+    // "statusBarItem.remoteBackground": "#4e4e4e",
+    // "statusBarItem.remoteForeground": "#1c1c1c"
   },
   "workbench.editor.centeredLayoutFixedWidth": true,
   "workbench.editor.closeEmptyGroups": false,
@@ -235,7 +235,7 @@
   "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.closingBraceHints.enable": false,
   "vsicons.dontShowNewVersionMessage": true,
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "[sql]": {
     "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
   },
