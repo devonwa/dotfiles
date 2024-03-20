@@ -1,22 +1,18 @@
-local status_ok, comment = pcall(require, "Comment")
-if not status_ok then
-  return
-end
+require('Comment').setup(
+        { mappings = { basic = false, extra = false } }
+)
+local api = require('Comment.api')
+vim.keymap.set('n', '<C-/>', api.toggle.linewise.current)
+vim.keymap.set('n', '<C-_>', api.toggle.linewise.current)
 
-comment.setup {
-  pre_hook = function(ctx)
-    local U = require "Comment.utils"
-
-    local location = nil
-    if ctx.ctype == U.ctype.block then
-      location = require("ts_context_commentstring.utils").get_cursor_location()
-    elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
-      location = require("ts_context_commentstring.utils").get_visual_start_location()
-    end
-
-    return require("ts_context_commentstring.internal").calculate_commentstring {
-      key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
-      location = location,
-    }
-  end,
-}
+local esc = vim.api.nvim_replace_termcodes(
+    '<ESC>', true, false, true
+)
+vim.keymap.set('x', '<C-/>', function()
+    vim.api.nvim_feedkeys(esc, 'nx', false)
+    api.toggle.linewise(vim.fn.visualmode())
+end)
+vim.keymap.set('x', '<C-_>', function()
+    vim.api.nvim_feedkeys(esc, 'nx', false)
+    api.toggle.linewise(vim.fn.visualmode())
+end)
