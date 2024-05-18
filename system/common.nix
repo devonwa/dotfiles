@@ -7,7 +7,6 @@
     pkgs.bat
     pkgs.cmatrix
     pkgs.dbeaver
-    pkgs.direnv
     pkgs.docker
     pkgs.fd
     pkgs.fira-code
@@ -66,5 +65,11 @@
     };
     includes = [ { path = "~/dotfiles/env/${env}/.gitconfig"; } ];
   };
+
+  programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
 }
 

@@ -13,7 +13,7 @@ keymap("n", "<leader><Tab>", "<cmd>lua require('telescope.builtin').buffers()<cr
 keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap("n", "<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap("n", "<leader>h", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
---keymap("n", "gr", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
+--keymap("n", "gH", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
 keymap("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", { noremap = true, silent = true })
 
 local actions = require("telescope.actions")
