@@ -145,6 +145,7 @@
     "<C-a>": false,
     "<C-d>": true,
     "<C-f>": false,
+    "<C-n>": false,
     "<C-w>": false
   },
   "vim.normalModeKeyBindings": [
@@ -245,6 +246,9 @@
     "**/.bloop": true,
     "**/.metals": true,
     "**/.ammonite": true
+  },
+  "[scala]": {
+    "editor.defaultFormatter": "scalameta.metals"
   }
 
   ///////////////////////////////////////////
