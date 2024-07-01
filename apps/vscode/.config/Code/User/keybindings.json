@@ -19,5 +19,10 @@
   { "key": "ctrl+n", "command": "openEditors.newUntitledFile" },
   { "key": "ctrl+shift+t", "command": "workbench.action.reopenClosedEditor" },
   { "key": "ctrl+w", "command": "workbench.action.closeActiveEditor" },
-  { "key": "ctrl+shift+w", "command": "workbench.action.closeWindow" }
+  { "key": "ctrl+shift+w", "command": "workbench.action.closeWindow" },
+  {
+    "key": "ctrl+f",
+    "command": "actions.find",
+    "when": "editorFocus || editorIsOpen"
+  }
 ]
