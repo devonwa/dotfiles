@@ -2,7 +2,7 @@
     "features": {
         "copilot": false
     },
-    "theme": "One Dark",
+    "theme": "Catppuccin Macchiato",
     "tab_size": 4,
     "preferred_line_length": 80,
     "soft_wrap": "none",
