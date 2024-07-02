@@ -77,7 +77,10 @@
     },
     {
       "before": ["<leader>", "tab"],
-      "commands": ["workbench.action.nextEditorInGroup"]
+      "commands": [
+        "workbench.action.quickOpenPreviousRecentlyUsedEditor",
+        "workbench.action.acceptSelectedQuickOpenItem"
+      ]
     },
     {
       "before": ["<leader>", "shift+tab"],
@@ -90,7 +93,10 @@
       "before": ["<leader>", "F"],
       "commands": ["workbench.action.findInFiles"]
     },
-    { "before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"] },
+    {
+      "before": ["<leader>", "f", "p"],
+      "commands": ["workbench.action.quickOpen"]
+    },
     { "before": ["<leader>", "n"], "commands": [":nohl"] },
     { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
     {
