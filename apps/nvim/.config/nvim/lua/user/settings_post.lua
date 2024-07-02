@@ -38,12 +38,10 @@ end
 
 vim.opt.iskeyword:append("-")
 
--- set scolorscheme
-vim.cmd [[
-try
-  colorscheme catppuccin
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
-  set background=dark
-endtry
-]]
+-- Events
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
