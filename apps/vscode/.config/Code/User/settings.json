@@ -68,33 +68,31 @@
   "vim.hlsearch": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "d"],
-      "commands": ["workbench.view.debug"]
+      "before": ["shift+l"],
+      "commands": ["workbench.action.nextEditorInGroup"]
     },
     {
-      "before": ["<leader>", "e"],
-      "commands": ["workbench.view.explorer"]
+      "before": ["shift+h"],
+      "commands": ["workbench.action.previousEditorInGroup"]
     },
     {
-      "before": ["<leader>", "f"],
-      "commands": ["actions.find"]
+      "before": ["<leader>", "tab"],
+      "commands": ["workbench.action.nextEditorInGroup"]
     },
+    {
+      "before": ["<leader>", "shift+tab"],
+      "commands": ["workbench.action.quickOpenNavigateNextInRecentFilesPicker"]
+    },
+    { "before": ["<leader>", "d"], "commands": ["workbench.view.debug"] },
+    { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
+    { "before": ["<leader>", "f"], "commands": ["actions.find"] },
     {
       "before": ["<leader>", "F"],
       "commands": ["workbench.action.findInFiles"]
     },
-    {
-      "before": ["<leader>", "p"],
-      "commands": ["workbench.action.quickOpen"]
-    },
-    {
-      "before": ["<leader>", "n"],
-      "commands": [":nohl"]
-    },
-    {
-      "before": ["s"],
-      "after": ["<leader>", "<leader>", "s"]
-    },
+    { "before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"] },
+    { "before": ["<leader>", "n"], "commands": [":nohl"] },
+    { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
     {
       "before": ["<leader>", "t"],
       "commands": ["workbench.view.testing.focus"]
@@ -107,34 +105,13 @@
       "before": ["<leader>", "z"],
       "commands": ["workbench.action.toggleZenMode"]
     },
-    {
-      "before": ["<C-d>"],
-      "after": ["<C-d>", "z", "z"]
-    },
-    {
-      "before": ["<C-u>"],
-      "after": ["<C-u>", "z", "z"]
-    },
-    {
-      "before": ["<C-t>"],
-      "after": ["terminal.active"]
-    },
-    {
-      "before": ["g", "r"],
-      "commands": ["editor.action.goToReferences"]
-    },
-    {
-      "before": ["g", "i"],
-      "commands": ["editor.action.goToImplementation"]
-    },
-    {
-      "before": ["n"],
-      "after": ["n", "z", "z", "z", "v"]
-    },
-    {
-      "before": ["N"],
-      "after": ["N", "z", "z", "z", "v"]
-    }
+    { "before": ["<C-d>"], "after": ["<C-d>", "z", "z"] },
+    { "before": ["<C-u>"], "after": ["<C-u>", "z", "z"] },
+    { "before": ["<C-t>"], "after": ["terminal.active"] },
+    { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] },
+    { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
+    { "before": ["n"], "after": ["n", "z", "z", "z", "v"] },
+    { "before": ["N"], "after": ["N", "z", "z", "z", "v"] }
     // { // find a way to offset up ~7 lines
     //   "before": ["z", "z"],
     //   "after": ["z", "z"]

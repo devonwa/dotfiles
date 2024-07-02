@@ -17,16 +17,16 @@ local plugins = {
     { 'numToStr/Comment.nvim', lazy = false }, -- Comment with C-/
     { "folke/neodev.nvim",     opts = {} },    -- tooltips for neovim init.lua development
 
+    -- Treesitter
+    "nvim-treesitter/nvim-treesitter",
+
     -- 	in tryout
     "ahmedkhalf/project.nvim",
     "lukas-reineke/indent-blankline.nvim",
     "JoosepAlviste/nvim-ts-context-commentstring",
     { "nvim-tree/nvim-web-devicons", lazy = false },
-    { "nvim-tree/nvim-tree.lua",     lazy = false },
-    "akinsho/bufferline.nvim",
     "moll/vim-bbye",
-    "nvim-lualine/lualine.nvim",
-    { "akinsho/toggleterm.nvim",   lazy = false },
+    { "akinsho/toggleterm.nvim",     lazy = false },
     "goolord/alpha-nvim",
     "folke/which-key.nvim",
     {
@@ -39,9 +39,26 @@ local plugins = {
             })
         end
     },
-    { "folke/persistence.nvim",    event = "BufReadPre" }, -- only start session saving when an actual file was opened
+    { "folke/persistence.nvim", event = "BufReadPre" }, -- only start session saving when an actual file was opened
 
-    -- Colorschemes
+    -- Files, Finders, and Buffers
+    { "nvim-tree/nvim-tree.lua" },
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        dependencies = {
+            "nvim-tree/nvim-web-devicons" }
+    },
+    { "ibhagwan/fzf-lua",    dependencies = { "nvim-tree/nvim-web-devicons" } },
+    -- "nvim-telescope/telescope.nvim",
+    -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
+    { "ThePrimeagen/harpoon" },
+    {"akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
+    "nvim-lualine/lualine.nvim",
+    { "folke/zen-mode.nvim",       opts = { window = { width = 130 } } },
+
+
+    -- Colorschemes and Appearance
     { "catppuccin/nvim",           lazy = false },
     { "dracula/vim",               lazy = true },
     { "olimorris/onedarkpro.nvim", lazy = true },
@@ -54,26 +71,11 @@ local plugins = {
     { "sainnhe/edge",              lazy = true },
 
     -- cmp plugins
-    "hrsh7th/nvim-cmp", -- The completion plugin
+    "hrsh7th/nvim-cmp",   -- The completion plugin
     "hrsh7th/cmp-buffer", -- buffer completions
-    "hrsh7th/cmp-path", -- path completions
+    "hrsh7th/cmp-path",   -- path completions
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-nvim-lua",
-
-    -- Snippets
-
-    -- Telescope
-    "nvim-telescope/telescope.nvim",
-    { "ibhagwan/fzf-lua",        dependencies = { "nvim-tree/nvim-web-devicons" } },
-
-    -- Treesitter
-    "nvim-treesitter/nvim-treesitter",
-
-    -- Mini
-    --{ 'echasnovski/mini.nvim', version = false },
-
-    -- Buffers
-    { "akinsho/bufferline.nvim", version = "*",                                   dependencies = "nvim-tree/nvim-web-devicons" },
 
     -- Git
     "lewis6991/gitsigns.nvim",
@@ -81,10 +83,10 @@ local plugins = {
     {
         "NeogitOrg/neogit",
         dependencies = {
-            "nvim-lua/plenary.nvim",     -- required
-            "nvim-telescope/telescope.nvim", -- optional
-            "sindrets/diffview.nvim",    -- optional
-            "ibhagwan/fzf-lua",          -- optional
+            "nvim-lua/plenary.nvim",  -- required
+            -- "nvim-telescope/telescope.nvim", -- optional
+            "sindrets/diffview.nvim", -- optional
+            "ibhagwan/fzf-lua",       -- optional
         },
         config = true
     },
@@ -102,8 +104,10 @@ local plugins = {
     "mfussenegger/nvim-dap",
     "rcarriga/nvim-dap-ui",
 
-    -- Presentation
-    { "folke/zen-mode.nvim", opts = { window = { width = 130 } } }
+    -- Snippets
+
+    -- Session management
+    { 'rmagatti/auto-session' }
 }
 
 require("lazy").setup(plugins)
