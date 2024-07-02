@@ -70,13 +70,6 @@ local plugins = {
     { "sainnhe/everforest",        lazy = true },
     { "sainnhe/edge",              lazy = true },
 
-    -- cmp plugins
-    "hrsh7th/nvim-cmp",   -- The completion plugin
-    "hrsh7th/cmp-buffer", -- buffer completions
-    "hrsh7th/cmp-path",   -- path completions
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-nvim-lua",
-
     -- Git
     "lewis6991/gitsigns.nvim",
     "sindrets/diffview.nvim",
@@ -99,6 +92,14 @@ local plugins = {
     { "neovim/nvim-lspconfig",            lazy = false }, -- enable LSP
     { "williamboman/nvim-lsp-installer",  lazy = false }, -- simple to use language server installer
     { "jose-elias-alvarez/null-ls.nvim",  lazy = false }, -- for formatters and linters
+
+    -- Auto-completion
+    "hrsh7th/nvim-cmp",   -- The completions engine
+    "hrsh7th/cmp-buffer", -- buffer completions
+    "hrsh7th/cmp-path",   -- path completions
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-nvim-lua",
 
     -- Debugger
     "mfussenegger/nvim-dap",
