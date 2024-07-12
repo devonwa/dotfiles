@@ -52,7 +52,7 @@ local plugins = {
     { "ibhagwan/fzf-lua",    dependencies = { "nvim-tree/nvim-web-devicons" } },
     -- "nvim-telescope/telescope.nvim",
     -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
-    { "ThePrimeagen/harpoon" },
+    { "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
     {"akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
     "nvim-lualine/lualine.nvim",
     { "folke/zen-mode.nvim",       opts = { window = { width = 130 } } },
@@ -69,6 +69,7 @@ local plugins = {
     { "sainnhe/gruvbox-material",  lazy = true },
     { "sainnhe/everforest",        lazy = true },
     { "sainnhe/edge",              lazy = true },
+    { 'Aasim-A/scrollEOF.nvim', event = { 'CursorMoved', 'WinScrolled' }, opts = {} },
 
     -- Git
     "lewis6991/gitsigns.nvim",
