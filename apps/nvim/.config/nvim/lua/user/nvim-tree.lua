@@ -32,6 +32,7 @@ require("nvim-tree").setup {
 }
 
 
+
 -- local function my_on_attach(bufnr)
 --   local api = require "nvim-tree.api"
 --

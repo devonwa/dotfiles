@@ -1,6 +1,4 @@
-local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
 
 -- Leader key
 --vim.keymap.set("", "<Space>", "<Nop>", opts)
@@ -19,10 +17,12 @@ vim.g.maplocalleader = " "
 -- Normal
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", opts) -- save
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", opts) -- quit
+vim.keymap.set("n", "<leader>x", ":w|bd<CR>", opts) -- save and close buffer
 vim.keymap.set("n", "<leader>n", ":nohl<CR>", opts) -- clear highlights after search
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", opts) -- ZenMode
 vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", opts) -- clear highlights after search
 vim.keymap.set("n", "<leader>gg", ":Neogit<CR>", opts) -- clear highlights after search
+vim.keymap.set("n", "<C-S-t>", ":e#<CR>", opts) -- open last closed file
 
 -- Non-vim editor commands
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save" })
@@ -34,7 +34,9 @@ vim.keymap.set("n", "<leader>e", ":Oil<CR>", opts)
 
 -- Finders
 vim.keymap.set("n", "<leader>fp", ":FzfLua files<CR>", opts)
+vim.keymap.set("n", "<C-p>", ":FzfLua files<CR>", opts)
 vim.keymap.set("n", "<leader>ff", ":FzfLua live_grep_resume<CR>", opts)
+vim.keymap.set("n", "<C-f>", ":FzfLua live_grep_resume<CR>", opts)
 vim.keymap.set("n", "<leader>fb", ":FzfLua buffers<CR>", opts)
 
 -- LSP
@@ -47,10 +49,10 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate windows
-vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
-vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
-vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", opts)
+vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", opts)
+vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", opts)
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", opts)
 
 -- Navigate buffers
 vim.keymap.set("n", "<leader><Tab>", ":b#<CR>", opts)
@@ -58,6 +60,7 @@ vim.keymap.set("n", "<leader><S-Tab>", ":FzfLua buffers<CR>", opts)
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>",  {desc = "Previous buffer" })
 vim.keymap.set("n", "<C-w>", ":bd<CR>", { desc = "Close buffer" })
+vim.keymap.set("n", "<C-n>", ":enew<CR>", { desc = "New no name buffer" })
 
 -- Neovide zoom
 if vim.g.neovide == true then

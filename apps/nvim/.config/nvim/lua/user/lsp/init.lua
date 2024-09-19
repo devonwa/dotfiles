@@ -6,6 +6,7 @@ require("mason-lspconfig").setup {
 
 -- Setup language servers.
 local lspconfig = require('lspconfig')
+lspconfig.pyright.setup{}
 lspconfig.gopls.setup{}
 lspconfig.rust_analyzer.setup{}
 lspconfig.lua_ls.setup{
