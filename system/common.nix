@@ -12,7 +12,7 @@
     pkgs.fira-code
     pkgs.fontconfig
     pkgs.fzf
-    pkgs.gcc # collisions with brew builds?
+    pkgs.gcc
     pkgs.gnumake # collissions with brew builds? 
     pkgs.go
     pkgs.go-task
@@ -23,6 +23,7 @@
     pkgs.lazygit
     pkgs.neovim
     pkgs.nix-direnv
+    pkgs.nodejs
     pkgs.obsidian
     pkgs.ripgrep
     pkgs.stow
@@ -49,6 +50,7 @@
       export DOTFILES_ENV=${env};
       export NIXPKGS_ALLOW_UNFREE=1;
       . $HOME/dotfiles/env/${env}/env
+      . "$HOME/.cargo/env"
     '';
   };
 
