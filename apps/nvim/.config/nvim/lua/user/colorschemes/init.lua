@@ -1,5 +1,6 @@
 require("user.colorschemes.catppuccin")
 require("user.colorschemes.tokyonight")
+require("user.colorschemes.noirbuddy")
 
 -- set scolorscheme
 vim.cmd [[

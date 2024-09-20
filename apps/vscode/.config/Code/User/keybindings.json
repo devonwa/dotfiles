@@ -1,28 +1,38 @@
 [
   {
-    "key": "ctrl+p",
-    "command": "workbench.action.quickOpen"
+    "key": "ctrl+e",
+    "command": "workbench.action.toggleSidebarVisibility"
   },
   {
-    "key": "ctrl+shift+p",
-    "command": "workbench.action.showCommands"
+    "key": "ctrl+f",
+    "command": "actions.find",
+    "when": "editorFocus || editorIsOpen"
   },
+  { "key": "ctrl+shift+f", "command": "workbench.action.findInFiles" },
+  { "key": "ctrl+n", "command": "openEditors.newUntitledFile" },
+  { "key": "ctrl+p", "command": "workbench.action.quickOpen" },
+  { "key": "ctrl+shift+p", "command": "workbench.action.showCommands" },
   {
     "key": "ctrl+t",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
-  {
-    "key": "ctrl+e",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  { "key": "ctrl+n", "command": "openEditors.newUntitledFile" },
   { "key": "ctrl+shift+t", "command": "workbench.action.reopenClosedEditor" },
   { "key": "ctrl+w", "command": "workbench.action.closeActiveEditor" },
   { "key": "ctrl+shift+w", "command": "workbench.action.closeWindow" },
   {
-    "key": "ctrl+f",
-    "command": "actions.find",
-    "when": "editorFocus || editorIsOpen"
-  }
+    "key": "ctrl+/",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+
+  // build habits with ctrl instead of cmd for multiplatform consistency
+  { "key": "cmd+n", "command": "" },
+  { "key": "cmd+p", "command": "" },
+  { "key": "shift+cmd+p", "command": "" },
+  { "key": "cmd+f", "command": "" },
+  { "key": "shift+cmd+f", "command": "" },
+  { "key": "shift+cmd+t", "command": "" },
+  { "key": "cmd+w", "command": "" },
+  { "key": "cmd+/", "command": "" }
 ]
