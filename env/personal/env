@@ -30,8 +30,7 @@ alias gw='git worktree'
 
 alias t='tmux'
 alias ta='tmux attach'
-func tn() { tmux new -t $(basename $(pwd)) }
-func tnw() { tmux new -t $(basename $(dirname $(dirname $(pwd))))/$(basename $(pwd)) }
+func tn() { . $DOTFILES/bin/tmux-new.sh }
 
 stty intr ^\\
 
