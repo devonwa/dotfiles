@@ -59,6 +59,8 @@ local plugins = {
 
 
     -- Colorschemes and Appearance
+    { "jesseleite/nvim-noirbuddy", dependencies = { "tjdevries/colorbuddy.nvim" }, lazy = false },
+    { "catppuccin/nvim",           lazy = false },
     { "catppuccin/nvim",           lazy = false },
     { "dracula/vim",               lazy = true },
     { "olimorris/onedarkpro.nvim", lazy = true },
