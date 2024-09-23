@@ -1,6 +1,6 @@
 SYSTEM = ${DOTFILES_SYSTEM}
 ENV = ${DOTFILES_ENV}
-appDotfiles = ./apps
+appDotfiles = ./apps/unix
 
 install_nix_standalone:
 	bash -c "sh <(curl -L https://nixos.org/nix/install)"
@@ -19,3 +19,6 @@ switch_hm:
 
 dots:
 	cd ${appDotfiles}; stow --no-folding --target=${HOME} *
+
+wsl:
+	./bin/wsl_dots

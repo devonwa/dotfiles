@@ -4,5 +4,4 @@ env/work/
 env/personal/notes
 
 **/lazygit/state.yml
-
-apps/nvim/.config/nvim/lazy-lock.json
+**/lazy-lock.json
