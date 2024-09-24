@@ -1,6 +1,6 @@
 SYSTEM = ${DOTFILES_SYSTEM}
 ENV = ${DOTFILES_ENV}
-appDotfiles = ./apps/unix
+appDotfiles = ./apps
 
 install_nix_standalone:
 	bash -c "sh <(curl -L https://nixos.org/nix/install)"

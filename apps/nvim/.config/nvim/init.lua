@@ -13,8 +13,8 @@ require "user.nvim-tree"
 require "user.lualine"
 require "user.toggleterm"
 require "user.lsp"
--- require "user.autosession"
--- require "user.harpoon"
+require "user.autosession"
+require "user.harpoon"
 
 -- Settings after plugins
 require "user.settings_post"
