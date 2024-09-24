@@ -23,8 +23,8 @@ require "user.toggleterm"
 -- require "user.whichkey"
 -- require "user.autocommands"
 require "user.lsp"
--- require "user.autosession"
--- require "user.harpoon"
+require "user.autosession"
+require "user.harpoon"
 
 -- Settings
 require("user.settings")
