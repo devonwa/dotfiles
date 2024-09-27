@@ -50,7 +50,6 @@
       export DOTFILES_ENV=${env};
       export NIXPKGS_ALLOW_UNFREE=1;
       . $HOME/dotfiles/env/${env}/env
-      . "$HOME/.cargo/env"
     '';
   };
 

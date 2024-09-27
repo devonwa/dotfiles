@@ -87,6 +87,9 @@ fi
 # notes
 export NOTES=$HOME/go/src/github.com/devonwa/notes
 
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # tmux
 newTmuxSession() {
     $XDG_CONFIG_HOME/tmux/templates/basic $(fd --type d . | fzf)
