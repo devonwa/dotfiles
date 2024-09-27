@@ -1,4 +1,4 @@
-{ config, pkgs, system, env, ... }:
+{ config, pkgs, pkgs-unstable, system, env, ... }:
 
 {
   home.packages = [
@@ -21,7 +21,7 @@
     pkgs.k9s
     pkgs.killall
     pkgs.lazygit
-    pkgs.neovim
+    pkgs-unstable.neovim
     pkgs.nix-direnv
     pkgs.nodejs
     pkgs.obsidian

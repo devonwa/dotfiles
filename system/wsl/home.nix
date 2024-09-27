@@ -1,4 +1,4 @@
-{ config, pkgs, system, env, ... }:
+{ config, pkgs, pkgs-unstable, system, env, ... }:
 
 {
   # fonts.fontconfig.enable = true;
@@ -12,7 +12,7 @@
     pkgs.helm
     pkgs.helmfile
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
-    pkgs.neovide
+    pkgs-unstable.neovide
   ];
 }
 
