@@ -1,7 +1,10 @@
 **/.DS_Store
+**/*.log
+
+**/lazygit/state.yml
+**/lazy-lock.json
 
 env/work/
 env/personal/notes
 
-**/lazygit/state.yml
-**/lazy-lock.json
+
