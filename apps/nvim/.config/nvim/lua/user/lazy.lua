@@ -43,12 +43,7 @@ local plugins = {
 
     -- Files, Finders, and Buffers
     { "nvim-tree/nvim-tree.lua" },
-    {
-        'stevearc/oil.nvim',
-        opts = {},
-        dependencies = {
-            "nvim-tree/nvim-web-devicons" }
-    },
+    { 'stevearc/oil.nvim', opts = {}, dependencies = { "nvim-tree/nvim-web-devicons" } },
     { "ibhagwan/fzf-lua",    dependencies = { "nvim-tree/nvim-web-devicons" } },
     -- "nvim-telescope/telescope.nvim",
     -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },

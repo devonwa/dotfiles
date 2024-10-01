@@ -49,17 +49,17 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate windows
-vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", opts)
-vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", opts)
-vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", opts)
-vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", opts)
+-- vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", opts)
+-- vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", opts)
+-- vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", opts)
+-- vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", opts)
 
 -- Navigate buffers
 vim.keymap.set("n", "<leader><Tab>", ":b#<CR>", opts)
 vim.keymap.set("n", "<leader><S-Tab>", ":FzfLua buffers<CR>", opts)
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>",  {desc = "Previous buffer" })
-vim.keymap.set("n", "<C-w>", ":bd<CR>", { desc = "Close buffer" })
+-- vim.keymap.set("n", "<C-w>", ":bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "<C-n>", ":enew<CR>", { desc = "New no name buffer" })
 
 -- Neovide zoom
