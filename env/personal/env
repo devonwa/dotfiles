@@ -17,8 +17,6 @@ alias reload='. $HOME/.zshrc'
 alias c='code .'
 alias cat='bat --style plain'
 alias cd='z'
-alias d='docker'
-alias dc='docker compose'
 alias f='fuck'
 alias kc='kubectl'
 alias nv='neovide --maximized'
@@ -28,9 +26,20 @@ alias top='htop'
 alias v='nvim'
 alias gw='git worktree'
 
+alias d='docker'
+func dlog()  {
+    if [[ $# -eq 0 ]] ; then
+        echo 'missing docker container id argument'
+        return 1
+    fi
+    docker logs -f ${1} 2>&1 | lnav
+}
+alias dc='docker compose'
+
 alias t='tmux'
 alias ta='tmux attach'
 func tn() { . $DOTFILES/bin/tmux-new.sh }
+
 
 stty intr ^\\
 
