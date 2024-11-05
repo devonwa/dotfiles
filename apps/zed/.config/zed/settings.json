@@ -3,7 +3,7 @@
         "inline_completion_provider": "none",
         "copilot": false
     },
-    "theme": "Catppuccin Macchiato",
+    "theme": "Gruvbox Dark Hard",
     "tab_size": 4,
     "preferred_line_length": 80,
     "soft_wrap": "none",
@@ -28,13 +28,17 @@
             "format_on_save": "language_server",
             "preferred_line_length": 64,
             "soft_wrap": "preferred_line_length"
+        },
+        "Python": {
+            "formatter": {
+                "external": { "command": "black", "arguments": ["-"] }
+            }
         }
     },
 
     "git": {
         "git_gutter": "tracked_files"
     },
-
     "lsp": {
         "gopls": {
             "initialization_options": {
