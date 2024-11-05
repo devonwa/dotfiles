@@ -112,5 +112,3 @@ bindkey '^[[Z' autosuggest-accept # autosuggest (shift+tab)
 export VI_MODE_SET_CURSOR=true # vi-mode cursor change
 KEYTIMEOUT=1 # 10ms for key sequences - remove ESC delay
 
-
-
