@@ -40,6 +40,8 @@ local plugins = {
         end
     },
     { "folke/persistence.nvim", event = "BufReadPre" }, -- only start session saving when an actual file was opened
+    { "petertriho/nvim-scrollbar"
+    }, -- show where lsp errors are in the buffer
 
     -- Files, Finders, and Buffers
     { "nvim-tree/nvim-tree.lua" },
@@ -69,7 +71,13 @@ local plugins = {
     { 'Aasim-A/scrollEOF.nvim', event = { 'CursorMoved', 'WinScrolled' }, opts = {} },
 
     -- Git
-    "lewis6991/gitsigns.nvim",
+    -- "lewis6991/gitsigns.nvim",
+    {"lewis6991/gitsigns.nvim",
+        config = function()
+            require('gitsigns').setup()
+            require("scrollbar.handlers.gitsigns").setup()
+        end
+    },
     "sindrets/diffview.nvim",
     {
         "NeogitOrg/neogit",

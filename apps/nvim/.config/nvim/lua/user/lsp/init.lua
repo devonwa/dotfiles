@@ -6,9 +6,9 @@ require("mason-lspconfig").setup {
 
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.pyright.setup{}
+-- golang
 lspconfig.gopls.setup{}
-lspconfig.rust_analyzer.setup{}
+-- lua
 lspconfig.lua_ls.setup{
   settings = {
     Lua = {
@@ -18,6 +18,11 @@ lspconfig.lua_ls.setup{
     },
   },
 }
+-- python
+lspconfig.black.setup{}
+lspconfig.pyright.setup{}
+-- rust
+lspconfig.rust_analyzer.setup{}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
