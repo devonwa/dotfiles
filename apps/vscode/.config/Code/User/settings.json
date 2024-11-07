@@ -24,6 +24,7 @@
   "editor.suggestSelection": "first",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "files.insertFinalNewline": true,
   "git.autofetch": true,
   "[git-commit]": { "editor.rulers": [50] },
   "git.confirmSync": false,
