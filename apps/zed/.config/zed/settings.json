@@ -15,6 +15,7 @@
     "relative_line_numbers": true,
     "cursor_blink": false,
     "projects_online_by_default": true,
+    "wrap_guides": [80, 120],
     "terminal": {
         "font_family": "FiraCode Nerd Font",
         "blinking": "off"
