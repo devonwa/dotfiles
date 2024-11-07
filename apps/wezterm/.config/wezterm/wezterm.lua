@@ -25,4 +25,17 @@ config.window_padding = {
   bottom = 0,
 }
 
+config.keys = {
+  { key = '1', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
+  { key = '2', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
+  { key = '3', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
+  { key = '4', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
+  { key = '5', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
+  { key = '6', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
+  { key = '7', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
+  { key = '8', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
+  { key = '9', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
+}
+
+
 return config
