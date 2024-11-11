@@ -41,6 +41,7 @@ tag_symbol = '  '
 style = 'none'
 
 [git_status]
+format = '([\[$conflicted$deleted$renamed$modified$typechanged$staged$untracked$ahead_behind\]]($style))'
 style = 'none'
 
 [nix_shell]
