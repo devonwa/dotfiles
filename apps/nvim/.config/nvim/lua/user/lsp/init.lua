@@ -19,7 +19,6 @@ lspconfig.lua_ls.setup{
   },
 }
 -- python
-lspconfig.black.setup{}
 lspconfig.pyright.setup{}
 -- rust
 lspconfig.rust_analyzer.setup{}
