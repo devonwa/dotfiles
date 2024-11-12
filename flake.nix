@@ -2,7 +2,7 @@
   description = "Dotfiles for Devon Walker";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -20,7 +20,11 @@
     homeConfigurations = {
       wsl = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { pkgs-unstable = import nixpkgs-unstable{}; system = "wsl"; env = "personal"; };
+        extraSpecialArgs = {
+            pkgs-unstable = import nixpkgs-unstable{};
+            system = "wsl";
+            env = "personal";
+        };
         modules = [
           ./system/wsl/home.nix
           {
@@ -35,7 +39,11 @@
 
       nixos = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { system = "nixos"; env = "personal"; };
+        extraSpecialArgs = {
+            pkgs-unstable = import nixpkgs-unstable{};
+            system = "nixos";
+            env = "personal";
+        };
         modules = [
           ./system/nixos/home.nix
           {
@@ -50,7 +58,11 @@
 
       work = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-darwin;
-        extraSpecialArgs = { system = "macos"; env = "work"; };
+        extraSpecialArgs = {
+            pkgs-unstable = import nixpkgs-unstable{};
+            system = "macos";
+            env = "work";
+        };
         modules = [
           ./system/macos/home.nix
           {
