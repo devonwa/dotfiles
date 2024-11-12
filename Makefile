@@ -1,6 +1,5 @@
 SYSTEM = ${DOTFILES_SYSTEM}
 ENV = ${DOTFILES_ENV}
-appDotfiles = ./apps
 
 install_nix_standalone:
 	bash -c "sh <(curl -L https://nixos.org/nix/install)"
@@ -18,7 +17,5 @@ switch_hm:
 	home-manager switch --impure --flake .#${SYSTEM}
 
 dots:
-	cd ${appDotfiles}; stow --no-folding --target=${HOME} *
+	cd dots; stow --no-folding --target=${HOME} *
 
-wsl:
-	./bin/wsl_dots

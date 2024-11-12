@@ -15,4 +15,4 @@ zinit light joshskidmore/zsh-fzf-history-search
 zinit ice lucid depth=1 wait"3"
 zinit light zsh-users/zsh-syntax-highlighting
 
-. $HOME/dotfiles/env/$DOTFILES_ENV/env
+source $HOME/.config/env
