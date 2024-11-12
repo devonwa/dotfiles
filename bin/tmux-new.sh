@@ -1,6 +1,7 @@
 #!/bin/sh
 
 SESSION=$(basename $(pwd))
+tmux ls | grep $SESSION && { tmux a -t $SESSION; return 0; }
 
 tmux new-session -d -s $SESSION
 
