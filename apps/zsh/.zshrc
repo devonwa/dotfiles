@@ -1,7 +1,3 @@
-export DOTFILES_SYSTEM=macos;
-export DOTFILES_ENV=work;
-export NIXPKGS_ALLOW_UNFREE=1;
-
 # start direnv on shell start
 eval "$(direnv hook zsh)"
 
@@ -19,4 +15,4 @@ zinit light joshskidmore/zsh-fzf-history-search
 zinit ice lucid depth=1 wait"3"
 zinit light zsh-users/zsh-syntax-highlighting
 
-. $HOME/dotfiles/env/work/env
+. $HOME/dotfiles/env/$DOTFILES_ENV/env

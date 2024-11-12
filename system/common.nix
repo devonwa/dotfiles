@@ -7,12 +7,14 @@
     pkgs.bat
     pkgs.cmatrix
     pkgs.dbeaver
+    pkgs.direnv
     pkgs.docker
     pkgs.fd
     pkgs.fira-code
     pkgs.fontconfig
     pkgs.fzf
     pkgs.gcc
+    # pkgs.git
     pkgs.gnumake # collissions with brew builds? 
     pkgs.go
     pkgs.go-task
@@ -22,36 +24,38 @@
     pkgs.killall
     pkgs.lazygit
     pkgs-unstable.neovim
-    pkgs.nix-direnv
+    # pkgs.nix-direnv
     pkgs.nodejs
     pkgs.obsidian
     pkgs.ripgrep
+    pkgs.starship
     pkgs.stow
-    pkgs.thefuck
     pkgs.tldr
     pkgs.tmux
     pkgs.xclip
     pkgs.yarn
+    pkgs.zinit
+    pkgs.zsh
     pkgs.zoxide
   ];
 
   programs.home-manager.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    enableAutosuggestions = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" "vi-mode" ];
-      theme = "macovsky";
-    };
-    initExtra = ''
-      export DOTFILES_SYSTEM=${system};
-      export DOTFILES_ENV=${env};
-      export NIXPKGS_ALLOW_UNFREE=1;
-      . $HOME/dotfiles/env/${env}/env
-    '';
-  };
+  # programs.zsh = {
+  #   enable = true;
+  #   enableAutosuggestions = true;
+  #   oh-my-zsh = {
+  #     enable = true;
+  #     plugins = [ "git" "vi-mode" ];
+  #     theme = "macovsky";
+  #   };
+  #   initExtra = ''
+  #     export DOTFILES_SYSTEM=${system};
+  #     export DOTFILES_ENV=${env};
+  #     export NIXPKGS_ALLOW_UNFREE=1;
+  #     . $HOME/dotfiles/env/${env}/env
+  #   '';
+  # };
 
   programs.git = {
     enable = true;
@@ -67,10 +71,10 @@
     includes = [ { path = "~/dotfiles/env/${env}/.gitconfig"; } ];
   };
 
-  programs.direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
-    };
+  # programs.direnv = {
+  #     enable = true;
+  #     enableZshIntegration = true;
+  #     nix-direnv.enable = true;
+  #   };
 }
 
