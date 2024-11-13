@@ -6,26 +6,22 @@ export PATH="$PATH:/usr/local/sbin"
 export XDG_CONFIG_HOME=$HOME/.config
 export DOTFILES=$HOME/dotfiles
 
-# common configs
-alias config_personal='$SHELL -c "cd $HOME/personal && nvim $HOME/personal/env"'
-alias config_homemanager='$SHELL -c "cd $HOME/dotfiles && nvim $HOME/dotfiles/home.nix"'
-alias config_nvim='$SHELL -c "cd $XDG_CONFIG_HOME/nvim && nvim $XDG_CONFIG_HOME/nvim/init.lua"'
-alias config_tmux='$SHELL -c "cd $XDG_CONFIG_HOME/tmux && nvim $XDG_CONFIG_HOME/tmux/tmux.conf"'
-
-alias base='cd $(git rev-parse --show-toplevel)'
-alias reload='. $HOME/.zshrc'
+alias base='cd $(git rev-parse --show-toplevel)' # use base to cd to the base of a git repo
 alias c='code .'
 alias cat='bat --style plain'
 alias cd='z'
-alias f='fuck'
 alias kc='kubectl'
 alias nv='neovide --maximized'
 alias lg='lazygit'
+alias ll='ls -la'
+alias ls='ls --color=auto'
 alias python='python3'
-alias top='htop'
 alias v='nvim'
-alias gw='git worktree'
 
+# generic terminal
+stty intr ^\\ # interupt command is ctrl+\
+
+# docker
 alias d='docker'
 func dlog()  {
     if [[ $# -eq 0 ]] ; then
@@ -35,13 +31,6 @@ func dlog()  {
     docker logs -f ${1} 2>&1 | lnav
 }
 alias dc='docker compose'
-
-alias t='tmux'
-alias ta='tmux attach'
-func tn() { . $DOTFILES/bin/tmux-new.sh }
-
-
-stty intr ^\\
 
 # fzf
 ## Use fd instead of find to respect .gitignore
@@ -56,13 +45,6 @@ fi
 #java
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 
-# home-manager
-hm-switch() {
-    user=$1
-    flake="$HOME/dotfiles/#$user"
-    home-manager switch --impure --flake $flake
-}
-
 # git
 alias gll='git logline'
 alias gp='git pull'
@@ -76,8 +58,6 @@ alias gitMergedBranchPrune='git branch --merged | egrep -v "(^\*|master|main|dev
 # go
 export GOPATH=$HOME
 export GOBIN=$GOPATH/bin
-# export PATH="/usr/local/opt/go@1.19/bin:$PATH"
-# export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 
 # nix
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
@@ -97,6 +77,10 @@ fi
 newTmuxSession() {
     $XDG_CONFIG_HOME/tmux/templates/basic $(fd --type d . | fzf)
 }
+alias t='tmux'
+alias ta='tmux attach'
+func tn() { . $DOTFILES/bin/tmux-new.sh }
+
 
 # zoxide
 eval "$(zoxide init zsh)"
