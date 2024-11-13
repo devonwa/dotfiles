@@ -25,7 +25,7 @@
     pkgs.lazygit
     pkgs-unstable.neovim
     pkgs.nodejs
-    pkgs.obsidian
+    # pkgs.obsidian # electron marked insecure in nix
     pkgs.ripgrep
     pkgs.starship
     pkgs.stow
@@ -33,7 +33,6 @@
     pkgs.tmux
     pkgs.xclip
     pkgs.yarn
-    pkgs.zinit
     pkgs.zsh
     pkgs.zoxide
   ];
