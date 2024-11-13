@@ -16,6 +16,7 @@ switch_hm:
 	test -n "$(SYSTEM)"
 	home-manager switch --impure --flake .#${SYSTEM}
 
+.PHONY: dots
 dots:
-	cd dots; stow --no-folding --target=${HOME} *
+	stow --no-folding --target=${HOME} ./dots/*
 
