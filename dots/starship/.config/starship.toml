@@ -48,7 +48,10 @@ format = '([\[$conflicted$deleted$renamed$modified$typechanged$staged$untracked$
 style = 'none'
 
 [nix_shell]
+format = '$symbol'
 symbol = " "
+style = 'none'
+
 
 [nodejs]
 symbol = " "
