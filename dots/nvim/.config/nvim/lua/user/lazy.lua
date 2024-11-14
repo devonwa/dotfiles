@@ -58,12 +58,11 @@ local plugins = {
     -- Colorschemes and Appearance
     { "jesseleite/nvim-noirbuddy", dependencies = { "tjdevries/colorbuddy.nvim" }, lazy = false },
     { "catppuccin/nvim",           lazy = false },
-    { "catppuccin/nvim",           lazy = false },
     { "dracula/vim",               lazy = true },
     { "olimorris/onedarkpro.nvim", lazy = true },
     { "folke/tokyonight.nvim",     lazy = true },
     { "sainnhe/edge",              lazy = true },
-    { "morhetz/gruvbox",           lazy = true },
+    { "ellisonleao/gruvbox.nvim",  lazy = false },
     { "sainnhe/sonokai",           lazy = true },
     { "sainnhe/gruvbox-material",  lazy = true },
     { "sainnhe/everforest",        lazy = true },

@@ -26,8 +26,12 @@ end
 
 -- pass to setup along with your other options
 require("nvim-tree").setup {
-  ---
-  on_attach = my_on_attach,
-  ---
+    on_attach = my_on_attach,
+    hijack_cursor = true,
+    reload_on_bufenter = true,
+    view = {
+        adaptive_size = true,
+        relativenumber = true
+    }
 }
 

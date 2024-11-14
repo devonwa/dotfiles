@@ -47,7 +47,7 @@
     // "statusBarItem.remoteBackground": "#4e4e4e",
     // "statusBarItem.remoteForeground": "#1c1c1c"
   },
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.editor.centeredLayoutFixedWidth": true,
   "workbench.editor.closeEmptyGroups": false,
   "workbench.editorAssociations": {
