@@ -18,5 +18,5 @@ switch_hm:
 
 .PHONY: dots
 dots:
-	stow --no-folding --target=${HOME} ./dots/*
+	cd dots; stow --no-folding --target=${HOME} *
 
