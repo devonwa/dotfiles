@@ -7,7 +7,7 @@
     pkgs.bat
     pkgs.cmatrix
     pkgs.dbeaver
-    pkgs.direnv
+    pkgs-unstable.direnv
     pkgs.docker
     pkgs.fd
     pkgs.fira-code
@@ -27,7 +27,7 @@
     pkgs.nodejs
     # pkgs.obsidian # electron marked insecure in nix
     pkgs.ripgrep
-    pkgs.starship
+    pkgs-unstable.starship
     pkgs.stow
     pkgs.tldr
     pkgs.tmux
