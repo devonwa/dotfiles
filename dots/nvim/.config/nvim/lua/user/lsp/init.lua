@@ -11,7 +11,9 @@ local lspconfig = require('lspconfig')
 local lsp_format = require("lsp-format")
 lsp_format.setup {}
 -- golang
-lspconfig.gopls.setup {}
+lspconfig.gopls.setup {
+    on_attach = lsp_format.on_attach,
+}
 -- lua
 lspconfig.lua_ls.setup {
     on_attach = lsp_format.on_attach,
