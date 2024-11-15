@@ -15,15 +15,19 @@ vim.g.maplocalleader = " "
 
 -----------------
 -- Normal
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", opts) -- save
-vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", opts) -- quit
-vim.keymap.set("n", "<leader>x", ":w|bd<CR>", opts) -- save and close buffer
-vim.keymap.set("n", "<leader>n", ":nohl<CR>", opts) -- clear highlights after search
-vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", opts) -- ZenMode
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", opts)      -- save
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", opts)      -- quit
+vim.keymap.set("n", "<leader>x", ":w|bd<CR>", opts)       -- save and close buffer
+vim.keymap.set("n", "<leader>n", ":nohl<CR>", opts)       -- clear highlights after search
+vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", opts)    -- ZenMode
 vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", opts) -- clear highlights after search
-vim.keymap.set("n", "<leader>gg", ":Neogit<CR>", opts) -- clear highlights after search
-vim.keymap.set("n", "<C-S-t>", ":e#<CR>", opts) -- open last closed file
-
+vim.keymap.set("n", "<leader>gg", ":Neogit<CR>", opts)    -- clear highlights after search
+vim.keymap.set("n", "<C-S-t>", ":e#<CR>", opts)           -- open last closed file
+vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)             -- recenter after scroll
+vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)             -- recenter after scroll
+vim.keymap.set("n", "n", "nzz", opts)                     -- recenter after search
+vim.keymap.set("n", "N", "Nzz", opts)                     -- recenter after search
+--
 -- Non-vim editor commands
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save" })
 vim.keymap.set("n", "s", "", { desc = "Do nothing" })
@@ -58,15 +62,17 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 vim.keymap.set("n", "<leader><Tab>", ":b#<CR>", opts)
 vim.keymap.set("n", "<leader><S-Tab>", ":FzfLua buffers<CR>", opts)
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
-vim.keymap.set("n", "<S-h>", ":bprevious<CR>",  {desc = "Previous buffer" })
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { desc = "Previous buffer" })
 -- vim.keymap.set("n", "<C-w>", ":bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "<C-n>", ":enew<CR>", { desc = "New no name buffer" })
 
 -- Neovide zoom
 if vim.g.neovide == true then
-  vim.keymap.set("n", "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>", { silent = true })
-  vim.keymap.set("n", "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>", { silent = true })
-  vim.keymap.set("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
+    vim.keymap.set("n", "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>",
+        { silent = true })
+    vim.keymap.set("n", "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>",
+        { silent = true })
+    vim.keymap.set("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
 end
 
 -----------------

@@ -19,6 +19,7 @@ local plugins = {
 
     -- Treesitter
     "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter-context",
 
     -- 	in tryout
     "ahmedkhalf/project.nvim",
@@ -41,7 +42,7 @@ local plugins = {
     },
     { "folke/persistence.nvim",  event = "BufReadPre" }, -- only start session saving when an actual file was opened
     { "petertriho/nvim-scrollbar"
-    },                                                  -- show where lsp errors are in the buffer
+    },                                                   -- show where lsp errors are in the buffer
 
     -- Files, Finders, and Buffers
     { "nvim-tree/nvim-tree.lua" },
