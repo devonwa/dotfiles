@@ -60,6 +60,7 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 vim.keymap.set("n", "<leader><Tab>", ":b#<CR>", opts)
+vim.keymap.set("n", "<C-Tab>", ":b#<CR>", opts)
 vim.keymap.set("n", "<leader><S-Tab>", ":FzfLua buffers<CR>", opts)
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { desc = "Previous buffer" })
