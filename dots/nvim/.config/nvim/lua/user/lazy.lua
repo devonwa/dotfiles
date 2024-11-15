@@ -39,18 +39,18 @@ local plugins = {
             })
         end
     },
-    { "folke/persistence.nvim", event = "BufReadPre" }, -- only start session saving when an actual file was opened
+    { "folke/persistence.nvim",  event = "BufReadPre" }, -- only start session saving when an actual file was opened
     { "petertriho/nvim-scrollbar"
-    }, -- show where lsp errors are in the buffer
+    },                                                  -- show where lsp errors are in the buffer
 
     -- Files, Finders, and Buffers
     { "nvim-tree/nvim-tree.lua" },
-    { 'stevearc/oil.nvim', opts = {}, dependencies = { "nvim-tree/nvim-web-devicons" } },
-    { "ibhagwan/fzf-lua",    dependencies = { "nvim-tree/nvim-web-devicons" } },
+    { 'stevearc/oil.nvim',       opts = {},                                       dependencies = { "nvim-tree/nvim-web-devicons" } },
+    { "ibhagwan/fzf-lua",        dependencies = { "nvim-tree/nvim-web-devicons" } },
     -- "nvim-telescope/telescope.nvim",
     -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
-    { "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
-    {"akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
+    { "ThePrimeagen/harpoon",    branch = "harpoon2",                             dependencies = { "nvim-lua/plenary.nvim" } },
+    { "akinsho/bufferline.nvim", version = "*",                                   dependencies = "nvim-tree/nvim-web-devicons" },
     "nvim-lualine/lualine.nvim",
     { "folke/zen-mode.nvim",       opts = { window = { width = 130 } } },
 
@@ -67,11 +67,12 @@ local plugins = {
     { "sainnhe/gruvbox-material",  lazy = true },
     { "sainnhe/everforest",        lazy = true },
     { "sainnhe/edge",              lazy = true },
-    { 'Aasim-A/scrollEOF.nvim', event = { 'CursorMoved', 'WinScrolled' }, opts = {} },
+    { 'Aasim-A/scrollEOF.nvim',    event = { 'CursorMoved', 'WinScrolled' },       opts = {} },
 
     -- Git
     -- "lewis6991/gitsigns.nvim",
-    {"lewis6991/gitsigns.nvim",
+    {
+        "lewis6991/gitsigns.nvim",
         config = function()
             require('gitsigns').setup()
             require("scrollbar.handlers.gitsigns").setup()
@@ -89,14 +90,15 @@ local plugins = {
         config = true
     },
 
+    -- LSPs, Linters, Formatters
+    { "neovim/nvim-lspconfig",            lazy = false }, -- enable LSP
+    "lukas-reineke/lsp-format.nvim",
+
     -- Manager of LSPs, Linters, Formatters
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
-
-    -- LSPs, Linters, Formatters
-    { "neovim/nvim-lspconfig",            lazy = false }, -- enable LSP
     { "williamboman/nvim-lsp-installer",  lazy = false }, -- simple to use language server installer
-    { "jose-elias-alvarez/null-ls.nvim",  lazy = false }, -- for formatters and linters
+
 
     -- Auto-completion
     "hrsh7th/nvim-cmp",   -- The completions engine
