@@ -57,15 +57,21 @@ local plugins = {
 
 
     -- Colorschemes and Appearance
+    {
+        'sainnhe/gruvbox-material',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.g.gruvbox_material_enable_italic = true
+        end
+    },
     { "jesseleite/nvim-noirbuddy", dependencies = { "tjdevries/colorbuddy.nvim" }, lazy = false },
     { "catppuccin/nvim",           lazy = false },
     { "dracula/vim",               lazy = true },
     { "olimorris/onedarkpro.nvim", lazy = true },
     { "folke/tokyonight.nvim",     lazy = true },
     { "sainnhe/edge",              lazy = true },
-    { "ellisonleao/gruvbox.nvim",  lazy = false },
     { "sainnhe/sonokai",           lazy = true },
-    { "sainnhe/gruvbox-material",  lazy = true },
     { "sainnhe/everforest",        lazy = true },
     { "sainnhe/edge",              lazy = true },
     { 'Aasim-A/scrollEOF.nvim',    event = { 'CursorMoved', 'WinScrolled' },       opts = {} },
