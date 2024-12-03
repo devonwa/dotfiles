@@ -1,4 +1,4 @@
-local opts = { noremap = true, silent = true }
+local opts = { noremap = true, silent = true, nowait = true }
 
 -- Leader key
 --vim.keymap.set("", "<Space>", "<Nop>", opts)
@@ -25,9 +25,10 @@ vim.keymap.set("n", "<leader>gg", ":Neogit<CR>", opts)    -- clear highlights af
 vim.keymap.set("n", "<C-S-t>", ":e#<CR>", opts)           -- open last closed file
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)             -- recenter after scroll
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)             -- recenter after scroll
+vim.keymap.set("n", "<C-w>", ":bd<CR>", opts)             -- close tab
 vim.keymap.set("n", "n", "nzz", opts)                     -- recenter after search
 vim.keymap.set("n", "N", "Nzz", opts)                     -- recenter after search
---
+
 -- Non-vim editor commands
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save" })
 vim.keymap.set("n", "s", "", { desc = "Do nothing" })
@@ -53,10 +54,10 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate windows
--- vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", opts)
--- vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", opts)
--- vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", opts)
--- vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", opts)
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", opts)
+vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", opts)
+vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", opts)
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", opts)
 
 -- Navigate buffers
 vim.keymap.set("n", "<leader><Tab>", ":b#<CR>", opts)

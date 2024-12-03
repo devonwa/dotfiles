@@ -5,7 +5,7 @@
   // "editor.codeActionsOnSave": {
   //   "source.fixAll.eslint": "explicit"
   // },
-  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorSmoothCaretAnimation": "off",
   "editor.cursorSurroundingLines": 8,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "FiraCode Nerd Font, Fira Code, Fira Mono, Source Code Pro, Menlo, Monaco, 'Courier New', monospace",
@@ -47,7 +47,7 @@
     // "statusBarItem.remoteBackground": "#4e4e4e",
     // "statusBarItem.remoteForeground": "#1c1c1c"
   },
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.editor.centeredLayoutFixedWidth": true,
   "workbench.editor.closeEmptyGroups": false,
   "workbench.editorAssociations": {

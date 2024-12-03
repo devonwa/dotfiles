@@ -18,6 +18,9 @@ require "user.autosession"
 require "user.harpoon"
 require "user.lsp"
 
+require("bufferline").setup {}
+
+
 -- Settings after plugins
 require "user.settings_post"
 require "user.keymaps" -- repeated in case plugin overrides

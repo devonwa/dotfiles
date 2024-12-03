@@ -12,25 +12,19 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    "nvim-lua/plenary.nvim",                   -- Useful lua functions used by lots of plugins
-    "windwp/nvim-autopairs",                   -- Autopairs, integrates with both cmp and treesitter
-    { 'numToStr/Comment.nvim', lazy = false }, -- Comment with C-/
-    { "folke/neodev.nvim",     opts = {} },    -- tooltips for neovim init.lua development
+    "nvim-lua/plenary.nvim",                            -- Useful lua functions used by lots of plugins
+    "windwp/nvim-autopairs",                            -- Autopairs, integrates with both cmp and treesitter
+    { 'numToStr/Comment.nvim',  lazy = false },         -- Comment with C-/
+    { "folke/neodev.nvim",      opts = {} },            -- tooltips for neovim init.lua development
+    { "folke/persistence.nvim", event = "BufReadPre" }, -- only start session saving when an actual file was opened
 
     -- Treesitter
     "nvim-treesitter/nvim-treesitter",
     "nvim-treesitter/nvim-treesitter-context",
 
     -- 	in tryout
-    "ahmedkhalf/project.nvim",
-    "lukas-reineke/indent-blankline.nvim",
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    { "nvim-tree/nvim-web-devicons", lazy = false },
-    "moll/vim-bbye",
-    { "akinsho/toggleterm.nvim",     lazy = false },
-    "goolord/alpha-nvim",
-    "folke/which-key.nvim",
     {
+
         "kylechui/nvim-surround",
         version = "*",
         event = "VeryLazy",
@@ -40,20 +34,21 @@ local plugins = {
             })
         end
     },
-    { "folke/persistence.nvim",  event = "BufReadPre" }, -- only start session saving when an actual file was opened
-    { "petertriho/nvim-scrollbar"
-    },                                                   -- show where lsp errors are in the buffer
 
-    -- Files, Finders, and Buffers
+    -- Files, Finders
     { "nvim-tree/nvim-tree.lua" },
     { 'stevearc/oil.nvim',       opts = {},                                       dependencies = { "nvim-tree/nvim-web-devicons" } },
     { "ibhagwan/fzf-lua",        dependencies = { "nvim-tree/nvim-web-devicons" } },
-    -- "nvim-telescope/telescope.nvim",
-    -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
     { "ThePrimeagen/harpoon",    branch = "harpoon2",                             dependencies = { "nvim-lua/plenary.nvim" } },
     { "akinsho/bufferline.nvim", version = "*",                                   dependencies = "nvim-tree/nvim-web-devicons" },
     "nvim-lualine/lualine.nvim",
-    { "folke/zen-mode.nvim",       opts = { window = { width = 130 } } },
+    { "akinsho/toggleterm.nvim",  lazy = false },
+
+
+    -- Editor buffer
+    { 'Aasim-A/scrollEOF.nvim',   event = { 'CursorMoved', 'WinScrolled' }, opts = {} },
+    { "petertriho/nvim-scrollbar" },                                     -- show where lsp errors are in the buffer
+    { "folke/zen-mode.nvim",      opts = { window = { width = 130 } } }, -- change editor view a focused window
 
 
     -- Colorschemes and Appearance
@@ -74,10 +69,9 @@ local plugins = {
     { "sainnhe/sonokai",           lazy = true },
     { "sainnhe/everforest",        lazy = true },
     { "sainnhe/edge",              lazy = true },
-    { 'Aasim-A/scrollEOF.nvim',    event = { 'CursorMoved', 'WinScrolled' },       opts = {} },
+
 
     -- Git
-    -- "lewis6991/gitsigns.nvim",
     {
         "lewis6991/gitsigns.nvim",
         config = function()
@@ -120,6 +114,31 @@ local plugins = {
     "rcarriga/nvim-dap-ui",
 
     -- Snippets
+    --
+
+
+    -- testing out
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        ---@type Flash.Config
+        opts = {},
+        -- stylua: ignore
+        keys = {
+            { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+            { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+            { "r", mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+            { "R", mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+            -- { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+        },
+    },
+
+    -- remove if nothing breaks
+    -- "moll/vim-bbye",
+    -- "ahmedkhalf/project.nvim",
+
+    -- check before removing
+    "lukas-reineke/indent-blankline.nvim",
 
     -- Session management
     { 'rmagatti/auto-session' }
