@@ -5,7 +5,7 @@ eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 
 # history
-export HISTFILE=$ZDOTDIR/.history_zsh
+export HISTFILE=$ZDOTDIR/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
 setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
