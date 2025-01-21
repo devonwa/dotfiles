@@ -39,6 +39,8 @@ lspconfig.ruff.setup {
 }
 -- rust
 lspconfig.rust_analyzer.setup {}
+-- javascript / typescript
+
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer

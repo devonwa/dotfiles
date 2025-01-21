@@ -120,7 +120,7 @@ local plugins = {
     -- testing out
     {
         "folke/flash.nvim",
-        event = "VeryLazy",
+        -- event = "VeryLazy",
         ---@type Flash.Config
         opts = {},
         -- stylua: ignore
@@ -131,6 +131,11 @@ local plugins = {
             { "R", mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
             -- { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
         },
+    },
+    {
+        "pmizio/typescript-tools.nvim",
+        dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+        opts = {},
     },
 
     -- remove if nothing breaks
@@ -143,5 +148,14 @@ local plugins = {
     -- Session management
     { 'rmagatti/auto-session' }
 }
+
+--require("flash").setup({
+--    highlight = {
+--        -- show a backdrop with hl FlashBackdrop
+--        backdrop = false,
+--        -- Highlight the search matches
+--        matches = true,
+--    },
+--})
 
 require("lazy").setup(plugins)

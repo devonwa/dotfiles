@@ -1,6 +1,6 @@
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
-  return
+    return
 end
 
 -- disable netrw at the very start of your init.lua (strongly advised)
@@ -14,7 +14,7 @@ local function my_on_attach(bufnr)
     local api = require "nvim-tree.api"
 
     local function opts(desc)
-    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
     end
 
     -- default mappings
@@ -32,6 +32,8 @@ require("nvim-tree").setup {
     view = {
         adaptive_size = true,
         relativenumber = true
-    }
+    },
+    filters = {
+        git_ignored = false,
+    },
 }
-
