@@ -17,8 +17,8 @@
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "none",
   "editor.rulers": [
-    { "column": 80, "color": "#272727" },
-    { "column": 120, "color": "#303030" }
+      { "column": 80, "color": "#272727" },
+      { "column": 120, "color": "#303030" }
   ],
   "editor.stickyScroll.enabled": true,
   "editor.suggestSelection": "first",
@@ -32,6 +32,9 @@
   "git.mergeEditor": false,
   "redhat.telemetry.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
+  "security.allowedUNCHosts": [
+      "wsl.localhost"
+  ],
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.scrollback": 30000,
@@ -40,18 +43,18 @@
   "window.newWindowDimensions": "maximized",
   "window.restoreFullscreen": true,
   "workbench.colorCustomizations": {
-    "statusBar.background": "#1c1c1c",
-    "statusBar.noFolderBackground": "#212121",
-    "statusBar.debuggingBackground": "#96a2a5",
-    "statusBar.foreground": "#a0a0a0"
-    // "statusBarItem.remoteBackground": "#4e4e4e",
-    // "statusBarItem.remoteForeground": "#1c1c1c"
+      "statusBar.background": "#1c1c1c",
+      "statusBar.noFolderBackground": "#212121",
+      "statusBar.debuggingBackground": "#96a2a5",
+      "statusBar.foreground": "#a0a0a0"
+      // "statusBarItem.remoteBackground": "#4e4e4e",
+      // "statusBarItem.remoteForeground": "#1c1c1c"
   },
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.editor.centeredLayoutFixedWidth": true,
   "workbench.editor.closeEmptyGroups": false,
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
+      "*.ipynb": "jupyter-notebook"
   },
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none",
@@ -60,7 +63,7 @@
   "zenMode.hideStatusBar": false,
   "zenMode.fullScreen": false,
   "zenMode.restore": true,
-
+  
   ///////////////////////////////////////////
   // vim
   "vim.easymotion": true,
@@ -70,156 +73,156 @@
   "vim.highlightedyank.enable": true,
   "vim.hlsearch": true,
   "vim.normalModeKeyBindingsNonRecursive": [
-    {
+      {
       "before": ["shift+l"],
       "commands": ["workbench.action.nextEditorInGroup"]
-    },
-    {
+      },
+      {
       "before": ["shift+h"],
       "commands": ["workbench.action.previousEditorInGroup"]
-    },
-    {
+      },
+      {
       "before": ["<leader>", "tab"],
       "commands": [
-        "workbench.action.quickOpenPreviousRecentlyUsedEditor",
-        "workbench.action.acceptSelectedQuickOpenItem"
+          "workbench.action.quickOpenPreviousRecentlyUsedEditor",
+          "workbench.action.acceptSelectedQuickOpenItem"
       ]
-    },
-    {
+      },
+      {
       "before": ["<leader>", "shift+tab"],
       "commands": ["workbench.action.quickOpenNavigateNextInRecentFilesPicker"]
-    },
-    { "before": ["<leader>", "d"], "commands": ["workbench.view.debug"] },
-    { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
-    { "before": ["<leader>", "f"], "commands": ["actions.find"] },
-    {
+      },
+      { "before": ["<leader>", "d"], "commands": ["workbench.view.debug"] },
+      { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
+      { "before": ["<leader>", "f"], "commands": ["actions.find"] },
+      {
       "before": ["<leader>", "F"],
       "commands": ["workbench.action.findInFiles"]
-    },
-    {
+      },
+      {
       "before": ["<leader>", "f", "p"],
       "commands": ["workbench.action.quickOpen"]
-    },
-    { "before": ["<leader>", "n"], "commands": [":nohl"] },
-    { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
-    {
+      },
+      { "before": ["<leader>", "n"], "commands": [":nohl"] },
+      { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
+      {
       "before": ["<leader>", "t"],
       "commands": ["workbench.view.testing.focus"]
-    },
-    {
+      },
+      {
       "before": ["<leader>", "w"],
       "commands": ["workbench.action.files.save"]
-    },
-    {
+      },
+      {
       "before": ["<leader>", "z"],
       "commands": ["workbench.action.toggleZenMode"]
-    },
-    { "before": ["<C-d>"], "after": ["<C-d>", "z", "z"] },
-    { "before": ["<C-u>"], "after": ["<C-u>", "z", "z"] },
-    { "before": ["<C-t>"], "after": ["terminal.active"] },
-    { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] },
-    { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
-    { "before": ["n"], "after": ["n", "z", "z", "z", "v"] },
-    { "before": ["N"], "after": ["N", "z", "z", "z", "v"] }
-    // { // find a way to offset up ~7 lines
-    //   "before": ["z", "z"],
-    //   "after": ["z", "z"]
-    // }
+      },
+      { "before": ["<C-d>"], "after": ["<C-d>", "z", "z"] },
+      { "before": ["<C-u>"], "after": ["<C-u>", "z", "z"] },
+      { "before": ["<C-t>"], "after": ["terminal.active"] },
+      { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] },
+      { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
+      { "before": ["n"], "after": ["n", "z", "z", "z", "v"] },
+      { "before": ["N"], "after": ["N", "z", "z", "z", "v"] }
+      // { // find a way to offset up ~7 lines
+      //   "before": ["z", "z"],
+      //   "after": ["z", "z"]
+      // }
   ],
   "vim.leader": "<space>",
   "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-d>": true,
-    "<C-f>": false,
-    "<C-n>": false,
-    "<C-w>": false
+      "<C-a>": false,
+      "<C-d>": true,
+      "<C-f>": false,
+      "<C-n>": false,
+      "<C-w>": false
   },
   "vim.normalModeKeyBindings": [
-    {
+      {
       "before": ["<leader>", "m"],
       "commands": ["bookmarks.toggle"]
-    },
-    {
+      },
+      {
       "before": ["<leader>", "M"],
       "commands": ["bookmarks.toggleLabeled"]
-    },
-    {
+      },
+      {
       "before": ["<leader>", "b"],
       "commands": ["bookmarks.listFromAllFiles"]
-    },
-    {
+      },
+      {
       "before": ["<leader>", "B"],
       "commands": ["bookmarks.list"]
-    }
+      }
   ],
-
+  
   ///////////////////////////////////////////
   // FX Frontend Settings
   // if using Angular Language Service
   "angular.view-engine": true,
-
+  
   // eslint settings
   // "eslint.workingDirectories": ["./web"],
-
+  
   // Lint/format on save
   // "editor.codeActionsOnSave": {
   //   //   // "source.organizeImports": true, ///////////////////// Turned off cause removing react from SC. Need better jsconfig.json
   //   "source.fixAll.eslint": true
   // },
-
+  
   ///////////////////////////////////////////
   // Language-specific settings
   "eslint.validate": ["javascript", "typescript", "typescriptreact"],
-
+  
   "go.coverageDecorator": { "type": "gutter" },
   "go.useLanguageServer": true,
   "go.toolsManagement.autoUpdate": true,
   "go.lintTool": "golangci-lint",
   "go.formatTool": "gofmt",
   "[go]": {
-    "editor.defaultFormatter": "golang.go"
+      "editor.defaultFormatter": "golang.go"
   },
   "[go.mod]": {
-    "editor.defaultFormatter": "golang.go"
+      "editor.defaultFormatter": "golang.go"
   },
   "[helm]": {
-    "editor.formatOnSave": false
+      "editor.formatOnSave": false
   },
   "html.format.wrapAttributes": "force-aligned",
   "html.format.wrapLineLength": 0,
   "[java]": {
-    "editor.defaultFormatter": "redhat.java"
+      "editor.defaultFormatter": "redhat.java"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "python.defaultInterpreterPath": "/usr/bin/python3",
   "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff",
-
-    "editor.formatOnType": true,
-    "editor.codeActionsOnSave": {
+      "editor.defaultFormatter": "charliermarsh.ruff",
+  
+      "editor.formatOnType": true,
+      "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit",
       "source.fixAll": "never"
-    }
+      }
   },
   "[scala]": {
-    "editor.defaultFormatter": "scalameta.metals"
+      "editor.defaultFormatter": "scalameta.metals"
   },
   "[sql]": {
-    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+      "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
   },
   "[svg]": {
-    "editor.defaultFormatter": "jock.svg"
+      "editor.defaultFormatter": "jock.svg"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "typescript.format.enable": true,
   "typescript.format.semicolons": "insert",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+      "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-
+  
   ///////////////////////////////////////////
   // Extensions
   "git-graph.showStatusBarItem": false,
@@ -236,11 +239,11 @@
   "vsicons.dontShowNewVersionMessage": true,
   "zenMode.showTabs": "single",
   "files.watcherExclude": {
-    "**/.bloop": true,
-    "**/.metals": true,
-    "**/.ammonite": true
+      "**/.bloop": true,
+      "**/.metals": true,
+      "**/.ammonite": true
   }
-
+  
   ///////////////////////////////////////////
   // Auto-added, unsorted
 }
