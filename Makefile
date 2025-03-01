@@ -12,6 +12,10 @@ install_hm:
 	exit \
 	exit
 
+install_shell:
+	command -v zsh | sudo tee -a /etc/shells \
+	sudo chsh -s "$(command -v zsh)" "${USER}"
+
 switch_hm:
 	test -n "$(SYSTEM)"
 	home-manager switch --impure --flake .#${SYSTEM}
@@ -20,3 +24,6 @@ switch_hm:
 dots:
 	cd dots; stow --no-folding --target=${HOME} *
 
+.PHONY: env-personal
+env-personal:
+	cd env/personal; stow --no-folding --target=${HOME}/.config *

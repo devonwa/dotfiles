@@ -29,8 +29,8 @@
           ./system/wsl/home.nix
           {
             home = {
-              username = "devn";
-              homeDirectory = "/home/devn";
+              username = "devon";
+              homeDirectory = "/home/devon";
               stateVersion = "22.05";
             };
           }
@@ -48,8 +48,8 @@
           ./system/nixos/home.nix
           {
             home = {
-              username = "devn";
-              homeDirectory = "/home/devn";
+              username = "devon";
+              homeDirectory = "/home/devon";
               stateVersion = "22.05";
             };
           }
