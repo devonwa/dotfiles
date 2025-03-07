@@ -157,21 +157,9 @@
   ],
   
   ///////////////////////////////////////////
-  // FX Frontend Settings
-  // if using Angular Language Service
+  // Language and Framework-specific settings
   "angular.view-engine": true,
-  
-  // eslint settings
-  // "eslint.workingDirectories": ["./web"],
-  
-  // Lint/format on save
-  // "editor.codeActionsOnSave": {
-  //   //   // "source.organizeImports": true, ///////////////////// Turned off cause removing react from SC. Need better jsconfig.json
-  //   "source.fixAll.eslint": true
-  // },
-  
-  ///////////////////////////////////////////
-  // Language-specific settings
+
   "eslint.validate": ["javascript", "typescript", "typescriptreact"],
   
   "go.coverageDecorator": { "type": "gutter" },
@@ -225,9 +213,7 @@
   
   ///////////////////////////////////////////
   // Extensions
-  "git-graph.showStatusBarItem": false,
   "github.gitProtocol": "ssh",
-  "github-enterprise.uri": "github.tesla.com",
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
@@ -236,7 +222,6 @@
   "rust-analyzer.inlayHints.typeHints.enable": false,
   "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.closingBraceHints.enable": false,
-  "vsicons.dontShowNewVersionMessage": true,
   "zenMode.showTabs": "single",
   "files.watcherExclude": {
       "**/.bloop": true,

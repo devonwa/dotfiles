@@ -9,6 +9,16 @@
     "when": "editorFocus || editorIsOpen"
   },
   { "key": "ctrl+shift+f", "command": "workbench.action.findInFiles" },
+  {
+    "key": "ctrl+shift+i",
+    "command": "workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "cmd+shift+i",
+    "command": "inlineChat.start",
+    "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly && !editorSimpleInput"
+  },
   { "key": "ctrl+n", "command": "openEditors.newUntitledFile" },
   { "key": "ctrl+p", "command": "workbench.action.quickOpen" },
   { "key": "ctrl+shift+p", "command": "workbench.action.showCommands" },
