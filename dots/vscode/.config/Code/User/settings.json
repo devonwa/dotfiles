@@ -1,5 +1,10 @@
 {
   ///////////////////////////////////////////
+  // Tryouts
+  // for copilot by hotkey
+  "editor.inlineSuggest.enabled": false,
+
+  ///////////////////////////////////////////
   // VS Code application settings
   "debug.javascript.autoAttachFilter": "smart",
   // "editor.codeActionsOnSave": {
@@ -55,12 +60,14 @@
     "*.ipynb": "jupyter-notebook"
   },
   "workbench.iconTheme": "vscode-icons",
+  "workbench.editor.openPositioning": "last",
   "workbench.startupEditor": "none",
   "zenMode.centerLayout": true,
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
   "zenMode.fullScreen": false,
   "zenMode.restore": true,
+
 
   ///////////////////////////////////////////
   // vim
@@ -151,7 +158,13 @@
     {
       "before": ["<leader>", "B"],
       "commands": ["bookmarks.list"]
-    }
+    },
+  ],
+  "vim.visualModeKeyBindings": [
+      {
+          "before": ["p"],
+          "after":["P"]
+      }
   ],
 
   ///////////////////////////////////////////
@@ -216,6 +229,7 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.hovers.enabled": false,
+  "indentRainbow.indicatorStyle": "light",
   "rust-analyzer.inlayHints.parameterHints.enable": false,
   "rust-analyzer.inlayHints.typeHints.enable": false,
   "rust-analyzer.inlayHints.chainingHints.enable": false,
@@ -226,7 +240,13 @@
     "**/.metals": true,
     "**/.ammonite": true
   },
-  "makefile.configureOnOpen": true
+  "makefile.configureOnOpen": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.accessibilitySupport": "on",
+  "accessibility.signalOptions.volume": 0
+
 
   ///////////////////////////////////////////
   // Auto-added, unsorted
