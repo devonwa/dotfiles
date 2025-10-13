@@ -8,7 +8,6 @@
     pkgs.cmatrix
     pkgs.dbeaver
     pkgs-unstable.direnv
-    pkgs.docker
     pkgs.fd
     pkgs.fira-code
     pkgs.fontconfig
@@ -25,6 +24,7 @@
     pkgs.lazygit
     pkgs-unstable.neovim
     pkgs.nodejs
+    pkgs-unstable.nh
     # pkgs.obsidian # electron marked insecure in nix
     pkgs.ripgrep
     pkgs-unstable.starship

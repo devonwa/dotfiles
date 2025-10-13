@@ -29,8 +29,8 @@
           ./system/wsl/home.nix
           {
             home = {
-              username = "devon";
-              homeDirectory = "/home/devon";
+              username = "devn";
+              homeDirectory = "/home/devn";
               stateVersion = "22.05";
             };
           }

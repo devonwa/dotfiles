@@ -13,6 +13,8 @@
     pkgs.helmfile
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     pkgs-unstable.neovide
+    # pkgs-unstable.pkg-config
+    # pkgs-unstable.openssl
   ];
 }
 
