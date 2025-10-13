@@ -26,6 +26,7 @@ config.window_padding = {
 }
 
 config.keys = {
+  { key = 'Tab', mods = 'SHIFT', action = wezterm.action.DisableDefaultAssignment },
   { key = 'Tab', mods = 'CTRL', action = wezterm.action.DisableDefaultAssignment },
   { key = '1', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
   { key = '2', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },

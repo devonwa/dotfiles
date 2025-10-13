@@ -26,4 +26,8 @@ dots:
 
 .PHONY: env-personal
 env-personal:
-	cd env/personal; stow --no-folding --target=${HOME}/.config *
+	cd env/personal; stow --no-folding --target=${HOME}/.config env/
+
+.PHONY: env-work
+env-work:
+	cd env/work; stow --no-folding --target=${HOME}/.config env/

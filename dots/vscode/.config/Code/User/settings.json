@@ -68,7 +68,6 @@
   "zenMode.fullScreen": false,
   "zenMode.restore": true,
 
-
   ///////////////////////////////////////////
   // vim
   "vim.easymotion": true,
@@ -152,26 +151,22 @@
       "commands": ["bookmarks.toggleLabeled"]
     },
     {
-      "before": ["<leader>", "b"],
+      "before": ["<leader>", "'"],
       "commands": ["bookmarks.listFromAllFiles"]
-    },
-    {
-      "before": ["<leader>", "B"],
-      "commands": ["bookmarks.list"]
-    },
+    }
   ],
   "vim.visualModeKeyBindings": [
-      {
-          "before": ["p"],
-          "after":["P"]
-      }
+    {
+      "before": ["p"],
+      "after": ["P"]
+    }
   ],
 
   ///////////////////////////////////////////
   // Language and Framework-specific settings
   "angular.view-engine": true,
 
-  "eslint.validate": ["javascript", "typescript", "typescriptreact"],
+  // "eslint.validate": ["javascript", "typescript", "typescriptreact"],
 
   "go.coverageDecorator": { "type": "gutter" },
   "go.useLanguageServer": true,
@@ -196,25 +191,31 @@
   "python.defaultInterpreterPath": "/usr/bin/python3",
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
+    // "editor.showUnused": false,
 
     "editor.formatOnType": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit",
-      "source.fixAll": "never"
+      // "source.organizeImports": "explicit",
+      // "source.fixAll": "never"
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
     }
   },
+  "python.analysis.indexing": true,
+    }
   "[scala]": {
     "editor.defaultFormatter": "scalameta.metals"
   },
   "[sql]": {
-    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+    "editor.defaultFormatter": "mtxr.sqltools"
   },
+  "sqltools.highlightQuery": false,
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
+  // "[typescript]": {
+  //   "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  // },
   "typescript.format.enable": true,
   "typescript.format.semicolons": "insert",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -244,9 +245,10 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "editor.accessibilitySupport": "on",
-  "accessibility.signalOptions.volume": 0
-
+  "editor.accessibilitySupport": "off",
+  "accessibility.signalOptions.volume": 0,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "chat.agent.maxRequests": 50
 
   ///////////////////////////////////////////
   // Auto-added, unsorted
