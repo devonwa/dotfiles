@@ -202,7 +202,6 @@
     }
   },
   "python.analysis.indexing": true,
-    }
   "[scala]": {
     "editor.defaultFormatter": "scalameta.metals"
   },
