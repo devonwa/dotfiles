@@ -121,8 +121,10 @@
       "before": ["<leader>", "z"],
       "commands": ["workbench.action.toggleZenMode"]
     },
-    { "before": ["<C-d>"], "after": ["<C-d>", "z", "z"] },
-    { "before": ["<C-u>"], "after": ["<C-u>", "z", "z"] },
+    { "before": ["<C-d>"], "after": ["<C-d>", "z", "t"] },
+    { "before": ["<C-u>"], "after": ["<C-u>", "z", "t"] },
+    { "before": ["<C-o>"], "after": ["<C-o>", "z", "t"] },
+    { "before": ["<C-i>"], "after": ["<C-i>", "z", "t"] },
     { "before": ["<C-t>"], "after": ["terminal.active"] },
     { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] },
     { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
