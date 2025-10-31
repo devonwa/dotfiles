@@ -15,7 +15,6 @@ alias nv='neovide --maximized'
 alias lg='lazygit'
 alias ll='ls -lha'
 alias ls='ls --color=auto'
-alias python='python3'
 alias v='nvim'
 
 # generic terminal
