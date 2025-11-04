@@ -1,8 +1,8 @@
 {
-  description = "Dotfiles for Devon Walker";
+  description = "Devon's Dots";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -16,6 +16,18 @@
 
     devShell.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.mkShell { buildInputs = [ self.packages.x86_64-linux.default ]; };
     devShell.x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.mkShell { buildInputs = [ self.packages.x86_64-darwin.default ]; };
+
+    nixosConfigurations = {
+      nixos-desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./system/nixos/configuration.nix ];
+      };
+
+      nixos-laptop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./system/nixos/configuration.nix ];
+      };
+    };
 
     homeConfigurations = {
       wsl = home-manager.lib.homeManagerConfiguration {
@@ -48,8 +60,8 @@
           ./system/nixos/home.nix
           {
             home = {
-              username = "devon";
-              homeDirectory = "/home/devon";
+              username = "devn";
+              homeDirectory = "/home/devn";
               stateVersion = "22.05";
             };
           }

@@ -6,7 +6,7 @@
     pkgs.ansible
     pkgs.bat
     pkgs.cmatrix
-    pkgs.dbeaver
+    pkgs.dbeaver-bin
     pkgs-unstable.direnv
     pkgs.fd
     pkgs.fira-code
