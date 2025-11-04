@@ -24,6 +24,10 @@ switch_hm:
 dots:
 	cd dots; stow --no-folding --target=${HOME} *
 
+.PHONY: dots-nixos-desktop
+dots-nixos-desktop:
+	cd hosts/nixos-desktop; stow --no-folding --target=${HOME} dots
+
 .PHONY: env-personal
 env-personal:
 	cd env/personal/dots; stow --no-folding --target=${HOME} env/
