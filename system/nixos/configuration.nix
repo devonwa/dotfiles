@@ -17,7 +17,8 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      xcape
+      ghostty
+      # xcape
       google-chrome
 
       lazygit
@@ -103,9 +104,8 @@
     ashell
 
     # hyprland
+    kitty # default terminal
     hyprpaper # wallpaper
-
-    ghostty # terminal
     rofi-wayland # app launcher
     dunst # notifications
     grim # screenshot

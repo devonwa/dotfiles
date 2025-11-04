@@ -29,7 +29,11 @@
 
       nixos-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./system/nixos/configuration.nix ];
+        modules = [ 
+          ./hosts/nixos-laptop/configuration.nix
+          ./hosts/nixos-laptop/hardware-configuration.nix
+          ./system/nixos/configuration.nix
+        ];
       };
     };
 
