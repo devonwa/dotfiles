@@ -1,0 +1,10 @@
+{ config, pkgs, ... }:
+
+{
+  networking.hostName = "nixos-desktop";
+
+  # Nvidia
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = true;
+}
