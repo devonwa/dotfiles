@@ -7,7 +7,7 @@
     pkgs.bat
     pkgs.cmatrix
     pkgs.dbeaver-bin
-    pkgs-unstable.direnv
+    pkgs.direnv
     pkgs.fd
     pkgs.fira-code
     pkgs.fontconfig
@@ -22,12 +22,12 @@
     pkgs.k9s
     pkgs.killall
     pkgs.lazygit
-    pkgs-unstable.neovim
+    pkgs.neovim
     pkgs.nodejs
-    pkgs-unstable.nh
+    # pkgs-unstable.nh
     # pkgs.obsidian # electron marked insecure in nix
     pkgs.ripgrep
-    pkgs-unstable.starship
+    pkgs.starship
     pkgs.stow
     pkgs.tldr
     pkgs.tmux
@@ -39,4 +39,3 @@
 
   programs.home-manager.enable = true;
 }
-

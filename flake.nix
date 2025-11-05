@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -15,7 +15,7 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       username = "devn";
-      homeDirectory = "${username}";
+      homeDirectory = "/home/${username}";
     in {
       nixosConfigurations = {
         nixos-desktop = nixpkgs.lib.nixosSystem {

@@ -1,5 +1,6 @@
 **/.DS_Store
 **/*.log
+**/*.swp
 
 **/lazygit/state.yml
 **/lazy-lock.json
