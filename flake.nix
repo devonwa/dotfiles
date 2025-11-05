@@ -14,6 +14,8 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      username = "devn";
+      homeDirectory = "${username}";
     in {
       nixosConfigurations = {
         nixos-desktop = nixpkgs.lib.nixosSystem {
@@ -36,7 +38,7 @@
       };
   
       homeConfigurations = {
-        nixos = home-manager.lib.homeManagerConfiguration {
+        ${username} = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = {
               pkgs-unstable = import nixpkgs-unstable{};
@@ -46,12 +48,13 @@
           modules = [
             {
               home = {
-                username = "devn";
-                homeDirectory = "/home/devn";
+                username = username;
+                homeDirectory = homeDirectory;
                 stateVersion = "25.05";
               };
             }
             ./system/nixos/home.nix
+            ./home.nix
           ];
         };
 

@@ -1,12 +1,8 @@
 { config, pkgs, system, env, ... }:
 
 {
-  imports = [
-    ../common.nix
-  ];
-
-  home.packages = [
-    pkgs.kdePackages.dolphin
+  home.packages = with pkgs; [
+    kdePackages.dolphin
     #pkgs.font-manager
     #pkgs.google-chrome #mac issue
     #pkgs.helm #mac issue
