@@ -17,6 +17,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
+      home-manager
       ghostty
       # xcape
       google-chrome
@@ -98,6 +99,7 @@
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
+    gnumake
     vim
     git
     # nwg-panel
