@@ -28,6 +28,10 @@ dots:
 dots-nixos-desktop:
 	cd hosts/nixos-desktop; stow --no-folding --target=${HOME} dots
 
+.PHONY: dots-nixos-laptop
+dots-nixos-laptop:
+	cd hosts/nixos-laptop; stow --no-folding --target=${HOME} dots
+
 .PHONY: env-personal
 env-personal:
 	cd env/personal/dots; stow --no-folding --target=${HOME} env/
