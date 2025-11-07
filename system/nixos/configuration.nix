@@ -19,7 +19,6 @@
     packages = with pkgs; [
       home-manager
       ghostty
-      # xcape
       google-chrome
 
       lazygit
@@ -69,7 +68,7 @@
       layout = "us";
       variant = "";
     };
-  }; 
+  };
   services.displayManager = {
     defaultSession = "hyprland";
     autoLogin.enable = true;
@@ -99,14 +98,12 @@
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
-    gnumake
     vim
     git
-    # nwg-panel
-    ashell
+    gnumake
 
     # hyprland
-    kitty # default terminal
+    kitty # hyprland default terminal
     hyprpaper # wallpaper
     rofi-wayland # app launcher
     dunst # notifications
@@ -115,6 +112,7 @@
     wl-clipboard # clipboard
     waybar # bar
     pavucontrol # audio control gui
+    kdePackages.dolphin # file explorer
   ];
 
 

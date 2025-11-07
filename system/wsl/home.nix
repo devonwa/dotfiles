@@ -1,20 +1,12 @@
-{ config, pkgs, pkgs-unstable, system, env, ... }:
+{ config, pkgs, pkgsUnstable, system, env, ... }:
 
 {
-  # fonts.fontconfig.enable = true;
-
-  imports = [
-    ../common.nix
-  ];
-
-  home.packages = [
-    pkgs.font-manager
-    pkgs.helm
-    pkgs.helmfile
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
-    pkgs-unstable.neovide
-    # pkgs-unstable.pkg-config
-    # pkgs-unstable.openssl
-  ];
+  home.packages =
+  (with pkgs; [
+      font-manager
+      helm
+      helmfile
+  ])
+  ++ (with pkgsUnstable; [
+  ]);
 }
-

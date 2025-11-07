@@ -1,41 +1,39 @@
-{ config, pkgs, pkgs-unstable, system, env, ... }:
+{ config, pkgs, pkgsUnstable, ... }:
 
 {
-  home.packages = [
-    pkgs.alacritty
-    pkgs.ansible
-    pkgs.bat
-    pkgs.cmatrix
-    pkgs.dbeaver-bin
-    pkgs.direnv
-    pkgs.fd
-    pkgs.fira-code
-    pkgs.fontconfig
-    pkgs.fzf
-    pkgs.gcc
-    pkgs.git
-    pkgs.gnumake
-    pkgs.go
-    pkgs.go-task
-    pkgs.htop-vim
-    pkgs.jq
-    pkgs.k9s
-    pkgs.killall
-    pkgs.lazygit
-    pkgs.neovim
-    pkgs.nodejs
-    # pkgs-unstable.nh
-    # pkgs.obsidian # electron marked insecure in nix
-    pkgs.ripgrep
-    pkgs.starship
-    pkgs.stow
-    pkgs.tldr
-    pkgs.tmux
-    pkgs.xclip
-    pkgs.yarn
-    pkgs.zsh
-    pkgs.zoxide
-  ];
+  home.packages =
+  (with pkgs; [
+    ansible
+    bat
+    cmatrix
+    dbeaver-bin
+    direnv
+    fd
+    fira-code
+    fontconfig
+    fzf
+    gcc
+    git
+    gnumake
+    go
+    htop-vim
+    jq
+    k9s
+    lazygit
+    nodejs
+    ripgrep
+    starship
+    stow
+    tldr
+    tmux
+    xclip
+    yarn
+    zsh
+    zoxide
+  ])
+  ++ (with pkgsUnstable; [
+    neovim
+  ]);
 
   programs.home-manager.enable = true;
 }

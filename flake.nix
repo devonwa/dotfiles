@@ -3,48 +3,45 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgsUnstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager }:
+  outputs = { self, nixpkgs, nixpkgsUnstable, home-manager }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs { inherit system; };
+      pkgsUnstable = import nixpkgsUnstable { inherit system; };
       username = "devn";
       homeDirectory = "/home/${username}";
     in {
       nixosConfigurations = {
         nixos-desktop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ 
+          modules = [
             ./hosts/nixos-desktop/configuration.nix
             ./hosts/nixos-desktop/hardware-configuration.nix
             ./system/nixos/configuration.nix
           ];
         };
-  
+
         nixos-laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ 
+          modules = [
             ./hosts/nixos-laptop/configuration.nix
             ./hosts/nixos-laptop/hardware-configuration.nix
             ./system/nixos/configuration.nix
           ];
         };
       };
-  
+
       homeConfigurations = {
         ${username} = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = {
-              pkgs-unstable = import nixpkgs-unstable{};
-              system = "nixos";
-              env = "personal";
-          };
+          extraSpecialArgs = { inherit pkgsUnstable; };
           modules = [
             {
               home = {
@@ -60,20 +57,17 @@
 
         wsl = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = {
-              pkgs-unstable = import nixpkgs-unstable{};
-              system = "wsl";
-              env = "personal";
-          };
+          extraSpecialArgs = { inherit pkgsUnstable; };
           modules = [
-            ./system/wsl/home.nix
             {
-              home = {
-                username = "devn";
-                homeDirectory = "/home/devn";
-                stateVersion = "22.05";
-              };
+                home = {
+                    username = username;
+                    homeDirectory = homeDirectory;
+                    stateVersion = "25.05";
+                };
             }
+            ./system/wsl/home.nix
+            ./home.nix
           ];
         };
       };
