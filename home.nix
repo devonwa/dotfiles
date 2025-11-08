@@ -33,6 +33,15 @@
   ])
   ++ (with pkgsUnstable; [
     neovim
+
+    # LSPs
+    gopls
+    lua-language-server
+    nil
+    pyright
+
+    # Formatters
+    stylua
   ]);
 
   programs.home-manager.enable = true;

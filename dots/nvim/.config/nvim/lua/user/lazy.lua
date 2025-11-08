@@ -15,7 +15,6 @@ local plugins = {
     "nvim-lua/plenary.nvim",                            -- Useful lua functions used by lots of plugins
     "windwp/nvim-autopairs",                            -- Autopairs, integrates with both cmp and treesitter
     { 'numToStr/Comment.nvim',  lazy = false },         -- Comment with C-/
-    { "folke/neodev.nvim",      opts = {} },            -- tooltips for neovim init.lua development
     { "folke/persistence.nvim", event = "BufReadPre" }, -- only start session saving when an actual file was opened
 
     -- Treesitter
@@ -95,10 +94,18 @@ local plugins = {
     { "neovim/nvim-lspconfig",            lazy = false }, -- enable LSP
     "lukas-reineke/lsp-format.nvim",
 
+
+    {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = { library = { { path = "${3rd}/luv/library", words = { "vim%.uv" } } } },
+    },
+
     -- Manager of LSPs, Linters, Formatters
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { "williamboman/nvim-lsp-installer",  lazy = false }, -- simple to use language server installer
+    { "ckipp01/stylua-nvim" },
 
 
     -- Auto-completion

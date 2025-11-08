@@ -40,12 +40,10 @@ vim.keymap.set("n", "<leader>e", ":Oil<CR>", opts)
 -- Finders
 vim.keymap.set("n", "<leader>fp", ":FzfLua files<CR>", opts)
 vim.keymap.set("n", "<C-p>", ":FzfLua files<CR>", opts)
-vim.keymap.set("n", "<leader>ff", ":FzfLua live_grep_resume<CR>", opts)
-vim.keymap.set("n", "<C-f>", ":FzfLua live_grep_resume<CR>", opts)
-vim.keymap.set("n", "<leader>fb", ":FzfLua buffers<CR>", opts)
+vim.keymap.set("n", "<leader>ff", ":lua FzfLua.live_grep({resume=true})<CR>", opts)
+vim.keymap.set("n", "<C-f>", ":lua FzfLua.live_grep({resume=true})<CR>", opts)
 
--- LSP
-vim.keymap.set("n", "gr", ":FzfLua lsp_references<CR>", opts)
+vim.keymap.set("n", "<leader>fb", ":FzfLua buffers<CR>", opts)
 
 -- Resize with arrows
 vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", opts)

@@ -13,7 +13,6 @@
   outputs = { self, nixpkgs, nixpkgsUnstable, home-manager }:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
       pkgsUnstable = import nixpkgsUnstable { inherit system; };
       username = "devn";
       homeDirectory = "/home/${username}";
@@ -27,7 +26,6 @@
             ./system/nixos/configuration.nix
           ];
         };
-
         nixos-laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
