@@ -62,7 +62,8 @@ keybind = ctrl+equal=increase_font_size:1
 keybind = ctrl+insert=copy_to_clipboard
 keybind = ctrl+page_up=previous_tab
 keybind = ctrl+page_down=next_tab
-keybind = ctrl+enter=toggle_fullscreen
+# keybind = ctrl+enter=toggle_fullscreen
+keybind = ctrl+enter=unbind
 # keybind = ctrl+tab=next_tab
 keybind = ctrl+tab=unbind
 keybind = shift+up=adjust_selection:up

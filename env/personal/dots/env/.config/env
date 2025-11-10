@@ -17,9 +17,6 @@ alias ll='ls -lha'
 alias ls='ls --color=auto'
 alias v='nvim'
 
-# generic terminal
-stty intr ^\\ # interupt command is ctrl+\
-
 # docker
 alias d='docker'
 func dlog()  {
@@ -51,7 +48,7 @@ alias gP='git push'
 alias gs='git status'
 alias gS='git switch'
 alias gw='git worktree'
-alias gitMergedBranch='git branch --merged | egrep -v "(^\*|master|main|dev)"' 
+alias gitMergedBranch='git branch --merged | egrep -v "(^\*|master|main|dev)"'
 alias gitMergedBranchPrune='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
 
 # go
@@ -62,15 +59,11 @@ export GOBIN=$GOPATH/bin
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
 export NIXPKGS_ALLOW_UNFREE=1;
 
-# notes
-export NOTES=$HOME/go/src/github.com/devonwa/notes
-
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 if [ -e "$HOME/.cargo/env" ]; then
   source "$HOME/.cargo/env"
 fi
-
 
 # tmux
 newTmuxSession() {
@@ -80,12 +73,10 @@ alias t='tmux'
 alias ta='tmux attach'
 func tn() { . $DOTFILES/bin/tmux-new.sh }
 
-
 # zoxide
 eval "$(zoxide init zsh)"
 
 # zsh
-bindkey '^[[Z' autosuggest-accept # autosuggest (shift+tab)
 export VI_MODE_SET_CURSOR=true # vi-mode cursor change
+bindkey '^[[Z' autosuggest-accept # autosuggest (shift+tab)
 KEYTIMEOUT=1 # 10ms for key sequences - remove ESC delay
-
