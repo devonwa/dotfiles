@@ -75,8 +75,3 @@ func tn() { . $DOTFILES/bin/tmux-new.sh }
 
 # zoxide
 eval "$(zoxide init zsh)"
-
-# zsh
-export VI_MODE_SET_CURSOR=true # vi-mode cursor change
-bindkey '^[[Z' autosuggest-accept # autosuggest (shift+tab)
-KEYTIMEOUT=1 # 10ms for key sequences - remove ESC delay
