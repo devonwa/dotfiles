@@ -20,13 +20,6 @@
       home-manager
       ghostty
       google-chrome
-      _1password-gui
-
-      lazygit
-      vscode
-      zed-editor
-      neovide
-      obsidian
     ];
   };
 
@@ -99,6 +92,9 @@
     vim
     git
     gnumake
+
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.fira-code
 
     # hyprland
     kitty # hyprland default terminal

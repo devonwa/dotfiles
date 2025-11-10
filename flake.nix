@@ -13,7 +13,8 @@
   outputs = { self, nixpkgs, nixpkgsUnstable, home-manager }:
     let
       system = "x86_64-linux";
-      pkgsUnstable = import nixpkgsUnstable { inherit system; };
+      pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
+      pkgsUnstable = import nixpkgsUnstable { inherit system; config.allowUnfree = true; };
       username = "devn";
       homeDirectory = "/home/${username}";
     in {
@@ -24,6 +25,7 @@
             ./hosts/nixos-desktop/configuration.nix
             ./hosts/nixos-desktop/hardware-configuration.nix
             ./system/nixos/configuration.nix
+            { nixpkgs.config.allowUnfree = true; }
           ];
         };
         nixos-laptop = nixpkgs.lib.nixosSystem {
@@ -32,13 +34,14 @@
             ./hosts/nixos-laptop/configuration.nix
             ./hosts/nixos-laptop/hardware-configuration.nix
             ./system/nixos/configuration.nix
+            { nixpkgs.config.allowUnfree = true; }
           ];
         };
       };
 
       homeConfigurations = {
         ${username} = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          pkgs = pkgs;
           extraSpecialArgs = { inherit pkgsUnstable; };
           modules = [
             {
@@ -54,7 +57,7 @@
         };
 
         wsl = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          pkgs = pkgs;
           extraSpecialArgs = { inherit pkgsUnstable; };
           modules = [
             {

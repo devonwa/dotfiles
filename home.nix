@@ -21,14 +21,12 @@
     k9s
     lazygit
     nodejs
-    obsidian
     ripgrep
     starship
     stow
     tldr
     tmux
     xclip
-    yarn
     zsh
     zoxide
     _1password-gui
@@ -36,6 +34,7 @@
   ++ (with pkgsUnstable; [
     neovim
     neovide
+    obsidian
     vscode
     zed-editor
 
