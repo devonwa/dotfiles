@@ -104,6 +104,8 @@
 
     # hyprland
     kitty # hyprland default terminal
+    hypridle
+    hyprlock
     hyprpaper # wallpaper
     rofi-wayland # app launcher
     dunst # notifications
