@@ -20,15 +20,13 @@
       home-manager
       ghostty
       google-chrome
+      _1password-gui
 
       lazygit
-
       vscode
       zed-editor
       neovide
-
       obsidian
-      _1password-gui
     ];
   };
 

@@ -21,6 +21,7 @@
     k9s
     lazygit
     nodejs
+    obsidian
     ripgrep
     starship
     stow
@@ -30,9 +31,13 @@
     yarn
     zsh
     zoxide
+    _1password-gui
   ])
   ++ (with pkgsUnstable; [
     neovim
+    neovide
+    vscode
+    zed-editor
 
     # LSPs
     gopls
