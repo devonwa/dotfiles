@@ -112,7 +112,7 @@
   ];
 
 
-  # # Capslock to CTRL when held and ESC when pressed
+  # Capslock to CTRL when held and ESC when pressed
   services.keyd = {
     enable = true;
     keyboards = {
