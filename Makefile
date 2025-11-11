@@ -10,4 +10,4 @@ home-manager:
 dots:
 	pushd dots; stow --no-folding --target=${HOME} *; popd; \
 	pushd hosts/$(shell hostname); stow --no-folding --target=${HOME} dots; popd; \
-	pushd env/personal/dots; stow --no-folding --target=${HOME} env/; popd;
+	pushd env/personal; stow --no-folding --target=${HOME} dots; popd;
