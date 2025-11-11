@@ -3,6 +3,10 @@
 SESSION=$(basename $(pwd))
 tmux ls | grep $SESSION && { tmux a -t $SESSION; return 0; }
 
+IS_GIT_REPO=false
+if git rev-parse --is-inside-work-tree 2>/dev/null; then
+    IS_GIT_REPO=true
+fi
 HAS_NVIM=false
 if command -v nvim >/dev/null 2>&1; then
     HAS_NVIM=true
@@ -20,8 +24,12 @@ tmux select-pane -t 2 # moving right highlights top window first
 tmux select-pane -t 1
 
 # Git window
-tmux new-window -t $SESSION:2 -n 'git'
-tmux send-keys -t 'git' 'lg' C-m
+if [ "$IS_GIT_REPO" = true ]; then
+    tmux new-window -t $SESSION:2 -n 'git'
+    tmux send-keys -t 'git' 'lazygit' C-m
+else
+    tmux new-window -t $SESSION:2 -n 'no_git'
+fi
 
 # Editor window
 tmux new-window -t $SESSION:3 -n 'vim'
@@ -35,6 +43,8 @@ fi
 if [ "$HAS_CLAUDE" = true ]; then
     tmux new-window -t $SESSION:4 -n 'ai'
     tmux send-keys -t 'ai' 'claude' C-m
+else
+    tmux new-window -t $SESSION:4 -n 'no_ai'
 fi
 
 tmux attach-session -t $SESSION:1
