@@ -21,13 +21,27 @@ vim.keymap.set("n", "<leader>x", ":w|bd<CR>", opts)       -- save and close buff
 vim.keymap.set("n", "<leader>n", ":nohl<CR>", opts)       -- clear highlights after search
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", opts)    -- ZenMode
 vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", opts) -- clear highlights after search
-vim.keymap.set("n", "<leader>gg", ":Neogit<CR>", opts)    -- clear highlights after search
-vim.keymap.set("n", "<C-S-t>", ":e#<CR>", opts)           -- open last closed file
-vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)             -- recenter after scroll
-vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)             -- recenter after scroll
-vim.keymap.set("n", "<C-w>", ":bd<CR>", opts)             -- close tab
-vim.keymap.set("n", "n", "nzz", opts)                     -- recenter after search
-vim.keymap.set("n", "N", "Nzz", opts)                     -- recenter after search
+vim.keymap.set("n", "<leader>gg", ":Neogit<CR>", opts)    -- open neogit
+
+-- -- Toggle diffview
+local function toggle_diffview()
+    local diffview = require('diffview.lib')
+    local view = diffview.get_current_view()
+    if view then
+        vim.cmd('DiffviewClose')
+    else
+        vim.cmd('DiffviewOpen')
+    end
+end
+vim.keymap.set("n", "<leader>gd", toggle_diffview, opts)              -- toggle diffview
+vim.keymap.set("n", "<leader>gh", ":DiffviewFileHistory<CR>", opts)   -- git file history (all files)
+vim.keymap.set("n", "<leader>gf", ":DiffviewFileHistory %<CR>", opts) -- git file history (current file)
+vim.keymap.set("n", "<C-S-t>", ":e#<CR>", opts)                       -- open last closed file
+vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)                         -- recenter after scroll
+vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)                         -- recenter after scroll
+vim.keymap.set("n", "<C-w>", ":bd<CR>", opts)                         -- close tab
+vim.keymap.set("n", "n", "nzz", opts)                                 -- recenter after search
+vim.keymap.set("n", "N", "Nzz", opts)                                 -- recenter after search
 
 -- Non-vim editor commands
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save" })
