@@ -7,6 +7,7 @@
     bat
     cmatrix
     dbeaver-bin
+    diff-so-fancy
     direnv
     fd
     fira-code
@@ -19,7 +20,6 @@
     htop-vim
     jq
     k9s
-    lazygit
     nodejs
     ripgrep
     starship
@@ -33,6 +33,7 @@
   ])
   ++ (with pkgsUnstable; [
     claude-code
+    lazygit
     neovim
     neovide
     obsidian
