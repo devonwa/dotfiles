@@ -32,6 +32,7 @@
     _1password-gui
   ])
   ++ (with pkgsUnstable; [
+    claude-code
     neovim
     neovide
     obsidian
