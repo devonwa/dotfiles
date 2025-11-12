@@ -33,6 +33,10 @@ vim.keymap.set("n", "N", "Nzz", opts)                     -- recenter after sear
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save" })
 vim.keymap.set("n", "s", "", { desc = "Do nothing" })
 
+-- Formatting
+vim.keymap.set("n", "<leader>lf", ":Format<CR>", opts) -- manual format
+vim.keymap.set("n", "<leader>W", ":W<CR>", opts)       -- save without formatting
+
 -- File nav
 vim.keymap.set("n", "<C-e>", ":NvimTreeFindFileToggle<CR>", opts) -- open explorer
 vim.keymap.set("n", "<leader>e", ":Oil<CR>", opts)

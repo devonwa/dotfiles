@@ -16,6 +16,7 @@ require "user.toggleterm"
 require "user.autosession"
 require "user.harpoon"
 require "user.lsp"
+require "user.formatter"
 
 -- require "user.lsp"
 
