@@ -14,6 +14,7 @@
       dbeaver-bin
       diff-so-fancy
       direnv
+      fastfetch
       fd
       fira-code
       fontconfig
