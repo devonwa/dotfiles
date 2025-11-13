@@ -60,7 +60,7 @@ vim.keymap.set("n", "<leader>fp", ":FzfLua files<CR>", opts)
 vim.keymap.set("n", "<C-p>", ":FzfLua files<CR>", opts)
 vim.keymap.set("n", "<leader>ff", ":lua FzfLua.live_grep({resume=true})<CR>", opts)
 vim.keymap.set("n", "<C-f>", ":lua FzfLua.live_grep({resume=true})<CR>", opts)
-
+vim.keymap.set("n", "<leader>fk", ":FzfLua keymaps<CR>", opts)
 vim.keymap.set("n", "<leader>fb", ":FzfLua buffers<CR>", opts)
 
 -- Resize with arrows
