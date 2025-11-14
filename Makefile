@@ -6,10 +6,13 @@ nixos:
 home-manager:
 	home-manager switch --flake .
 
+.PHONY: host
+host:
+	pushd hosts/$(shell hostname); stow --no-folding --target=${HOME} dots; popd
+
 .PHONY: dots
 dots:
-	pushd dots; stow --no-folding --target=${HOME} *; popd; \
-	pushd hosts/$(shell hostname); stow --no-folding --target=${HOME} dots; popd; \
+	pushd dots; stow --no-folding --target=${HOME} *; popd
 
 .PHONY: undots
 undots:
