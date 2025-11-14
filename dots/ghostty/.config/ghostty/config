@@ -1,10 +1,11 @@
-font-size = 12
+font-size = 14
 font-family = FiraCode Nerd Font
 font-family = DejaVu Sans Mono
 font-family = FreeMono
 
-theme = GruvboxDark
-background-opacity = 1.00
+# theme = Gruvbox Dark Hard
+background = "#000000"
+background-opacity = 0.90
 # image supported after 1.2
 # background-image = /home/devn/Pictures/wallpapers/forest-rays.jpg
 
