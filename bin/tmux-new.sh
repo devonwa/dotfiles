@@ -11,9 +11,9 @@ HAS_NVIM=false
 if command -v nvim >/dev/null 2>&1; then
     HAS_NVIM=true
 fi
-HAS_CLAUDE=false
-if command -v claude >/dev/null 2>&1; then
-    HAS_CLAUDE=true
+HAS_AI=false
+if command -v opencode >/dev/null 2>&1; then
+    HAS_AI=true
 fi
 
 # Main window
@@ -40,9 +40,9 @@ else
 fi
 
 # AI window
-if [ "$HAS_CLAUDE" = true ]; then
+if [ "$HAS_AI" = true ]; then
     tmux new-window -t "$SESSION:4" -n 'ai'
-    tmux send-keys -t 'ai' 'claude' C-m
+    tmux send-keys -t 'ai' 'opencode' C-m
 else
     tmux new-window -t "$SESSION:4" -n 'no_ai'
 fi

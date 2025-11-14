@@ -10,14 +10,27 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgsUnstable, home-manager }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgsUnstable,
+      home-manager,
+    }:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
-      pkgsUnstable = import nixpkgsUnstable { inherit system; config.allowUnfree = true; };
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      pkgsUnstable = import nixpkgsUnstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
       username = "devn";
       homeDirectory = "/home/${username}";
-    in {
+    in
+    {
       nixosConfigurations = {
         nixos-desktop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -61,11 +74,11 @@
           extraSpecialArgs = { inherit pkgsUnstable; };
           modules = [
             {
-                home = {
-                    username = username;
-                    homeDirectory = homeDirectory;
-                    stateVersion = "25.05";
-                };
+              home = {
+                username = username;
+                homeDirectory = homeDirectory;
+                stateVersion = "25.05";
+              };
             }
             ./system/wsl/home.nix
             ./home.nix

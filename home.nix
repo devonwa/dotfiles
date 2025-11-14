@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   pkgsUnstable,
   ...
@@ -8,6 +7,7 @@
 {
   home.packages =
     (with pkgs; [
+      _1password-gui
       ansible
       bat
       cmatrix
@@ -36,7 +36,6 @@
       xclip
       zsh
       zoxide
-      _1password-gui
     ])
     ++ (with pkgsUnstable; [
       claude-code
@@ -44,6 +43,7 @@
       neovim
       neovide
       obsidian
+      opencode
       vscode
       zed-editor
 
