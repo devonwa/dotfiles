@@ -91,7 +91,7 @@ local plugins = {
     },
 
     -- LSPs, Linters, Formatters
-    { "neovim/nvim-lspconfig",            lazy = false }, -- enable LSP
+    { "neovim/nvim-lspconfig",           lazy = false },  -- enable LSP
     "lukas-reineke/lsp-format.nvim",
 
 
@@ -102,9 +102,7 @@ local plugins = {
     },
 
     -- Manager of LSPs, Linters, Formatters
-    { "williamboman/mason.nvim" },
-    { "williamboman/mason-lspconfig.nvim" },
-    { "williamboman/nvim-lsp-installer",  lazy = false }, -- simple to use language server installer
+    { "williamboman/nvim-lsp-installer", lazy = false },  -- simple to use language server installer
     { "ckipp01/stylua-nvim" },
 
 
