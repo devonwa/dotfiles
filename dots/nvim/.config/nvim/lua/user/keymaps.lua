@@ -93,6 +93,47 @@ if vim.g.neovide == true then
     vim.keymap.set("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
 end
 
+-- Copilot
+vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false, silent = true })
+vim.keymap.set("i", "<M-]>", '<Plug>(copilot-next)', { silent = true })
+vim.keymap.set("i", "<M-[>", '<Plug>(copilot-previous)', { silent = true })
+vim.keymap.set("i", "<M-\\>", '<Plug>(copilot-suggest)', { silent = true })
+vim.g.copilot_no_tab_map = true
+
+-- CopilotChat
+local function toggle_copilot_chat()
+    local chat_bufnr = nil
+    -- Find existing CopilotChat buffer
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+        if vim.api.nvim_buf_is_valid(buf) then
+            local bufname = vim.api.nvim_buf_get_name(buf)
+            if bufname:match("copilot%-chat") then
+                chat_bufnr = buf
+                break
+            end
+        end
+    end
+    
+    -- If buffer exists and is visible in a window, close it
+    if chat_bufnr then
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+            if vim.api.nvim_win_get_buf(win) == chat_bufnr then
+                vim.api.nvim_win_close(win, false)
+                return
+            end
+        end
+        -- Buffer exists but not visible, open it
+        vim.cmd("CopilotChatOpen")
+        return
+    end
+    
+    -- Buffer doesn't exist, toggle normally
+    vim.cmd("CopilotChatToggle")
+end
+
+vim.keymap.set({ "n", "v" }, "<C-i>", toggle_copilot_chat, { desc = "Toggle Copilot Chat", silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>i", toggle_copilot_chat, { desc = "Toggle Copilot Chat", silent = true })
+
 -----------------
 -- Visual
 -- Paste replace without overwrite

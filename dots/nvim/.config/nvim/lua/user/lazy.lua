@@ -123,6 +123,14 @@ local plugins = {
     -- Snippets
     --
 
+    -- Copilot
+    "github/copilot.vim",
+    {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        dependencies = { { "github/copilot.vim" }, { "nvim-lua/plenary.nvim" }, },
+        opts = { debug = false, },
+    },
+
 
     -- testing out
     {
@@ -155,14 +163,5 @@ local plugins = {
     -- Session management
     { 'rmagatti/auto-session' }
 }
-
---require("flash").setup({
---    highlight = {
---        -- show a backdrop with hl FlashBackdrop
---        backdrop = false,
---        -- Highlight the search matches
---        matches = true,
---    },
---})
 
 require("lazy").setup(plugins)
