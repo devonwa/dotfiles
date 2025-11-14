@@ -133,6 +133,9 @@ func tn() { . $DOTFILES/bin/tmux-new.sh }
 # zoxide
 eval "$(zoxide init zsh)"
 
-
 # run env-specific config for personal or work
-source $HOME/.config/env
+if [ -f $HOME/.config/env ]; then
+  source $HOME/.config/env
+else
+  echo "~/.config/env does not exist"
+fi

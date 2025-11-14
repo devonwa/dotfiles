@@ -2,19 +2,23 @@
 
 {
   # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.devn = {
     isNormalUser = true;
     description = "Devon";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       home-manager
@@ -23,11 +27,9 @@
     ];
   };
 
-
   # Networking
   # networking.wireless.enable = true;
   networking.networkmanager.enable = true;
-
 
   # Time
   time.timeZone = "America/Los_Angeles";
@@ -43,7 +45,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
 
   # X11 window system
   programs.hyprland = {
@@ -66,10 +67,8 @@
     autoLogin.user = "devn";
   };
 
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -80,7 +79,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
 
   # Packages
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
@@ -97,20 +95,21 @@
     nerd-fonts.fira-code
 
     # hyprland
-    kitty # hyprland default terminal
-    hypridle
-    hyprlock
+    hypridle # lock on idle
+    hyprlock # lock screen
     hyprpaper # wallpaper
-    rofi-wayland # app launcher
+
     dunst # notifications
     grim # screenshot
-    slurp # screenshot
-    wl-clipboard # clipboard
-    waybar # bar
-    pavucontrol # audio control gui
     kdePackages.dolphin # file explorer
+    kitty # hyprland default terminal
+    nwg-look # normal cursor
+    pavucontrol # audio control gui
+    rofi-wayland # app launcher
+    slurp # screenshot
+    waybar # bar
+    wl-clipboard # clipboard
   ];
-
 
   # Capslock to CTRL when held and ESC when pressed
   services.keyd = {
@@ -127,10 +126,8 @@
     };
   };
 
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;

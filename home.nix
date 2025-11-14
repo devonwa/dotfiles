@@ -32,6 +32,7 @@
       stow
       tldr
       tmux
+      viu
       xclip
       zsh
       zoxide
