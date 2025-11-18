@@ -18,10 +18,10 @@ fi
 
 # Main window
 tmux new-session -d -s "$SESSION"
-tmux split-window -h
-tmux split-window -v
-tmux select-pane -t 2 # moving right highlights top window first
-tmux select-pane -t 1
+# tmux split-window -h
+# tmux split-window -v
+# tmux select-pane -t 2 # moving right highlights top window first
+# tmux select-pane -t 1
 
 # Git window
 if [ "$IS_GIT_REPO" = true ]; then
