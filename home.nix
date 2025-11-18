@@ -8,6 +8,7 @@
   home.packages =
     (with pkgs; [
       _1password-gui
+      anki-bin
       ansible
       bat
       cmatrix
@@ -28,10 +29,12 @@
       k9s
       nodejs
       ripgrep
+      rustup
       starship
       stow
       tldr
       tmux
+      usbutils
       viu
       xclip
       zsh

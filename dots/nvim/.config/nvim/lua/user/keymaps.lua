@@ -113,7 +113,7 @@ local function toggle_copilot_chat()
             end
         end
     end
-    
+
     -- If buffer exists and is visible in a window, close it
     if chat_bufnr then
         for _, win in ipairs(vim.api.nvim_list_wins()) do
@@ -126,12 +126,12 @@ local function toggle_copilot_chat()
         vim.cmd("CopilotChatOpen")
         return
     end
-    
+
     -- Buffer doesn't exist, toggle normally
     vim.cmd("CopilotChatToggle")
 end
 
-vim.keymap.set({ "n", "v" }, "<C-i>", toggle_copilot_chat, { desc = "Toggle Copilot Chat", silent = true })
+vim.keymap.set({ "n", "v" }, "<C-S-i>", toggle_copilot_chat, { desc = "Toggle Copilot Chat", silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>i", toggle_copilot_chat, { desc = "Toggle Copilot Chat", silent = true })
 
 -----------------

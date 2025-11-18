@@ -2,6 +2,7 @@ vim.lsp.enable("lua_ls")
 vim.lsp.enable("pyright")
 vim.lsp.enable("gopls")
 vim.lsp.enable("nil_ls")
+vim.lsp.enable("rust_analyzer")
 
 -- LSP keymaps
 local opts = { noremap = true, silent = true, nowait = true }
