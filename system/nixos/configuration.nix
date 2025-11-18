@@ -63,9 +63,12 @@
   };
   services.displayManager = {
     defaultSession = "hyprland";
-    autoLogin.enable = true;
+    autoLogin.enable = false;
     autoLogin.user = "devn";
   };
+
+  # USB microcontroller connections
+  services.udev.packages = [ pkgs.openocd ];
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -101,7 +104,6 @@
 
     dunst # notifications
     grim # screenshot
-    kdePackages.dolphin # file explorer
     kitty # hyprland default terminal
     nwg-look # normal cursor
     pavucontrol # audio control gui
@@ -109,6 +111,9 @@
     slurp # screenshot
     waybar # bar
     wl-clipboard # clipboard
+    xfce.thunar # file explorer
+    xfce.thunar-archive-plugin # file explorer extract zip
+    xfce.tumbler # file explorer image thumbnails
   ];
 
   # Capslock to CTRL when held and ESC when pressed
