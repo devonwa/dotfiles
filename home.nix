@@ -27,6 +27,7 @@
       htop-vim
       jq
       k9s
+      libreoffice
       nodejs
       ripgrep
       rustup
