@@ -42,6 +42,7 @@
       zoxide
     ])
     ++ (with pkgsUnstable; [
+      bluetui
       claude-code
       lazygit
       neovim
