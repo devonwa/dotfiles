@@ -1,12 +1,12 @@
-{ config, pkgs, pkgsUnstable, system, env, ... }:
-
+{ pkgs, pkgsUnstable, ... }:
 {
   home.packages =
-  (with pkgs; [
+    (with pkgs; [
       font-manager
       helm
       helmfile
-  ])
-  ++ (with pkgsUnstable; [
-  ]);
+    ])
+    ++ (with pkgsUnstable; [
+    ]);
+
 }

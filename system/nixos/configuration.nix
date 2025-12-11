@@ -55,16 +55,19 @@
     enable = true;
     xwayland.enable = true;
   };
-  services.xserver = {
-    enable = true;
+  services = {
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+    };
     displayManager.gdm.enable = true;
     displayManager.gdm.wayland = true;
     desktopManager.gnome.enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
   };
+
   services.displayManager = {
     defaultSession = "hyprland";
     autoLogin.enable = false;
@@ -111,7 +114,7 @@
     kitty # hyprland default terminal
     nwg-look # normal cursor
     pavucontrol # audio control gui
-    rofi-wayland # app launcher
+    rofi # app launcher
     slurp # screenshot
     waybar # bar
     wl-clipboard # clipboard

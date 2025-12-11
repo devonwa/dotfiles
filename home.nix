@@ -3,7 +3,6 @@
   pkgsUnstable,
   ...
 }:
-
 {
   home.packages =
     (with pkgs; [
@@ -27,6 +26,7 @@
       htop-vim
       jq
       k9s
+      lazygit
       libreoffice
       nodejs
       ripgrep
@@ -44,11 +44,11 @@
     ++ (with pkgsUnstable; [
       bluetui
       claude-code
-      lazygit
       neovim
       neovide
       obsidian
       opencode
+      spotify
       vscode
       zed-editor
 

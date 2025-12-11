@@ -1,9 +1,8 @@
-{ config, pkgs, pkgsUnstable, ... }:
-
+{ ... }:
 {
   programs.git = {
     enable = true;
-    userName = "Devon Walker";
-    userEmail = "devon@devonwa.com";
+    settings.user.name = "Devon Walker";
+    settings.user.email = "devon@devonwa.com";
   };
 }
