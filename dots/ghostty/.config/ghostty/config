@@ -5,9 +5,11 @@ font-family = FreeMono
 
 # theme = Gruvbox Dark Hard
 background = "#000000"
-background-opacity = 0.90
+background-opacity = 1.00
 # image supported after 1.2
-# background-image = /home/devn/Pictures/wallpapers/forest-rays.jpg
+background-image = /home/devn/personal/wallpapers/trees4k.jpg
+background-image-opacity = 0.05
+background-image-fit = stretch
 
 
 # prevent ghostty from showing window size as a brief centered popup
