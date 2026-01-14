@@ -52,6 +52,11 @@
       vscode
       zed-editor
 
+      # screenshot
+      grim
+      slurp
+      swappy
+
       # LSPs
       gopls
       lua-language-server
