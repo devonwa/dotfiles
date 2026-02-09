@@ -40,5 +40,6 @@
   { "key": "shift+cmd+t", "command": "" },
   { "key": "cmd+w", "command": "" },
   { "key": "cmd+/", "command": "" },
-  { "key": "cmd+\\", "command": "" }
+  { "key": "cmd+\\", "command": "" },
+  { "key": "shift+cmd+\\", "command": "" }
 ]
