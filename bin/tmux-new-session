@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Create tmux session using shared script
+"$(dirname "$0")/tmux-create-session"

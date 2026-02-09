@@ -128,7 +128,10 @@ newTmuxSession() {
     $XDG_CONFIG_HOME/tmux/templates/basic $(fd --type d . | fzf)
 }
 alias ta='tmux attach'
-func tn() { . $DOTFILES/bin/tmux-new.sh }
+func ,tmux-new-session() { . $DOTFILES/bin/tmux-new-session }
+alias tns=',tmux-new-session'
+func ,tmux-new-worktree() { . $DOTFILES/bin/tmux-new-worktree }
+alias tnw=',tmux-new-worktree'
 
 # zoxide
 eval "$(zoxide init zsh)"
