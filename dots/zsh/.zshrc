@@ -106,6 +106,8 @@ alias gP='git push'
 alias gs='git status'
 alias gS='git switch'
 alias gw='git worktree'
+func ,git-new-worktree() { $DOTFILES/bin/git-new-worktree }
+alias gnw=',git-new-worktree'
 alias gitMergedBranch='git branch --merged | egrep -v "(^\*|master|main|dev)"'
 alias gitMergedBranchPrune='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
 
@@ -128,10 +130,11 @@ newTmuxSession() {
     $XDG_CONFIG_HOME/tmux/templates/basic $(fd --type d . | fzf)
 }
 alias ta='tmux attach'
-func ,tmux-new-session() { . $DOTFILES/bin/tmux-new-session }
-alias tns=',tmux-new-session'
-func ,tmux-new-worktree() { . $DOTFILES/bin/tmux-new-worktree }
-alias tnw=',tmux-new-worktree'
+func ,tmux-new-session() { $DOTFILES/bin/tmux-new-session }
+alias tn=',tmux-new-session'
+
+# workspaces
+func ,add-to-workspace() { $DOTFILES/bin/add-to-workspace }
 
 # zoxide
 eval "$(zoxide init zsh)"
