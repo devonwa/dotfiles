@@ -24,6 +24,9 @@ else
             GRANDPARENT_DIR=$(basename "$(dirname "$(dirname "$(pwd)")")" | sed 's/^\.//')
             SESSION="${GRANDPARENT_DIR}/${BASE_DIR}"
             ;;
+        workspaces)
+            SESSION="workspaces/${BASE_DIR}"
+            ;;
         *)
             SESSION="${BASE_DIR}"
             ;;

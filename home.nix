@@ -29,6 +29,7 @@
       lazygit
       libreoffice
       nodejs
+      python315
       ripgrep
       rustup
       starship
