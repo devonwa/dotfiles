@@ -29,7 +29,6 @@
       lazygit
       libreoffice
       nodejs
-      python315
       ripgrep
       rustup
       starship
@@ -37,6 +36,7 @@
       tldr
       tmux
       usbutils
+      uv
       viu
       xclip
       zsh
