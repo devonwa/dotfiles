@@ -1,3 +1,6 @@
 {
-  "editorMode": "vim"
+  "editorMode": "vim",
+  "enabledPlugins": {
+    "pyright-lsp@claude-plugins-official": true
+  }
 }
