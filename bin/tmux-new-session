@@ -18,11 +18,23 @@ else
     BASE_DIR=$(basename "$(pwd)" | sed 's/^\.//')
     BASE_DIR=${BASE_DIR:0:30}
 
-    # Special handling for worktree directories
     case "$PARENT_DIR" in
         .wt|.wts|.worktree|worktree|worktrees|.worktrees)
-            GRANDPARENT_DIR=$(basename "$(dirname "$(dirname "$(pwd)")")" | sed 's/^\.//')
-            SESSION="${GRANDPARENT_DIR}/${BASE_DIR}"
+            # Find git repository root by walking up directory tree
+            CURRENT_DIR="$(pwd)"
+            while [ "$CURRENT_DIR" != "/" ]; do
+                CURRENT_DIR=$(dirname "$CURRENT_DIR")
+                if [ -d "$CURRENT_DIR/.git" ]; then
+                    GIT_DIR=$(basename "$CURRENT_DIR" | sed 's/^\.//')
+                    SESSION="${GIT_DIR}/${BASE_DIR}"
+                    break
+                fi
+            done
+            
+            # If no git directory found, use base directory
+            if [ -z "$SESSION" ]; then
+                SESSION="${BASE_DIR}"
+            fi
             ;;
         workspaces)
             SESSION="workspaces/${BASE_DIR}"
@@ -36,7 +48,7 @@ fi
 echo "Creating tmux session '$SESSION' in '$WORKING_DIR'..."
 
 # Check if session already exists
-if tmux has-session -t "$SESSION" 2>/dev/null; then
+if tmux has-session -t="$SESSION" 2>/dev/null; then
     echo "Session '$SESSION' already exists"
     # If in tmux, switch to session, otherwise attach
     if [ -n "$TMUX" ]; then
