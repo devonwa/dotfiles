@@ -23,7 +23,7 @@
   "editor.renderWhitespace": "none",
   "editor.rulers": [
     { "column": 80, "color": "#272727" },
-    { "column": 120, "color": "#303030" }
+    { "column": 120, "color": "#303030" },
   ],
   "editor.stickyScroll.enabled": true,
   "editor.suggestSelection": "first",
@@ -49,14 +49,15 @@
     "statusBar.background": "#1c1c1c",
     "statusBar.noFolderBackground": "#212121",
     "statusBar.debuggingBackground": "#96a2a5",
-    "statusBar.foreground": "#a0a0a0"
+    "statusBar.foreground": "#a0a0a0",
     // "statusBarItem.remoteBackground": "#4e4e4e",
     // "statusBarItem.remoteForeground": "#1c1c1c"
   },
   "workbench.editor.centeredLayoutFixedWidth": true,
   "workbench.editor.closeEmptyGroups": false,
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
+    "*.ipynb": "jupyter-notebook",
+    "git-rebase-todo": "default",
   },
   "workbench.iconTheme": "vscode-icons",
   "workbench.editor.openPositioning": "last",
@@ -78,47 +79,47 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["shift+l"],
-      "commands": ["workbench.action.nextEditorInGroup"]
+      "commands": ["workbench.action.nextEditorInGroup"],
     },
     {
       "before": ["shift+h"],
-      "commands": ["workbench.action.previousEditorInGroup"]
+      "commands": ["workbench.action.previousEditorInGroup"],
     },
     {
       "before": ["<leader>", "tab"],
       "commands": [
         "workbench.action.quickOpenPreviousRecentlyUsedEditor",
-        "workbench.action.acceptSelectedQuickOpenItem"
-      ]
+        "workbench.action.acceptSelectedQuickOpenItem",
+      ],
     },
     {
       "before": ["<leader>", "shift+tab"],
-      "commands": ["workbench.action.quickOpenNavigateNextInRecentFilesPicker"]
+      "commands": ["workbench.action.quickOpenNavigateNextInRecentFilesPicker"],
     },
     { "before": ["<leader>", "d"], "commands": ["workbench.view.debug"] },
     { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
     { "before": ["<leader>", "f"], "commands": ["actions.find"] },
     {
       "before": ["<leader>", "F"],
-      "commands": ["workbench.action.findInFiles"]
+      "commands": ["workbench.action.findInFiles"],
     },
     {
       "before": ["<leader>", "f", "p"],
-      "commands": ["workbench.action.quickOpen"]
+      "commands": ["workbench.action.quickOpen"],
     },
     { "before": ["<leader>", "n"], "commands": [":nohl"] },
     { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
     {
       "before": ["<leader>", "t"],
-      "commands": ["workbench.view.testing.focus"]
+      "commands": ["workbench.view.testing.focus"],
     },
     {
       "before": ["<leader>", "w"],
-      "commands": ["workbench.action.files.save"]
+      "commands": ["workbench.action.files.save"],
     },
     {
       "before": ["<leader>", "z"],
-      "commands": ["workbench.action.toggleZenMode"]
+      "commands": ["workbench.action.toggleZenMode"],
     },
     { "before": ["<C-d>"], "after": ["<C-d>", "z", "t"] },
     { "before": ["<C-u>"], "after": ["<C-u>", "z", "t"] },
@@ -128,7 +129,7 @@
     { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] },
     { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
     { "before": ["n"], "after": ["n", "z", "z", "z", "v"] },
-    { "before": ["N"], "after": ["N", "z", "z", "z", "v"] }
+    { "before": ["N"], "after": ["N", "z", "z", "z", "v"] },
     // { // find a way to offset up ~7 lines
     //   "before": ["z", "z"],
     //   "after": ["z", "z"]
@@ -140,27 +141,27 @@
     "<C-d>": true,
     "<C-f>": false,
     "<C-n>": false,
-    "<C-w>": false
+    "<C-w>": false,
   },
   "vim.normalModeKeyBindings": [
     {
       "before": ["<leader>", "m"],
-      "commands": ["bookmarks.toggle"]
+      "commands": ["bookmarks.toggle"],
     },
     {
       "before": ["<leader>", "M"],
-      "commands": ["bookmarks.toggleLabeled"]
+      "commands": ["bookmarks.toggleLabeled"],
     },
     {
       "before": ["<leader>", "'"],
-      "commands": ["bookmarks.listFromAllFiles"]
-    }
+      "commands": ["bookmarks.listFromAllFiles"],
+    },
   ],
   "vim.visualModeKeyBindings": [
     {
       "before": ["p"],
-      "after": ["P"]
-    }
+      "after": ["P"],
+    },
   ],
 
   ///////////////////////////////////////////
@@ -175,18 +176,18 @@
   "go.lintTool": "golangci-lint",
   "go.formatTool": "gofmt",
   "[go]": {
-    "editor.defaultFormatter": "golang.go"
+    "editor.defaultFormatter": "golang.go",
   },
   "[go.mod]": {
-    "editor.defaultFormatter": "golang.go"
+    "editor.defaultFormatter": "golang.go",
   },
   "[helm]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
   },
   "html.format.wrapAttributes": "force-aligned",
   "html.format.wrapLineLength": 0,
   "[java]": {
-    "editor.defaultFormatter": "redhat.java"
+    "editor.defaultFormatter": "redhat.java",
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "python.defaultInterpreterPath": "/usr/bin/python3",
@@ -199,19 +200,19 @@
       // "source.organizeImports": "explicit",
       // "source.fixAll": "never"
       "source.fixAll.ruff": "explicit",
-      "source.organizeImports.ruff": "explicit"
-    }
+      "source.organizeImports.ruff": "explicit",
+    },
   },
   "python.analysis.indexing": true,
   "[scala]": {
-    "editor.defaultFormatter": "scalameta.metals"
+    "editor.defaultFormatter": "scalameta.metals",
   },
   "[sql]": {
-    "editor.defaultFormatter": "mtxr.sqltools"
+    "editor.defaultFormatter": "mtxr.sqltools",
   },
   "sqltools.highlightQuery": false,
   "[svg]": {
-    "editor.defaultFormatter": "jock.svg"
+    "editor.defaultFormatter": "jock.svg",
   },
   // "[typescript]": {
   //   "editor.defaultFormatter": "dbaeumer.vscode-eslint"
@@ -220,7 +221,7 @@
   "typescript.format.semicolons": "insert",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
 
   ///////////////////////////////////////////
@@ -239,18 +240,18 @@
   "files.watcherExclude": {
     "**/.bloop": true,
     "**/.metals": true,
-    "**/.ammonite": true
+    "**/.ammonite": true,
   },
   "makefile.configureOnOpen": true,
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "vscode.json-language-features",
   },
   "editor.accessibilitySupport": "off",
   "accessibility.signalOptions.volume": 0,
   "github.copilot.nextEditSuggestions.enabled": true,
   "chat.agent.maxRequests": 50,
   "workbench.colorTheme": "Gruvbox Dark Hard",
-  "chat.viewSessions.enabled": false
+  "chat.viewSessions.enabled": false,
 
   ///////////////////////////////////////////
   // Auto-added, unsorted

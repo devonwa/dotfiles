@@ -1,0 +1,44 @@
+#!/bin/bash
+set -e
+
+TPM_DIR="$HOME/.tmux/plugins/tpm"
+TMUX_CONF="$HOME/.config/tmux/tmux.conf"
+
+# Export TPM path for install_plugins script
+export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins/"
+
+# Abort if a tmux server is running
+if tmux info &> /dev/null; then
+    echo "A tmux server is currently running. Please kill it first:"
+    echo "  tmux kill-server"
+    exit 1
+fi
+
+echo "Setting up Tmux Plugin Manager (TPM)..."
+
+# Clone or update TPM
+if [ ! -d "$TPM_DIR" ]; then
+    echo "Cloning TPM to $TPM_DIR..."
+    git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+    echo "✓ TPM cloned successfully"
+else
+    echo "TPM already installed, updating..."
+    cd "$TPM_DIR" && git pull
+    echo "✓ TPM updated"
+fi
+
+# Install plugins (handle tmux running/not running)
+echo "Installing tmux plugins..."
+if tmux info &> /dev/null; then
+    # Tmux is running, install directly
+    "$TPM_DIR/bin/install_plugins"
+else
+    # Tmux not running, create temporary session with config file
+    tmux -f "$TMUX_CONF" new-session -d -s tpm_install
+    sleep 1
+    "$TPM_DIR/bin/install_plugins"
+    tmux kill-session -t tpm_install 2>/dev/null || true
+fi
+
+echo "✓ Tmux plugins installed successfully!"
+echo ""
