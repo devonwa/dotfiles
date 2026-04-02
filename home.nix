@@ -26,6 +26,7 @@
       htop-vim
       jq
       k9s
+      lazydocker
       lazygit
       libreoffice
       nodejs
