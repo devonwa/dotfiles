@@ -4,5 +4,6 @@
     enable = true;
     settings.user.name = "Devon Walker";
     settings.user.email = "devon@devonwa.com";
+    settings.fetch.prune = true;
   };
 }
