@@ -1,18 +1,21 @@
 [
   {
     "key": "ctrl+e",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "command": "workbench.action.toggleSidebarVisibility",
   },
   {
     "key": "ctrl+f",
     "command": "actions.find",
-    "when": "editorFocus || editorIsOpen"
+    "when": "editorFocus || editorIsOpen",
   },
   { "key": "ctrl+shift+f", "command": "workbench.action.findInFiles" },
   {
     "key": "ctrl+shift+i",
     "command": "workbench.panel.chat",
-    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "claude-vscode.focus",
   },
   { "key": "ctrl+n", "command": "openEditors.newUntitledFile" },
   { "key": "ctrl+p", "command": "workbench.action.quickOpen" },
@@ -20,7 +23,7 @@
   {
     "key": "ctrl+t",
     "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
+    "when": "terminal.active",
   },
   { "key": "ctrl+shift+t", "command": "workbench.action.reopenClosedEditor" },
   { "key": "ctrl+w", "command": "workbench.action.closeActiveEditor" },
@@ -28,7 +31,7 @@
   {
     "key": "ctrl+/",
     "command": "editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly"
+    "when": "editorTextFocus && !editorReadonly",
   },
 
   // build habits with ctrl instead of cmd for multiplatform consistency
@@ -41,5 +44,5 @@
   { "key": "cmd+w", "command": "" },
   { "key": "cmd+/", "command": "" },
   { "key": "cmd+\\", "command": "" },
-  { "key": "shift+cmd+\\", "command": "" }
+  { "key": "shift+cmd+\\", "command": "" },
 ]
