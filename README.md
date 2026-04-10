@@ -11,3 +11,9 @@ ln -s /home/devn/.nix-profile/bin/zsh /usr/bin/zsh
 chsh -s /usr/bin/zsh
 ```
 
+### Mac
+Useful apps:
+- Karabiner - Keyboard remapping, for caps esc behavior
+- Raycast - Spotlight replacement
+- Rectangle - Window management
+- jurplel/InstantSpaceSwitcher - Makes switching between spaces instant, without the animation delay
