@@ -11,6 +11,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Enable mount support for exFAT
+  boot.supportedFilesystems = [ "exfat" ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.devn = {
     isNormalUser = true;
@@ -95,6 +98,7 @@
 
   programs.zsh.enable = true;
   programs.firefox.enable = true;
+  programs.steam.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim
@@ -103,6 +107,9 @@
 
     nerd-fonts.droid-sans-mono
     nerd-fonts.fira-code
+
+    exfatprogs # mkfs.exfat
+    nfs-utils # nfs connect to NAS
 
     # hyprland
     hypridle # lock on idle

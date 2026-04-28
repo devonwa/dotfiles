@@ -52,6 +52,7 @@
       obsidian
       opencode
       spotify
+      vlc
       vscode
       zed-editor
 
