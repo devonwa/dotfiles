@@ -100,6 +100,10 @@
   programs.firefox.enable = true;
   programs.steam.enable = true;
 
+  fonts.packages = with pkgs; [
+    font-awesome
+  ];
+
   environment.systemPackages = with pkgs; [
     vim
     git
@@ -129,6 +133,8 @@
     xfce.thunar-archive-plugin # file explorer extract zip
     xfce.tumbler # file explorer image thumbnails
   ];
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1"; # Hint Electron apps to use Wayland
 
   # Capslock to CTRL when held and ESC when pressed
   services.keyd = {
