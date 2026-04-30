@@ -43,7 +43,7 @@
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
     },
     "clock": {
-        "format": "{:%Y-%e-%d %H:%M}",
+        "format": "{:%Y-%m-%d %I:%M%p}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode-mon-col": 3,
