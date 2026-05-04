@@ -98,16 +98,22 @@
 
   programs.zsh.enable = true;
   programs.firefox.enable = true;
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
+  };
 
   fonts.packages = with pkgs; [
     font-awesome
   ];
 
   environment.systemPackages = with pkgs; [
-    vim
     git
     gnumake
+    lnav
+    vim
 
     nerd-fonts.droid-sans-mono
     nerd-fonts.fira-code
