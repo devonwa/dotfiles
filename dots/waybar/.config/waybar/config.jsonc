@@ -5,10 +5,10 @@
     "modules-left": [
     ],
     "modules-center": [
-        "gamemode",
-        "mpris"
     ],
     "modules-right": [
+        "gamemode",
+        "mpris",
         "group/resources",
         "idle_inhibitor",
         "wireplumber",
