@@ -252,6 +252,7 @@
   "chat.agent.maxRequests": 50,
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "chat.viewSessions.enabled": false,
+  "claudeCode.preferredLocation": "panel",
 
   ///////////////////////////////////////////
   // Auto-added, unsorted
