@@ -139,6 +139,7 @@ alias tn=',tmux-new-session'
 
 # workspaces
 func ,add-to-workspace() { $DOTFILES/bin/add-to-workspace }
+func ,hypr-launch-or-switch() { $DOTFILES/bin/hypr-launch-or-switch }
 
 # zoxide
 eval "$(zoxide init zsh)"

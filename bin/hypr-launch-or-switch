@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# The app class name (use 'hyprctl clients' to find the exact class)
+APP_CLASS=$1
+# The command to launch the app if it's not open
+LAUNCH_CMD=$2
+
+# 1. Get the workspace ID of the first window matching the app class
+WORKSPACE_ID=$(hyprctl clients -j | jq -r ".[] | select(.class == \"$APP_CLASS\") | .workspace.id" | head -n 1)
+
+# 2. Check if a workspace ID was found
+if [ "$WORKSPACE_ID" != "" ] && [ "$WORKSPACE_ID" != "null" ]; then
+    # Switch to that workspace
+    hyprctl dispatch workspace "$WORKSPACE_ID"
+else
+    # App is not open, so launch it
+    eval "$LAUNCH_CMD"
+fi

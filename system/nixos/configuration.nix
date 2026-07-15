@@ -19,6 +19,7 @@
     isNormalUser = true;
     description = "Devon";
     extraGroups = [
+      "docker"
       "networkmanager"
       "wheel"
     ];
@@ -131,6 +132,7 @@
     kitty # hyprland default terminal
     nwg-look # normal cursor
     pavucontrol # audio control gui
+    networkmanagerapplet # wifi manager
     rofi # app launcher
     slurp # screenshot
     waybar # bar
@@ -138,6 +140,7 @@
     xfce.thunar # file explorer
     xfce.thunar-archive-plugin # file explorer extract zip
     xfce.tumbler # file explorer image thumbnails
+    wireguard-tools
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1"; # Hint Electron apps to use Wayland
@@ -160,9 +163,16 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Tailscale
+  services.tailscale.enable = true;
+
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
+
+  # Docker
+  # In /etc/nixos/configuration.nix
+  virtualisation.docker.enable = true;
 
   # DON'T EDIT!!! NOOOOOOOOOOOOOOO
   system.stateVersion = "25.05";

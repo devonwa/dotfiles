@@ -7,7 +7,6 @@
   home.packages =
     (with pkgs; [
       _1password-gui
-      anki-bin
       ansible
       bat
       cmatrix
@@ -45,6 +44,8 @@
       zoxide
     ])
     ++ (with pkgsUnstable; [
+      anki-bin
+      ankiAddons.anki-connect
       bluetui
       claude-code
       neovim
