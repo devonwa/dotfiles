@@ -8,7 +8,6 @@ background = "#000000"
 background-opacity = 1.00
 # image supported after 1.2
 background-image = ~/personal/wallpapers/trees4k.jpg
-background-image-opacity = 0.08
 background-image-fit = stretch
 
 

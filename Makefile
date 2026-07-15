@@ -12,12 +12,13 @@ host:
 dots:
 	pushd dots; stow --no-folding --target=${HOME} *; popd
 	@echo "Setting up platform-specific configs..."
+	@rm -f ${HOME}/.config/ghostty/config
 	@if [ "$$(uname)" = "Darwin" ]; then \
-		ln -sf config.macos ${HOME}/.config/ghostty/config; \
-		echo "Linked Ghostty config for macOS"; \
+		cat ${HOME}/.config/ghostty/config.base ${HOME}/.config/ghostty/config.macos.override > ${HOME}/.config/ghostty/config; \
+		echo "Generated Ghostty config for macOS"; \
 	elif [ "$$(uname)" = "Linux" ]; then \
-		ln -sf config.linux ${HOME}/.config/ghostty/config; \
-		echo "Linked Ghostty config for Linux"; \
+		cat ${HOME}/.config/ghostty/config.base ${HOME}/.config/ghostty/config.linux.override > ${HOME}/.config/ghostty/config; \
+		echo "Generated Ghostty config for Linux"; \
 	fi
 	@echo ""
 	@echo "Dotfiles installed. Run 'make setup' to install app-specific plugins."
