@@ -3,15 +3,16 @@ name: save-permissions
 description: Save all permission requests from the current chat to allowed config
 ---
 
-Review the current conversation and identify all Bash permission requests that were made.
+Review the current conversation and identify all tool permission requests that were made.
 
 For each permission request:
-1. Extract the permission description (the semantic description of what the command does)
-2. Determine the appropriate pattern (use `*` for general permissions or specific patterns)
+1. Identify the tool type (Bash, Read, Edit, Write, Glob, Grep, etc.)
+2. Extract the permission description (the semantic description of what the operation does)
+3. Determine the appropriate pattern (use `*` for general permissions or specific patterns)
 
 Then add these permissions to `~/.claude/settings.local.json` in the format:
 ```
-Bash(description:pattern)
+ToolName(description:pattern)
 ```
 
 After adding the permissions, show a summary of what was added.
@@ -27,4 +28,9 @@ After adding the permissions, show a summary of what was added.
 - `Bash(install dependencies:npm install*)`
 - `Bash(run tests:npm test*)`
 - `Bash(git operations:git *)`
-- `Bash(file operations:cat *)`
+- `Read(read config files:**/settings*.json)`
+- `Read(read source files:**/*.py)`
+- `Edit(edit config files:**/settings*.json)`
+- `Write(create new files:*)`
+- `Glob(search for files:**/*)`
+- `Grep(search file contents:*)`

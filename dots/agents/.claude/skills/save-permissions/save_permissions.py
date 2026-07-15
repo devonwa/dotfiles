@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Helper script to add permissions to Claude Code settings.
-Usage: python save_permissions.py "description:pattern" ["description2:pattern2" ...]
+Usage: python save_permissions.py "Tool:description:pattern" ["Tool2:description2:pattern2" ...]
 """
 
 import json
@@ -30,12 +30,10 @@ def add_permissions(new_permissions):
     added = []
 
     for perm in new_permissions:
-        # Format as Bash(description:pattern)
-        bash_perm = f"Bash({perm})"
-        if bash_perm not in existing:
-            settings['permissions']['allow'].append(bash_perm)
-            existing.add(bash_perm)
-            added.append(bash_perm)
+        if perm not in existing:
+            settings['permissions']['allow'].append(perm)
+            existing.add(perm)
+            added.append(perm)
 
     # Write back
     with open(settings_path, 'w') as f:
@@ -45,7 +43,7 @@ def add_permissions(new_permissions):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python save_permissions.py 'description:pattern' ['description2:pattern2' ...]")
+        print("Usage: python save_permissions.py 'Tool(description:pattern)' ['Tool2(description2:pattern2)' ...]")
         sys.exit(1)
 
     permissions = sys.argv[1:]

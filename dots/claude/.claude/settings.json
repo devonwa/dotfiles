@@ -3,6 +3,9 @@
   "enabledPlugins": {
     "pyright-lsp@claude-plugins-official": true
   },
+  "permissions": {
+    "defaultMode": "acceptEdits"
+  },
   "hooks": {
     "Notification": [
       {
@@ -10,7 +13,17 @@
         "hooks": [
           {
             "type": "command",
-            "command": "if [ -n \"$TMUX\" ]; then MSG=\"Claude Code needs your attention in $(tmux display-message -p '#S:#I')\"; else MSG=\"Claude Code needs your attention\"; fi; osascript -e \"display notification \\\"$MSG\\\" with title \\\"Claude Code\\\"\""
+            "command": "if [ -n \"$TMUX\" ]; then CLAUDE_WINDOW=\"$(tmux display-message -p '#S:#I')\"; IS_ACTIVE=$(tmux list-windows -a -F '#{session_name}:#{window_index} #{window_active}' 2>/dev/null | grep \"^$CLAUDE_WINDOW 1$\" || echo \"\"); if [ -z \"$IS_ACTIVE\" ]; then MSG=\"Claude Code needs your attention in $CLAUDE_WINDOW\"; osascript -e \"display notification \\\"$MSG\\\" with title \\\"Claude Code\\\"\"; fi; else MSG=\"Claude Code needs your attention\"; osascript -e \"display notification \\\"$MSG\\\" with title \\\"Claude Code\\\"\"; fi"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "claude /save-permissions"
           }
         ]
       }
