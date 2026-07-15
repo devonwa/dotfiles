@@ -7,7 +7,7 @@ font-family = FreeMono
 background = "#000000"
 background-opacity = 1.00
 # image supported after 1.2
-background-image = /home/devn/personal/wallpapers/trees4k.jpg
+background-image = ~/personal/wallpapers/trees4k.jpg
 background-image-opacity = 0.05
 background-image-fit = stretch
 
@@ -39,7 +39,7 @@ keybind = ctrl+shift+o=new_split:right
 keybind = ctrl+shift+q=quit
 keybind = ctrl+shift+t=new_tab
 keybind = ctrl+shift+v=paste_from_clipboard
-keybind = ctrl+shift+w=close_tab
+keybind = ctrl+shift+w=unbind
 keybind = ctrl+shift+comma=reload_config
 keybind = ctrl+shift+right=next_tab
 keybind = ctrl+shift+left=previous_tab
