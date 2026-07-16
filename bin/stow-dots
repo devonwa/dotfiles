@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+stow_with_supersede() {
+    local stow_dir="$1"
+    local package="$2"
+
+    (
+        cd "$stow_dir"
+
+        local dry_output
+        dry_output=$(stow -n --no-folding --override='.*' --target="$HOME" "$package" 2>&1 || true)
+
+        while IFS= read -r line; do
+            if [[ "$line" == *"existing target is not owned by stow:"* ]]; then
+                local conflict="${line#*existing target is not owned by stow: }"
+                echo "  Clearing conflict: $conflict"
+                rm -f "$HOME/$conflict"
+            fi
+        done <<< "$dry_output"
+
+        stow --no-folding --override='.*' --target="$HOME" "$package"
+    )
+}
+
+apply_os_configs() {
+    local os_suffix
+    case "$(uname)" in
+        Darwin) os_suffix="macos" ;;
+        Linux)  os_suffix="linux" ;;
+        *) return 0 ;;
+    esac
+
+    while IFS= read -r base_file; do
+        local target="${base_file%.base}"
+        local override="${target}.${os_suffix}.override"
+        if [ -e "$override" ]; then
+            echo "  Merging $(basename "$target")..."
+            rm -f "$target"
+            cat "$base_file" "$override" > "$target"
+        fi
+    done < <(find "$HOME/.config" -name "*.base" 2>/dev/null)
+}
+
+echo "Stowing dotfiles..."
+cd "$DOTFILES_DIR/dots"
+stow --no-folding --target="$HOME" *
+apply_os_configs
+
+if [ -d "$HOME/personal/dots" ]; then
+    echo "Stowing personal dots..."
+    stow_with_supersede "$HOME/personal" "dots"
+    apply_os_configs
+fi
+
+if [ -d "$HOME/work/dots" ]; then
+    echo "Stowing work dots..."
+    stow_with_supersede "$HOME/work" "dots"
+    apply_os_configs
+fi
+
+echo ""
+echo "Dotfiles installed. Run 'make setup' to install app-specific plugins."
+echo ""
