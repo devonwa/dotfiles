@@ -46,6 +46,16 @@ apply_os_configs() {
 
 echo "Stowing dotfiles..."
 cd "$DOTFILES_DIR/dots"
+
+dry_output=$(stow -n --no-folding --override='.*' --target="$HOME" * 2>&1 || true)
+while IFS= read -r line; do
+    if [[ "$line" == *"existing target is not owned by stow:"* ]]; then
+        conflict="${line#*existing target is not owned by stow: }"
+        echo "  Clearing conflict: $conflict"
+        rm -f "$HOME/$conflict"
+    fi
+done <<< "$dry_output"
+
 stow --no-folding --target="$HOME" *
 apply_os_configs
 
