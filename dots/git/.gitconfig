@@ -1,0 +1,4 @@
+[diff]
+    tool = nvimdiff
+[difftool]
+    prompt = false

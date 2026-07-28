@@ -5,5 +5,7 @@
     settings.user.name = "Devon Walker";
     settings.user.email = "devon@devonwa.com";
     settings.fetch.prune = true;
+    settings.diff.tool = "nvimdiff";
+    settings.difftool.prompt = false;
   };
 }
