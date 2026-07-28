@@ -50,7 +50,6 @@ MODE_CURSOR_VICMD="green block"
 MODE_CURSOR_SEARCH="#ff00ff steady underline"
 MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady bar"
 MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
-bindkey '^[[Z' autosuggest-accept # autosuggest (shift+tab)
 KEYTIMEOUT=1 # 10ms for key sequences - remove ESC delay
 
 ########################################
