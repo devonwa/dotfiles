@@ -75,6 +75,7 @@ alias lg='lazygit'
 alias ll='ls -lha'
 alias ls='ls --color=auto'
 alias v='nvim'
+alias oc='opencode'
 
 # docker
 alias d='docker'
