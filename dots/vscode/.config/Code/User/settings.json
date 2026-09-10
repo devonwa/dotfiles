@@ -255,6 +255,8 @@
   "claudeCode.preferredLocation": "panel",
   "chat.tools.terminal.autoApprove": {
     "printenv": true,
+    "git add": true,
+    "git rebase": true,
   },
 
   ///////////////////////////////////////////
