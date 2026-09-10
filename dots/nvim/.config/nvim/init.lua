@@ -4,6 +4,7 @@ require "user.keymaps" -- repeated at start so available if settings crash
 
 -- Plugins
 require "user.lazy"
+require "user.fzflua"
 require "user.colorschemes"
 require "user.cmp"
 require "user.comment"
