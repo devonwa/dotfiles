@@ -141,6 +141,8 @@ alias tn=',tmux-new-session'
 # workspaces
 func ,add-to-workspace() { $DOTFILES/bin/add-to-workspace }
 func ,hypr-launch-or-switch() { $DOTFILES/bin/hypr-launch-or-switch }
+alias wsm='workspace-manager'
+export WORKSPACE_MANAGER_DIR="$HOME/workspaces"
 
 # zoxide
 eval "$(zoxide init zsh)"
