@@ -41,7 +41,8 @@ Run from the repo root.
   - `hosts/<host>/configuration.nix` + `hardware-configuration.nix` - machine
     NixOS config (hostname, GPU drivers, etc.).
   - `hosts/<host>/dots/` - stow package for host-specific config (e.g.
-    `.config/hypr/host.conf` monitor layout), applied with `make host`.
+    `.config/hypr/host.lua` monitor layout, required by `hyprland.lua`), applied
+    with `make host`.
 - `dots/` - the Stow packages. One subdirectory per app; inside, the file tree
   mirrors its location under `$HOME`. Example:
   `dots/nvim/.config/nvim/...` -> `~/.config/nvim/...`.
