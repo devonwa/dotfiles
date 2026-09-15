@@ -68,7 +68,6 @@
       };
     };
     displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = true;
     desktopManager.gnome.enable = true;
   };
 
@@ -171,8 +170,8 @@
   systemd.services."autovt@tty1".enable = false;
 
   # Docker
-  # In /etc/nixos/configuration.nix
   virtualisation.docker.enable = true;
+  virtualisation.docker.package = pkgs.docker_29;
 
   # DON'T EDIT!!! NOOOOOOOOOOOOOOO
   system.stateVersion = "25.05";
