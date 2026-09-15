@@ -48,6 +48,7 @@
       ankiAddons.anki-connect
       bluetui
       claude-code
+      handy
       neovim
       neovide
       obsidian
